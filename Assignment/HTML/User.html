@@ -1,85 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User form </title>
-    <style>
-      .centered-form {
-        margin: 0 auto;
-        width: 500px;       
-        border: 1px solid #000;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User form </title>
+  <style>
+    .centered-form {
+      margin: 0 auto;
+      width: 500px;
+      border: 1px solid #000;
       padding: 10px;
-      }
-      .wide-button {
-      width: 250px; 
+      background-color:#b0eb0d;
     }
-    h1{
-     align-items: center; 
-     text-align: center; 
-     color: blue; 
-     text-decoration: underline;
+
+    .wide-button {
+      width: 250px;
     }
-    </style>
+
+    h1 {
+      align-items: center;
+      text-align: center;
+      color: blue;
+      text-decoration: underline;
+    }
+  </style>
 </head>
-<body >
- 
-    
-  <div class="centered-form">  
-  <form style=" align-items: center;"; title="User Form" >
-    <h1 CLASS="h1" >USER FORM</h1>
-                <h3 style="color:blueviolet;">Your Details : </h3>
-               <label for="Name"> <strong>Name : </strong></label>
-                <input type="text" name="Name" id="Name" placeholder="first name and Last name " size="20"> <br>
-                <label for="email"> <Strong>Email: </Strong> </label>
-                <input type="email" name="Email" id="Email" placeholder="Example@domain.com" size="20"> <br>
-                <label for="Phone"> <strong>Phone: </strong></label>
-                <input type="number" name="Phone" id="Phone" placeholder="Eg. 9460014103" size="20"> 
-      
-            <h3 style="color:blueviolet;">Delivery Address : </h3>
-            <strong>Address</strong>
-            <br>  
-            <textarea cols="30" rows="5" value="address">  
+
+<body>
+
+
+  <div class="centered-form">
+    <form style=" align-items: center;" ; title="User Form">
+      <h1 CLASS="h1">USER FORM</h1>
+      <h3 style="color:blueviolet;">Your Details : </h3>
+      <label for="Name"> <strong>Name : </strong></label>
+      <input type="text" name="Name" id="Name" placeholder="first name and Last name " size="20"> <br>
+      <label for="email"> <Strong>Email: </Strong> </label>
+      <input type="email" name="Email" id="Email" placeholder="Example@domain.com" size="20"> <br>
+      <label for="Phone"> <strong>Phone: </strong></label>
+      <input type="number" name="Phone" id="Phone" placeholder="Eg. 9460014103" size="20">
+
+      <h3 style="color:blueviolet;">Delivery Address : </h3>
+      <strong>Address</strong>
+      <br>
+      <textarea cols="30" rows="5" value="address">
             </textarea><br>
-            <label for="Name"> <strong>Post Code:</strong></label>
-            <input type="text" name="Post Code" id="Post Code" size="20" > <br>
-            <label for="Name"> <strong>Country: </strong></label>
-            <input type="text" name="Country" id="Country" size="20" > <br>
-        
-       
-            <h3 style="color:blueviolet;">Card Details : </h3>
-            
-                <h3><legend>Card Type :</legend></h3>
-              
-                <label>
-                  <input type="radio" name="Card" value="VISA">
-                  <img src="C:\Users\Admin\Desktop\visa.png" alt="center" >
-                  VISA
-                </label>
-              
-                <label>
-                  <input type="radio" name="Card" value=" AmEx">
-                  <img src="C:\Users\Admin\Desktop/amex.png" >
-                  AmEx
-                </label>
-              
-                <label>
-                  <input type="radio" name="Card" value=" Mastercard">
-                  <img src="C:\Users\Admin\Desktop/master.png" >
-                  Mastercard
-                </label><br>
-                <label for="Card number"> <strong>Card number </strong></label>
-                <input type="text" name="Card number" id="Card number" size="20" > <br>
-                <label for="Security code"> <strong>Security code </strong></label>
-                <input type="text" name="Security code" id="Security code" size="20" > <br>
-                <label for="Name on card"> <strong>Name on card </strong></label>
-                <input type="text" name="Name on card" id="Name on card" placeholder="Exact name as on the card" size="20" > <br>
-                <button class="wide-button">BUY IT!</button>     
-        <
+      <label for="Name"> <strong>Post Code:</strong></label>
+      <input type="text" name="Post Code" id="Post Code" size="20"> <br>
+      <label for="Name"> <strong>Country: </strong></label>
+      <input type="text" name="Country" id="Country" size="20"> <br>
+
+
+      <h3 style="color:blueviolet;">Card Details : </h3>
+
+      <h3>Card Type :</h3>
+
+      <label>
+        <input type="radio" name="Card" value="VISA">
+        <img src="C:\Users\Admin\Desktop\visa.png" alt="center">
+        VISA
+      </label>
+
+      <label>
+        <input type="radio" name="Card" value=" AmEx">
+        <img src="C:\Users\Admin\Desktop/amex.png">
+        AmEx
+      </label>
+
+      <label>
+        <input type="radio" name="Card" value=" Mastercard">
+        <img src="C:\Users\Admin\Desktop/master.png">
+        Mastercard
+      </label><br>
+      <label for="Card number"> <strong>Card number </strong></label>
+      <input type="text" name="Card number" id="Card number" size="20"> <br>
+      <label for="Security code"> <strong>Security code </strong></label>
+      <input type="text" name="Security code" id="Security code" size="20"> <br>
+      <label for="Name on card"> <strong>Name on card </strong></label>
+      <input type="text" name="Name on card" id="Name on card" placeholder="Exact name as on the card" size="20"> <br>
+      <button class="wide-button">BUY IT!</button>
     </Form>
   </div>
 
 
 
 </body>
+
 </html>
