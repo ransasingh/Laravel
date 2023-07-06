@@ -21,7 +21,7 @@
 <?php
     if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         if (isset($_GET['rows'])) {
-            $rows = $_GET['rows'];
+            $rows = $_GET['rows']n
 
             // Generate the pattern
             for ($i = 1; $i <= $rows; $i++) {

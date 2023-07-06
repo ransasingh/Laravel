@@ -4,7 +4,6 @@
     <title>Percentage and Grade Calculation</title>
 </head>
 <body>
-    <div class="form_conatiner">
     <form method="POST">
         <label for="physics">Physics:</label>
         <input type="number" name="physics" id="physics" required> 
