@@ -2,14 +2,17 @@
 require_once("header.php");
 
 if (isset($_POST['btn-login'])) {
-    // if ($_POST['username'] != "" || $_POST['password'] != "" || $_POST['email'] != "") {
-    if ($_POST['username'] != "" && $_POST['password'] != "" && $_POST['email'] != "") {
+    echo "<pre>";
+    print_r($_POST);
+    echo "</pre>";
+    // // if ($_POST['username'] != "" || $_POST['password'] != "" || $_POST['email'] != "") {
+    // if ($_POST['username'] != "" && $_POST['password'] != "" && $_POST['email'] != "") {
         setcookie("username",$_POST['username'], time()+1*60*60);
         setcookie("password",$_POST['password'], time()+1*60*60);
         setcookie("email",$_POST['email'], time()+1*60*60);
-    }else{
-        echo "User Name is required";
-    }
+    // }else{
+    //     echo "User Name is required";
+    // }
 }
 ?>
 
