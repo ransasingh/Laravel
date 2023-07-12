@@ -10,6 +10,7 @@
         @import url('https://use.fontawesome.com/releases/v5.7.2/css/all.css');
     </style>
     <link rel="stylesheet" href="https://bootswatch.com/5/lumen/bootstrap.css">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <script src="https://bootswatch.com/_vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
@@ -40,6 +41,7 @@
            <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Account</a>
           <div class="dropdown-menu">
+            
             <a class="dropdown-item" href="login.php">login</a>
             <a class="dropdown-item" href="logout.php">logout</a>
             <a class="dropdown-item" href="#">Another action</a>
@@ -47,13 +49,17 @@
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="#">Separated link</a>
           </div>
+          
         </li>
         </li>
       </ul>
-      <!-- <form class="d-flex">
+      <form class="d-flex">
         <input class="form-control me-sm-2" type="search" placeholder="Search">
-        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-      </form> -->
+        
+      </form>
+      <a href="cart.php">
+          <i class="fa fa-cart-plus" aria-hidden="true"></i>
+      </a>
     </div>
   </div>
 </nav>

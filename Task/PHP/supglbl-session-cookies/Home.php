@@ -1,5 +1,5 @@
 <?php
-require_once("header.php");
+require_once("index.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -9,7 +9,7 @@ require_once("header.php");
     <title>Document</title>
 </head>
 <body>
-    <div>
-        <h2>Home</h2>
+    <!-- <div>
+        <h2>Home</h2> -->
 </body>
 </html>
