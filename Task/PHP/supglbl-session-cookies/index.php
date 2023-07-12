@@ -4,7 +4,6 @@ if (isset($_REQUEST['prod1'])) {
     $_SESSION['cartData']['prod1']=array("prod_title"=>$_REQUEST['prod_title'],"prod_price"=>$_REQUEST['prod_price'],"prod_quantity"=>$_REQUEST['prod_quantity'],"prod_image"=>$_REQUEST['prod_image']);
 }
 
-
 ?>
 <div class="container">
     <div class="row">
