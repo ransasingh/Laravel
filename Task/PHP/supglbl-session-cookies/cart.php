@@ -5,7 +5,12 @@ print_r($_SESSION);
 
 echo "</pre>";
 ?>
-<!-- <section class="h-100 h-custom" style="background-color: #eee;">
+
+
+
+
+
+<section class="h-100 h-custom" style="background-color: #eee;">
   <div class="container py-5 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col">
@@ -131,8 +136,11 @@ echo "</pre>";
                         </div>
                         <div style="width: 80px;">
                           <h5 class="mb-0">9000</h5>
-                        </div>
+                        <!-- </div>
                         <a href="#!" style="color: #cecece;"><i class="fas fa-trash-alt"></i></a>
+                      </div> -->
+                      <div>
+                      <a href="empty.php">Empty Cart</a>
                       </div>
                     </div>
                   </div>
@@ -149,4 +157,4 @@ echo "</pre>";
       </div>
     </div>
   </div>
-</section> -->
+</section>
