@@ -1,9 +1,13 @@
 <?php
 require_once "header.php";
-echo "<pre>";
-print_r($_SESSION);
+// echo "<pre>";
+// print_r($_SESSION);
 
-echo "</pre>";
+// echo "</pre>";
+if (isset($_REQUEST['emptycart'])) {
+  unset($_SESSION['cartData']);
+  header("lcoation:cart.php");
+}
 ?>
 
 
@@ -23,6 +27,9 @@ echo "</pre>";
                 <h5 class="mb-3"><a href="#!" class="text-body"><i
                       class="fas fa-long-arrow-alt-left me-2"></i>Continue shopping</a></h5>
                 <hr>
+                <?php
+
+                  if (isset($_SESSION['cartData'])) { ?>
 
                 <div class="d-flex justify-content-between align-items-center mb-4">
                   <div>
@@ -136,25 +143,23 @@ echo "</pre>";
                         </div>
                         <div style="width: 80px;">
                           <h5 class="mb-0">9000</h5>
-                        <!-- </div>
+                        </div>
                         <a href="#!" style="color: #cecece;"><i class="fas fa-trash-alt"></i></a>
-                      </div> -->
-                      <div>
-                      <a href="empty.php">Empty Cart</a>
                       </div>
-                    </div>
-                  </div>
-                </div>
+                      <?php } else{?> 
+                      Your cart is empty
+                      <?php }  ?>
 
-              </div>
-              
-              </div>
-
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+                                  </div>
+                            
+                                </div>
+                                <form method="post">
+                                  <button name="emptycart">Empty Cart</button>
+                                </form>
+                          <!-- <a href="emptycart">Empty</a> -->
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      </section>
