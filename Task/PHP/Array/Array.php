@@ -24,9 +24,20 @@ echo "</pre>";
 ?>  
 <h3>2.Multidimension array</h3>
   <?php  
-$emp = array(array(1,"Ranjeet",400000),array(2,"Pradeep",500000),array(3,"raj",300000)); 
+
+$student = array("SchoolName"=>array
+("10th"=>array("Ram"=>array('Maths'=>50,'Sci'=>45,"Eng"=>49),
+"Shyam"=>array('Maths'=>40,'Sci'=>42,"Eng"=>48),
+"Ghnshyam"=>array('Maths'=>40,'Sci'=>42,"Eng"=>48)),
+"11th"=>array("Ram"=>array('Maths'=>50,'Sci'=>45,"Eng"=>49),
+"Shyam"=>array('Maths'=>40,'Sci'=>42,"Eng"=>48),
+"Ghnshyam"=>array('Maths'=>40,'Sci'=>42,"Eng"=>48)),
+"12th"=>array("Ram"=>array('Maths'=>50,'Sci'=>45,"Eng"=>49),
+"Shyam"=>array('Maths'=>40,'Sci'=>42,"Eng"=>48),
+"Ghnshyam"=>array('Maths'=>40,'Sci'=>42,"Eng"=>48))
+));
 echo "<pre>";
-print_r($emp);
+print_r($student);
 echo "</pre>";
 ?> 
 </body>

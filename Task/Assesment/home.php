@@ -9,6 +9,6 @@ include("header.php");
     <title>Document</title>
 </head>
 <body>
-    <h2>Welcome to bank</h2>
+    <h2>Bank Management System</h2>
 </body>
 </html>

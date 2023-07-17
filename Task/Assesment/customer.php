@@ -13,7 +13,7 @@ include("header.php");
         <ul>
             <li><a href="Withdraw.php">Withdraw Amount</a></li>
             <li><a href="Deposite.php">Deposite Amount</a></li>
-            <li><a href="View.php">View Balance</a></li>
+            <li><a href="Viewbalence.php">View Balance</a></li>
             
             
         </ul>
