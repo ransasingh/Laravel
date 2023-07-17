@@ -2,7 +2,7 @@
 echo "<pre>";
 echo "<h1><p>php array function</P></h1>";
 echo "<p><h3>1.Creates an array</P></h3>";
-//
+//types of array function 
 $abc=array("ranjeet","singh","rajpurohit");
 echo "<pre>";
 print_r($abc);
@@ -49,6 +49,7 @@ print_r($key);
 echo "<p><h3>9.PHP array_intersect() function returns the intersection of two array. In other words, it returns the matching elements of two array.</h3></P>";
 $name1=array("sonoo","john","vivek","smith");    
 $name2=array("umesh","sonoo","kartik","smith");    
-$name3=array_intersect($name1,$name2);
+$name3=array_intersect($name1);
 print_r($name3);
+
 ?>
