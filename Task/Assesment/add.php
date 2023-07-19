@@ -10,7 +10,7 @@
         <title>Customer form</title>
     </head>
     <body>
-    <form class="add_customer_form" action="customer_add_action.php" method="post">
+    <form method="post" class="add_customer_form" action="customer_add_action.php" method="post">
  
  <div class="flex-container-form_header">
       <h1 id="form_header">Please fill in the following details . . .</h1>
@@ -161,7 +161,7 @@
 
     
 <div class="container">
-          <button type="reset" class="reset" onclick="return confirmReset();">Reset</button>
+          <button type="reset" class="reset" >Reset</button>
       </div>
 </div>
 
