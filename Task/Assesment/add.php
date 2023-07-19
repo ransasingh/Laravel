@@ -1,6 +1,7 @@
 
 <?php   
     include "header.php";
+    
     ?>
     <!DOCTYPE html>
     <html lang="en">
@@ -10,7 +11,7 @@
         <title>Customer form</title>
     </head>
     <body>
-    <form method="post" class="add_customer_form" action="customer_add_action.php" method="post">
+    <form method="post" class="#" action="#" method="post">
  
  <div class="flex-container-form_header">
       <h1 id="form_header">Please fill in the following details . . .</h1>
@@ -156,7 +157,7 @@
 
  <div class="flex-container">
       <div class="container">
-          <button type="submit">Submit</button>
+          <button type="submit" name="submit" >Submit</button>
       </div>
 
     
