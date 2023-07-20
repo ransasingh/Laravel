@@ -28,7 +28,7 @@ print_r($age);
 echo "<br>=============================== Array Combine =================================== <br>";
 $newar = (array_combine($fname,$age ));
 print_r($newar);
-exit;
+// exit;
 echo "<br>=============================== Array Merge =================================== <br>";
 print_r(array_merge($fname,$age));
 echo "<br>=============================== Array Merge Recursive=================================== <br>";
