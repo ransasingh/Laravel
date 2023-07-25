@@ -1,45 +1,47 @@
 <?php
-require_once("header.php");
+include("Header.php");
 
-
-// if (isset($_POST['login'])) {
+if (isset($_POST['login'])) {
     
-//     echo "<pre>";
-//     print_r($_COOKIE);
-//     echo "</pre>";
-//     if ($_COOKIE['username'] == $_REQUEST['username'] && $_COOKIE['password'] == $_REQUEST['password']) {
-//         echo "login success";
-//         $_SESSION['Data'] = "ABC";
-//         $_SESSION['UserData'] = array("username"=>$_REQUEST['username'],"password"=>$_REQUEST['password']);
-//         header("location:Home.php");
-//     }else{
-//         echo "Invalid user";
-//     }
+    // echo "<pre>";
+    // print_r($_COOKIE);
+    // echo "</pre>";
+    if ($_COOKIE['username'] == $_REQUEST['username'] && $_COOKIE['password'] == $_REQUEST['password']) {
+        echo "login success";
+        $_SESSION['Data'] = "ABC";
+        $_SESSION['UserData'] = array("username"=>$_REQUEST['username'],"password"=>$_REQUEST['password']);
+        header("location:index.php");
+     
+    }else{
+        echo "Invalid user";
+    }
 
 }
+
 ?>
-<style>
-    /* * {
-        border: 1px solid
-    } */
-</style>
-<!-- <h2>Login</h2> -->
-<div class="container">
-    <!-- <h2>Login</h2> -->
-    <div class="row mt-5">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login form</title>
+</head>
+<body>
+    <div class="container">
+<div class="row mt-5">
         <div class="col-4 offset-4">
             <div class="card">
                 <div class="card-header text-center"><h3>Login</h3></div>
-                <form method="post">
+                <form method="post" >
                 <div class="card-body">
                     <div class="row mt-2">
                         <div class="col">
-                            <input type="text" placeholder="Enter User Name" class="form-control" name="username" id="username">
+                            <input type="text" placeholder="Enter User Name" class="form-control" name="username" id="username" required  >
                         </div>
                     </div>
                     <div class="row mt-2">
                         <div class="col">
-                            <input type="password" placeholder="Enter Password" class="form-control" name="password" id="password">
+                            <input type="password" placeholder="Enter Password" class="form-control" name="password" id="password"  required>
                         </div>
                     </div>
                     <div class="row mt-2">
@@ -60,5 +62,4 @@ require_once("header.php");
     </div>
 </div>
 </body>
-
 </html>

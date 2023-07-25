@@ -13,7 +13,7 @@
     <body>
     <form method="post" class="#" action="#" method="post">
  
- <div class="flex-container-form_header">
+<div class="container">
       <h1 id="form_header">Please fill in the following details . . .</h1>
   </div>
 
