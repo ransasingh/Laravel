@@ -8,6 +8,8 @@
 
 // $MatchOb = new MathOp;
 // echo $MatchOb->Addition(5,5);
+//encapsulation 
+
 class class1
 {
     function f1($a,$b){
