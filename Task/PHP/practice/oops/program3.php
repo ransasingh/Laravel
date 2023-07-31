@@ -2,7 +2,7 @@
 class Car{
 	public $color;
 	public $model;
-	public function vehicle($color, $model){
+	public function __construct($color, $model){
 		$this->color = $color;
 		$this->model = $model;
 	}
