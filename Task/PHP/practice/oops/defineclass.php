@@ -51,6 +51,6 @@ $car->priceTitle = 'Base Price';
 
 echo "Car: $car->make $car->model ($car->year) <br>";
 echo " Color: $car->color <br>";
-// echo "Price Title: $car->priceTitle  <br>";
+echo "Price Title: $car->priceTitle  <br>";
 echo "Price: $" . $car->getPrice() . " <br>";
 ?>

@@ -7,7 +7,7 @@ class demo{
 }
 class myclass extends demo{
    public function sayhello(){
-      ranjeet::sayhello();
+      parent::sayhello();
       echo "Hello PHP";
    }
 }

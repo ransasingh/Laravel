@@ -12,16 +12,16 @@ class ParentClass{
         echo self::$PrivateDM." inside parent class <br>";
     }
 }
-// class ChildClass extends GlobalParentClass{
-//     static function StaticMethod() {
-//         // echo $this->PublicDM;
-//         echo parent::$PublicDM."<br>";
-//         echo parent::$ProtectedDM."<br>";
-//         echo self::$ProtectedDM." protected DM accessing inchild by self keyword with ::  <br>";
-//         // echo parent::$PrivateDM."<br>";
-//         echo "called Static Method";
-//     }
-// }
+class ChildClass extends GlobalParentClass{
+    static function StaticMethod() {
+        // echo $this->PublicDM;
+        echo parent::$PublicDM."<br>";
+        echo parent::$ProtectedDM."<br>";
+        echo self::$ProtectedDM." protected DM accessing inchild by self keyword with ::  <br>";
+        // echo parent::$PrivateDM."<br>";
+        echo "called Static Method";
+    }
+}
 
 echo ChildClass::StaticMethod();
 echo ChildClass::parentMethod   ();
