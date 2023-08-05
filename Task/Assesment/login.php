@@ -16,7 +16,7 @@ require_once("header.php");
 //         echo "Invalid user";
 //     }
 
-}
+// }
 ?>
 <style>
     /* * {
@@ -50,7 +50,7 @@ require_once("header.php");
                     </div>
                     <div class="row mt-3">
                         <div class="col text-center">
-                            <a href="registration.php">Click here for ceate new account</a>
+                            <a href="Registration.php">Click here for ceate new account</a>
                         </div>
                     </div>
                 </div>
