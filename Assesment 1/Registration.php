@@ -39,7 +39,7 @@ if (isset($_POST['btn-submit'])) {
                         <div class="row mt-3">
                             <div class="col text-center">
                                 <input type="submit" class="btn btn-primary" name="btn-submit" id="">
-                                <input type="submit" class="btn btn-danger" name="" id="">
+                                <input type="reset" class="btn btn-danger" name="reset" id="">
                             </div>
                         </div>
                     </form>

@@ -21,6 +21,7 @@ echo "<br>";
 $poly->username="test";
 echo "<br>";
 $poly->insert("username","password");
+$poly->insert("username","password","email");
 
 
 

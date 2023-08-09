@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,21 +28,28 @@
         <li class="nav-item">
           <a class="nav-link" href="#">About</a>
         </li>
+        
+        
+       <?php if(isset($_SESSION['UserData'])){ 
+        // print_r($_SESSION['UserData']);
+        ?>
+         <li class="nav-item">
+         <a class="nav-link" href="logout.php">Logout</a>
+       </li>
+       <?php } else { ?>
         <li class="nav-item">
           <a class="nav-link" href="login.php">Login</a>
         </li>
-        <!-- <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
-        </li> -->
-       
+       <?php }
+        ?>
+      
+      
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Bank management</a>
           <div class="dropdown-menu">
           <a class="dropdown-item" href="#">Banker</a>
           <div>
+          
         <ul>
             <li><a href="add.php">Add Customer</a></li>
             <li><a href="View.php">View Customer</a></li>
@@ -48,11 +58,12 @@
             <li><a href="total.php">Total amount in bank</a></li>
         </ul>
     </div>  
-    
+  
    
           
             <a class="dropdown-item" href="#">Customer</a>
             <div>
+           
         <ul>
             <li><a href="Withdraw.php">Withdraw Amount</a></li>
             <li><a href="Deposite.php">Deposite Amount</a></li>
@@ -60,13 +71,14 @@
             
             
         </ul>
+       
     </div>  
         </li>
       </ul>
-      <form class="d-flex">
+      <!-- <form class="d-flex">
         <input class="form-control me-sm-2" type="search" placeholder="Search">
         <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-      </form>
+      </form> -->
     </div>
   </div>
 </nav>
