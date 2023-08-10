@@ -96,6 +96,11 @@ if (isset($_POST['submit'])) {
                 <label>Phone No. :</b></label><br>
                 <input name="phone" size="30" type="text" required />
             </div>
+            <div class=container>
+
+                <label>Prof pic :</b></label><br>
+                <input type="file" id="myFile" name="Prof pic">
+            </div>
         </div>
 
 
