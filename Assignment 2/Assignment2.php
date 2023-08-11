@@ -275,30 +275,338 @@ echo "<b> MODULE – 4(Advance PHP) </b>";
             <li>Manual Class Loading:</li>
             <ul>
                 <li>Manually load classes by explicitly including or requiring their corresponding files using require_once or include_once statements.</li>
-                
+
             </ul>
             <li>Using Composer:</li>
             <ul>
                 <li>Use Composer's autoloading, you need to define the autoloading configuration in your project's<b> composer.json </b> file and run the <b>composer install </b> to generate the autoloader files. </li>
-                
+
             </ul>
-            
+
         </ul>
     </ul>
-    
-    <br>
-    <h2>Q9.  How to Call Parent Constructor?  </h2>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
+    <br>
+    <h2>Q9. How to Call Parent Constructor? </h2>
+    <br>
+    <ul>
+        <li>Call the constructor of a parent class from within the constructor of a child class using the parent::__construct() syntax. This allows you to execute the initialization logic defined in the parent class before adding any additional logic specific to the child class</li>
+        <pre>
+            class parentclass{
+                public function __construct()
+                {
+                    echo "parent function ";
+                    
+                    
+                }
+            }
+            class childclass extends parentclass{
+                public function __construct()
+                {
+                    echo "child function ";
+                    parent::__construct();//parent construct call
+                }
+            }
+            $obj= new childclass;
+            
+        </pre>
+    </ul>
+
+    <?php
+    // class parentclass{
+    //     public function __construct()
+    //     {
+    //         echo "parent function <br>";
+
+
+    //     }
+    // }
+    // class childclass extends parentclass{
+    //     public function __construct()
+    //     {
+    //         echo "child function <br>";
+    //         parent::__construct();
+    //     }
+    // }
+    // $obj= new childclass;
+
+
+    ?>
+
+    <h2>Q10.Are Parent Constructor Called Implicitly When Create An ObjectOf Class? </h2>
+    <br>
+    <uL>
+        <li>
+            <p>No, the parent constructor is not called implicitly when creating an object of a class in PHP. If a class has a constructor defined, it must be explicitly called from the child class constructor if you want to execute the parent's constructor logic.</p>
+        </li>
+    </uL>
+
+    <h2>Q11.What Happen, If Constructor Is Defined As Private Or Protected? </h2>
+    <ul>
+        <li>When a constructor is defined as private or protected in a class, it affects the accessibility of the constructor and the way objects of that class can be created.</li>
+        <ul>
+            <ul>
+                <li>Private Constructor:</li>
+                <ul>
+
+                    <li>If a constructor is declared as private, it means it can only be accessed from within the class itself. It cannot be accessed or called from outside the class, including its child classes or other parts of the code.</li>
+                    <li>
+                        <pre>
+                            class myclass{
+                                private  function __construct()
+                        {
+                            echo "This is private construct";
+                        }
+                        
+                    }
+                    
+                   // $Obj = new myclass;  //Fatal error: Uncaught Error: Call to private myclass::__construct()
+                   
+                    </pre>
+                    </li>
+
+                    <?php
+                    // class myclass
+                    // {
+                    //     private  function __construct()
+                    //     {
+                    //         echo "This is private construct";
+                    //     }
+                    // }
+
+                    //  $Obj = new myclass;  //Fatal error: Uncaught Error: Call to private myclass::__construct()
+
+                    ?>
+
+
+                </ul>
+                <ul>
+                    <li>Protected Constructor:</li>
+                    <ul>
+
+                        <li>If a constructor is declared as protected, it means it can only be accessed from within the class itself and its child classes. It cannot be accessed or called from outside the class hierarchy. </li>
+                        <li>
+                            <pre>
+                class myclass
+                {
+                    protected  function __construct()
+                    {
+                        echo "This is protected construct";
+                    }
+                }
+                class childclass extends myclass {
+                    public function __construct()
+                    {
+                        echo "This is child class";
+                        parent::__construct(); // parent construct called
+                    }
+                }
+                
+                //  $Obj = new myclass;  //Uncaught Error: Call to protected myclass::__construct() 
+                $obj = new childclass;
+            </pre>
+                        </li>
+
+                        <?php
+                        // class myclass
+                        // {
+                        //     protected  function __construct()
+                        //     {
+                        //         echo "This is protected construct";
+                        //     }
+                        // }
+                        // class childclass extends myclass {
+                        //     public function __construct()
+                        //     {
+                        //         echo "This is child class";
+                        //         parent::__construct(); // parent construct called
+                        //     }
+                        // }
+
+                        // //  $Obj = new myclass;  //Uncaught Error: Call to protected myclass::__construct() 
+                        // $obj = new childclass;
+                        ?>
+
+
+                    </ul>
+                </ul>
+            </ul>
+        </ul>
+    </ul>
+    <h2>Q12. What are PHP Magic Methods/Functions? List them Write program for Static Keyword in PHP? </h2>
+    <br>
+    <ul>
+        <li>In PHP, magic methods (also known as magic functions) are special methods that start with a double underscore (__). </li>
+        <li> These methods are automatically called by PHP at certain points during the execution of a class. They allow you to define custom behaviors for various operations and provide additional functionality to your classes.</li>
+        <ul>
+            <li>some commonly used magic methods in PHP:</li>
+            <ol>
+                <li>__construct: The constructor method, called when an object is created from the class.</li>
+                <li>__destruct: The destructor method, called when an object is no longer referenced or when the script execution ends.</li>
+                <li>__get: Called when accessing inaccessible properties.</li>
+                <li>__set: Called when assigning a value to an inaccessible property.</li>
+                <li>__isset: Called when using isset() or empty() on an inaccessible property.</li>
+                <li>_unset: Called when using unset() on an inaccessible property.</li>
+                <li>__call: Called when invoking inaccessible methods.</li>
+                <li>__callStatic: Called when invoking inaccessible static methods.</li>
+                <li>__toString: Called when an object is used in a string context.</li>
+                <li>__clone: Called when cloning an object.</li>
+                <li>__sleep: Called before serializing an object.</li>
+                <li>__wakeup: Called after unserializing an object.</li>
+                <li>__invoke: Called when an object is treated as a function.</li>
+                <li>__set_state: Called when using var_export() to export an object.</li>
+                <li>__debugInfo: Called when using var_dump() or print_r() on an object.</li>
+            </ol>
+            <li>Write program for Static Keyword in PHP? </li>
+            <ul>
+                <li>To use these static methods, we don't need to create an instance of the class. Instead, we directly call the methods using the class name and the scope resolution operator `::`.</li>
+                <pre>class mathes{
+                public static function add($num1,$num2){
+                    return $num1+$num2;
+                }
+                public static function sub($num1,$num2){
+                    return $num1-$num2;
+                }
+            }
+
+        echo mathes::add(10,20);// Output = 30;
+        
+        echo mathes::sub(30,15);// Output = 15;
+    </pre>
+            </ul>
+            <?php
+            // class mathes
+            // {
+            //     public static function add($num1, $num2)
+            //     {
+            //         return $num1 + $num2;
+            //     }
+            //     public static function sub($num1, $num2)
+            //     {
+            //         return $num1 - $num2;
+            //     }
+            // }
+
+            // echo mathes::add(10, 20);
+            // echo "<br>";
+            // echo mathes::sub(30, 15);
+            ?>
+        </ul>
+    </ul>
+
+    <h2>Q13.Create multiple Traits and use it in to a single class? </h2>
+    <ul>
+        <li>Traits are used to declare methods that can be used in multiple classes. Traits can have methods and abstract methods that can be used in multiple classes, and the methods can have any access modifier (public, private, or protected).</li>
+        <li>Traits are declared with the <b> trait </b> keyword.</li>
+        <li>To use a trait in a class, use the <b> use </b> keyword</li>
+    </ul>
+    <pre>
+
+            trait message1 {
+                public function msg1() {
+                    echo "OOP is object oriented programming ";
+            }
+            }
+
+            trait message2 {
+            public function msg2() {
+                echo "OOP reduces code duplication!";
+            }
+            }
+
+            class Welcome {
+            use message1;
+            }
+
+            class Welcome2 {
+            use message1, message2;
+            }
+
+            $obj = new Welcome();
+            $obj->msg1();
+            echo "<br>";
+
+            $obj2 = new Welcome2();
+            $obj2->msg1();
+            $obj2->msg2();
+        </pre>
+
+    <h2>Q14. Write PHP Script of Object Iteration? </h2>
+    <ul>
+        <pre>
+
+            class Myclass
+            {
+                public $name = "";
+                public $age = "";
+                public $city = "";
+
+                public function __construct($Name, $Age, $City)
+                {
+                    $this->name = $Name;
+                    $this->age = $Age;
+                    $this->city = $City;
+                }
+                public function Getname()
+                {
+                    return $this->name;
+                }
+                public function Getage()
+                {
+                    return $this->age;
+                }
+                public function Getcity()
+                {
+                    return $this->city;
+                }
+            }
+
+            $obj = new Myclass("Ranjeet", 35,"Rajasthan");
+            foreach ($obj as $key => $value) {
+                echo "$key:$value".PHP_EOL ;
+                
+            }
+            
+            
+               
+            
+            class Myclass
+            {
+                    public $name = "";
+                    public $age = "";
+                    public $city = "";
+                    
+                    public function __construct($Name, $Age, $City)
+                    {
+                        $this->name = $Name;
+                        $this->age = $Age;
+                        $this->city = $City;
+                    }
+                    public function Getname()
+                    {
+                        return $this->name;
+                    }
+                    public function Getage()
+                    {
+                        return $this->age;
+                    }
+                    public function Getcity()
+                    {
+                        return $this->city;
+                    }
+                }
+
+                $obj = new Myclass("Ranjeet", 35, "Rajasthan");
+                foreach ($obj as $key => $value) {
+                    echo "$key:$value" . PHP_EOL;
+                } 
+                </ul>
+    </pre>
+
+        <h2>Q15.Use of The $this keyword </h2>
+        <ul>
+            <li>The $this keyword is a special variable in PHP that refers to the current object instance within a class. It is used to access properties and methods of the object from within the class.</li>
+        </ul>
 
 </body>
 
