@@ -31,7 +31,7 @@ session_start();
         
         
        <?php if(isset($_SESSION['UserData'])){ 
-        // print_r($_SESSION['UserData']);
+        
         ?>
          <li class="nav-item">
          <a class="nav-link" href="logout.php">Logout</a>
