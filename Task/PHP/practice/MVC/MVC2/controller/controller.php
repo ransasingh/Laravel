@@ -5,11 +5,12 @@ require_once("model/model.php");
 // echo "<pre>";
 //     print_r($_SERVER);
 //     echo "<pre>";
-class controller
+class controller extends model
 {
     public $baseURL = "";
     public function __construct()
     {
+        parent::__construct();
         $this->baseURL = "http://localhost/MVC2/Assest/";
         $strtoarr = explode("/", $_SERVER['PHP_SELF']);
         $this->baseURL = $_SERVER['REQUEST_SCHEME'] . "://" . $_SERVER['SERVER_NAME'];
@@ -44,12 +45,15 @@ class controller
                         // echo "<pre>";
                         // print_r($_POST);
                         // echo "</pre>";
-                        // $data=array_merge($_POST,array("Hobby"=>$hobbydata));
-                        // $insertres= $this->register('studentdata', $data);
-                        // // echo "<pre>";
-                        // // print_r( $insertres);
-                        // // echo "</pre>";
+                        $data=array_merge($_POST,array("Hobby"=>$hobbydata));
+                        $insertres= $this->register('studentdata', $data);
+                        // echo "<pre>";
+                        // print_r( $insertres);
+                        // echo "</pre>";
+                          if($insertres['code']=1){
+                            header("location:login");
 
+                          }      
 
                     }
                     
@@ -71,3 +75,4 @@ class controller
     }
 }
 $controller = new controller;
+
