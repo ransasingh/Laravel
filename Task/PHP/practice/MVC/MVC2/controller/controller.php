@@ -36,6 +36,23 @@ class controller
                 case '/registration':
                    
                     include_once "View/registration.php";
+                    if(isset($_POST['register'])){
+                        array_pop($_POST);
+                        $hobbydata= implode(",",$_POST['Hobby']);
+                        array_pop($_POST);
+                        // echo $hobbydata;
+                        // echo "<pre>";
+                        // print_r($_POST);
+                        // echo "</pre>";
+                        // $data=array_merge($_POST,array("Hobby"=>$hobbydata));
+                        // $insertres= $this->register('studentdata', $data);
+                        // // echo "<pre>";
+                        // // print_r( $insertres);
+                        // // echo "</pre>";
+
+
+                    }
+                    
                  
                     break;
                     case '/contact':
@@ -54,4 +71,3 @@ class controller
     }
 }
 $controller = new controller;
-?>
