@@ -32,6 +32,8 @@ class controller extends model
                 case '/login':
                     // include_once "View/header.php";
                     include_once "View/login.php";
+                    
+                 
                     // include_once "View/footer.php";
                     break;
                 case '/registration':
