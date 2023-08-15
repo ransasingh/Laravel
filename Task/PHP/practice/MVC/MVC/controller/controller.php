@@ -7,7 +7,7 @@ class controller
 
     public function __construct(public $baseURL = null)
     {
-        $this->baseURL = "http://localhost/Laravel/MVC/Assest/";
+        $this->baseURL = "http://localhost/Laravel/Task/PHP/practice/MVC/MVC/Assest/";
         // echo "<pre>";
         // print_r($_SERVER);
         // echo "<pre>";
@@ -36,10 +36,11 @@ class controller
                 case '/Registration':
 
                     include_once("view/Registration.php");
-                    if(isset($_POST['registration'])){
-                    echo "<pre>";
-                    print_r($_POST);
-                    echo "</pre>";
+                    if(isset($_POST['register'])){
+                        echo "<pre>";
+                        print_r($_POST);
+                        array_pop($_POST);
+                        echo "</pre>";
 
 
 

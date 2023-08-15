@@ -18,7 +18,7 @@
     </div>
     <form method="post" class="row g-2">
       <div class="col-md-6 offset-3">
-        <label for="fullname" class="form-label">Fullname</label>
+        <label for="fullname" class="form-label">User name</label>
         <input type="text" class="form-control" name="fullname" id="fullname">
       </div>
 
@@ -27,12 +27,12 @@
         <input type="password" class="form-control" name="password" id="password">
       </div>
       <div class="col-md-6 offset-3">
-        <button type="Submit" name="login-button" id="Login">Login</button>
-           <a href="registration" array_splice>click here to new account</a>
+        <button type="Submit" name="login" id="Login">Login</button>
+        <a href="registration" array_splice>click here to new account</a>
       </div>
 
       <div class="col-md-6 offset-3">
-     
+
       </div>
 
 

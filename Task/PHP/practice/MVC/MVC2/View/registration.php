@@ -12,12 +12,12 @@
 <body>
 
 <div class="container mt-3 p-3 mb-2 bg-blue text-black">
-        <div class="text-center">
+        <div class="text-center"><a href="home">Home</a>
             <h2><b>Registration Form</b></h2>
         </div>
         <form method="post" class="row g-2">
             <div class="col-md-6 offset-3">
-                <label for="fullname" class="form-label">Fullname</label>
+                <label for="fullname" class="form-label">User name</label>
                 <input type="text" class="form-control" name="fullname" id="fullname">
             </div>
             <div class="col-md-6 offset-3">
