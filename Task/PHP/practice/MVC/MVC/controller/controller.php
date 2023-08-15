@@ -2,7 +2,7 @@
 session_start();
 require_once("Model/Model.php");
 
-class controller
+class controller extends model
 {
 
     public function __construct(public $baseURL = null)
@@ -37,10 +37,14 @@ class controller
 
                     include_once("view/Registration.php");
                     if(isset($_POST['register'])){
-                        echo "<pre>";
-                        print_r($_POST);
                         array_pop($_POST);
-                        echo "</pre>";
+                        $hobbydata=implode(",",$_POST['hobby']);
+                        array_pop($_POST);
+                        // echo $hobbydata;
+                        // echo "<pre>";
+                        // print_r($_POST);
+                        // echo "</pre>";"
+                        $data = array_merge($_POST, array("hoobby" => $hobbydata));
 
 
 
