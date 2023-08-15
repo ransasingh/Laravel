@@ -38,13 +38,18 @@ class controller extends model
                     include_once("view/Registration.php");
                     if(isset($_POST['register'])){
                         array_pop($_POST);
-                        $hobbydata=implode(",",$_POST['hobby']);
+                        $hobbydata = implode(",", $_POST['hobby']);
                         array_pop($_POST);
-                        // echo $hobbydata;
+                        echo $hobbydata;
                         // echo "<pre>";
                         // print_r($_POST);
                         // echo "</pre>";"
-                        $data = array_merge($_POST, array("hoobby" => $hobbydata));
+                        $data = array_merge($_POST, array("hobby" => $hobbydata));
+                        echo "<pre>";
+                        print_r($data);
+                        echo "</pre>";
+
+
 
 
 
