@@ -4,7 +4,10 @@ use controller as GlobalController;
 require_once("model/model.php");
 
 class controller extends model {
- public function __construct(public $baseURL=null) {
+ public function __construct(public $baseURL=null) 
+ {
+ parent::__construct();
+
     $this->baseURL= "http://localhost/Laravel/Task/PHP/practice/MVC/Asessment1/";
     if(isset($_SERVER['PATH_INFO'])){
 
@@ -21,10 +24,10 @@ class controller extends model {
               break;
           case '/login':
           include("view/login.php");
-        if(isset($_POST['Login'])){
-            $loginRes= $this->Login($_POST['username'],$_POST['password']);
-            print_r($loginRes['data']);
-        }
+        // if(isset($_POST['Login'])){
+        //     $loginRes= $this->Login($_POST['username'],$_POST['password']);
+        //     print_r($loginRes['data']);
+        // }
          
               break;
           
