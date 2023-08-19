@@ -1,8 +1,3 @@
-<?php
-include("header.php");
+<?php require("controller/controller.php");
+// echo "hello";
 ?>
-
-
-
-
-
