@@ -1,0 +1,72 @@
+Download and installed Composer
+https://getcomposer.org/download/
+
+
+Install laravel (CMD)
+composer global require laravel/installer
+
+
+download and inatall node
+
+Create Laravel Project using Composer(CMD)
+composer create-project laravel/laravel example-app
+
+
+For Execute project (CMD)
+C:\xampp\htdocs\laravel\04April_laravel_shailesh_TTS2\Laravel\project>php artisan serve
+
+
+Artisan is the name of the command-line interface included with Laravel. It provides a number of helpful commands for your use while developing your application. It is driven by the powerful Symfony Console component. To view a list of all available Artisan commands, you may use the list command: php artisan list.
+
+
+
+Importantnt Files/Folders 
+app
+config(raer)
+resources
+routes
+
+.env(init / config) => database connection 
+
+
+
+composer require laravel/ui
+php artisan ui vue --auth
+npm i 
+php artisan serve
+npm run dev
+
+
+
+
+php artisan make:migration create_product_table
+
+update migration table
+
+php artisan make:migration create_altproduct_table --table=product
+
+php artisan make:seeder ProductSeeder
+
+
+https://www.tutsmake.com/laravel-10-factory-generate-dummy-data-tutorial/
+
+
+create  controller without resource methods
+php artisan make:controller test_controller1 
+
+
+create  controller with resource methods
+php artisan make:controller test_controller --resource
+
+create  model
+php artisan make:model model_name
+
+
+create model with migration and controller with rerouce
+php artisan make:model model_name -mrc
+
+
+
+
+
+
