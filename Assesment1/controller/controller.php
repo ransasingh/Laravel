@@ -29,6 +29,11 @@ class controller extends model
                     include_once("view/home.php");
                     include_once("view/footer.php");
                     break;
+                case '/Customer':
+                    include_once("view/Customer/customerheader.php");
+                    include_once("view/home.php");
+                    include_once("view/footer.php");
+                    break;
                 case '/Add':
                     include_once("view/Banker/bankerheader.php");
                     include_once("view/Banker/Add.php");
@@ -37,6 +42,7 @@ class controller extends model
                         echo "<pre>";
                         print_r($_POST);
                         echo "</pre>";
+                        
 
                     }
                     include_once("view/footer.php");
@@ -57,6 +63,7 @@ class controller extends model
                     //     $loginRes= $this->Login($_POST['username'],$_POST['password']);
                     //     print_r($loginRes['data']);
                     // }
+                    
 
                     break;
 
@@ -64,6 +71,9 @@ class controller extends model
                     # code...
                     break;
             }
+        }
+        else{
+            header("location:home");
         }
     }
 }
