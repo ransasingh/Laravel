@@ -42,7 +42,12 @@ class controller extends model
                         echo "<pre>";
                         print_r($_POST);
                         echo "</pre>";
-                        
+                        $addres = $this->insert("users",$_POST);
+                        echo "<pre>";
+                        print_r($addres);
+                        echo "</pre>";
+                       
+                       
 
                     }
                     include_once("view/footer.php");

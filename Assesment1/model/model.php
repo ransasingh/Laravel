@@ -20,8 +20,8 @@ class model  {
         $val = implode("','", $data);
         echo $SQL = " INSERT INTO $tbl ($clm) VALUES ('$val') ";
         // echo $SQL;
-    //     $SQLEx = $this->connection->query($SQL);
-    //     // print_r($SQLEx);
+        $SQLEx = $this->connection->query($SQL);
+        print_r($SQLEx);
     //     if ($SQLEx > 0) {
     //         $ResponceData['Code'] = "1";
     //         $ResponceData['Mag'] = "Success";
