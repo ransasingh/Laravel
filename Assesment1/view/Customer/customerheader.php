@@ -1,3 +1,10 @@
+<?php
+
+if(!isset($_SESSION['userdata'])){
+    header("location:login");
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,7 +21,7 @@
   <link href="<?php echo $this->baseURL; ?>assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
-  <link <!-- href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" -->
+  <!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" -->
   <!-- rel="stylesheet"> -->
 
   <!-- Vendor CSS Files -->
@@ -65,10 +72,11 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto active" href="home">Home</a></li>
+          <li><a class="nav-link scrollto active" href="Customer">Home</a></li>
           <li><a class="nav-link scrollto" href="#">Withdaw Amount</a></li>
           <li><a class="nav-link scrollto" href="#">Desposite Amount</a></li>
           <li><a class="nav-link scrollto" href="#">View Balance</a></li>
+          <li><a class="nav-link scrollto" href="logout">Logout</a></li>
 
          
           

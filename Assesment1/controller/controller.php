@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 use controller as GlobalController;
 
@@ -39,14 +40,16 @@ class controller extends model
                     include_once("view/Banker/Add.php");
                     if(isset($_POST['Add'])){
                         array_pop($_POST);
-                        echo "<pre>";
-                        print_r($_POST);
-                        echo "</pre>";
-                        $addres = $this->insert("users",$_POST);
-                        echo "<pre>";
-                        print_r($addres);
-                        echo "</pre>";
-                       
+                        // echo "<pre>";
+                        // print_r($_POST);
+                        // echo "</pre>";
+                        $addres = $this->insert("bank",$_POST);
+                        // echo "<pre>";
+                        // print_r($addres);
+                        // echo "</pre>";
+                    //    if($addres['Code']==1){
+                    //     header("location:viewall");
+                    //    }
                        
 
                     }
@@ -54,6 +57,10 @@ class controller extends model
                     break;
                     case '/viewall':
                         include_once("view/Banker/bankerheader.php");
+                        $viewusers = $this->select("bank");
+                        // echo "<pre>";
+                        // print_r($viewusers['Data']);
+                        // echo "</pre>";
                         include_once("view/Banker/viewall.php");
                         include_once("view/footer.php");
                         break;
@@ -62,23 +69,46 @@ class controller extends model
                         include_once("view/Banker/search.php");
                         include_once("view/footer.php");
                         break;
-                case '/login':
-                    include("view/login.php");
-                    // if(isset($_POST['Login'])){
-                    //     $loginRes= $this->Login($_POST['username'],$_POST['password']);
-                    //     print_r($loginRes['data']);
-                    // }
-                    
-
-                    break;
-
-                default:
-                    # code...
+                        case '/login':
+                            include("view/login.php");
+                            if(isset($_POST['Login'])){
+                                $loginRes= $this->login($_POST['username'],$_POST['password']);
+                                // print_r($loginRes['Data']);
+                                if($_POST['username'] !="" && $_POST['password']!=""){
+                                    if($loginRes['Code']==1){
+                                        $_SESSION['userdata'] = $loginRes['Data'];
+                                        // print_r($_SESSION['userdata']);
+                                        if($loginRes['Data']->role_id==1){
+                                            header("location:banker");
+                                        }
+                                        else{
+                                            header("location:Customer");
+                                        }
+                                    }
+                                    else{
+                                        echo "invalid";
+                                    }
+                                }
+                                else{
+                                    echo "enter valid username and password";
+                                }
+                            }
+                            
+                            
+                            
+                            break;
+                            case '/logout':
+                               session_destroy();
+                               header("location:login");
+                                break;
+                            
+                            default:
+                            # code...
                     break;
             }
         }
         else{
-            header("location:home");
+            header("location:login");
         }
     }
 }

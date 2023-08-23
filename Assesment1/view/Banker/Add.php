@@ -49,13 +49,13 @@
             </div>
 
             <div class="col-md-5 offset-3">
-                <label for="adhar" class="form-label">Adhar no:</label>
-                <input type="text" name="adhar" minlength="12" maxlength="12" class="form-control" id="adhar" placeholder="Enter adhar">
+                <label for="adharno" class="form-label">Adhar no:</label>
+                <input type="text" name="adharno" minlength="12" maxlength="12" class="form-control" id="adharno" placeholder="Enter adhar">
             </div>
-            <div class="col-md-5 offset-3">
+            <!-- <div class="col-md-5 offset-3">
                 <label for="prof-_pic" class="form-label">Profile pic</label>
                 <input type="file" name="prof-_pic" class="form-control" id="">
-            </div>
+            </div> -->
             <div class="col-md-5 offset-3">
                 <label for="address" class="form-label">Address</label>
                 <textarea name="address" id="address" rows="2" cols="40"></textarea>

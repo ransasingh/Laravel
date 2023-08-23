@@ -10,28 +10,64 @@ class model  {
         //     echo "connection failed";
         // }
     }
-    function login(){
-
+    function login($uname, $pass){
+  $SQL= "select * from bank where password='$pass' AND (username='$uname' OR email='$uname' OR phone= '$uname')";
+        // echo $SQL;
+        $SQLEx = $this->connection->query($SQL);
+        // print_r($SQLEx);
+        if ($SQLEx->num_rows > 0) {
+            $fetchData=$SQLEx->fetch_object();
+            $ResponceData['Code'] = "1";
+            $ResponceData['Mag'] = "Success";
+            $ResponceData['Data'] = $fetchData;
+        } else {
+            $ResponceData['Code'] = "0";
+            $ResponceData['Mag'] = "Try Again";
+            $ResponceData['Data'] = "0";
+        }
+        return $ResponceData;
 
     }
     function insert($tbl,$data){
 
         $clm = implode(",", array_keys($data));
         $val = implode("','", $data);
-        echo $SQL = " INSERT INTO $tbl ($clm) VALUES ('$val') ";
+         $SQL = " INSERT INTO $tbl ($clm) VALUES ('$val') ";
         // echo $SQL;
         $SQLEx = $this->connection->query($SQL);
-        print_r($SQLEx);
-    //     if ($SQLEx > 0) {
-    //         $ResponceData['Code'] = "1";
-    //         $ResponceData['Mag'] = "Success";
-    //         $ResponceData['Data'] = "1";
-    //     } else {
-    //         $ResponceData['Code'] = "0";
-    //         $ResponceData['Mag'] = "Try Again";
-    //         $ResponceData['Data'] = "0";
-    //     }
-    //     return $ResponceData;
+        // print_r($SQLEx);
+        if ($SQLEx > 0) {
+            $ResponceData['Code'] = "1";
+            $ResponceData['Mag'] = "Success";
+            $ResponceData['Data'] = "1";
+        } else {
+            $ResponceData['Code'] = "0";
+            $ResponceData['Mag'] = "Try Again";
+            $ResponceData['Data'] = "0";
+        }
+        return $ResponceData;
+    }
+    function select($tbl){
+
+
+        $SQL= "select * from $tbl";
+      
+        // echo $SQL;
+        $SQLEx = $this->connection->query($SQL);
+        if ($SQLEx->num_rows > 0) {
+            while ($data = $SQLEx->fetch_object()) {
+                $fetchData[] = $data;
+            }
+            $ResponceData['Code'] = "1";
+            $ResponceData['Mag'] = "Success";
+            $ResponceData['Data'] = $fetchData;
+        } else {
+            $ResponceData['Code'] = "0";
+            $ResponceData['Mag'] = "Try Again";
+            $ResponceData['Data'] = "0";
+        }
+        return $ResponceData;
+   
     }
 
     

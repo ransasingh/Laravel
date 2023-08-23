@@ -16,8 +16,8 @@
         </div>
         <form method="post" class="row g-2">
             <div class="col-md-6 offset-3">
-                <label for="fullname" class="form-label">User name</label>
-                <input type="text" class="form-control" name="fullname" id="fullname">
+                <label for="username" class="form-label">User name</label>
+                <input type="text" class="form-control" name="username" id="username">
             </div>
           
             <div class="col-md-6 offset-3">

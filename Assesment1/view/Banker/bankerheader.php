@@ -1,3 +1,10 @@
+<?php
+
+if(!isset($_SESSION['userdata'])){
+    header("location:login");
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -65,12 +72,13 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto active" href="home">Home</a></li>
+          <li><a class="nav-link scrollto active" href="banker">Home</a></li>
           <li><a class="nav-link scrollto" href="Add">Add Customer</a></li>
-          <li><a class="nav-link scrollto" href="viewall">View Customer</a></li>
+          <!-- <li><a class="nav-link scrollto" href="viewall">View Customer</a></li> -->
+          <li><a class="nav-link scrollto" href="viewall">View All Customer</a></li>
           <li><a class="nav-link scrollto" href="search">Search Customer</a></li>
-          <li><a class="nav-link scrollto" href="#">View All Customer</a></li>
           <li><a class="nav-link scrollto" href="#">Total Amount in Bank</a></li>
+          <li><a class="nav-link scrollto" href="logout">Logout</a></li>
          
           
 
