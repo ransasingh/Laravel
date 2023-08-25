@@ -1,3 +1,11 @@
+<?php
+// $dbDate = '	'; 
+// $newDate = date('d/m/Y', strtotime($dbDate));
+
+// echo $newDate;
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
