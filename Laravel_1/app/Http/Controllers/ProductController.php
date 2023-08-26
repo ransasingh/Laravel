@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\product;
 use Illuminate\Http\Request;
+use DB;
 
 class ProductController extends Controller
 {
@@ -14,11 +15,9 @@ class ProductController extends Controller
      */
     public function index(product $product)
     {
-        $allProducts = $product::all();
-        // dd($allProducts);
-      
-        return view("viewallproduct",compact('allProducts'));
-
+        $allproduct = DB::table('product')->get();
+        return view('viewallproduct', compact('allproduct'));
+        // dd($allproduct);
     }
 
     /**
@@ -37,17 +36,9 @@ class ProductController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request,product $product)
+    public function store(Request $request)
     {
-        // dd($request);
-        $product->product_name = $request->product_name;
-        $product->product_discripation = $request->product_discripation;
-        $product->product_price = $request->product_price;
-        $product->product_quantity = $request->product_quantity;
-        $Insertproduct = $product->save();
-       return redirect("product");
-       
-
+        //
     }
 
     /**
@@ -56,9 +47,9 @@ class ProductController extends Controller
      * @param  \App\Models\product  $product
      * @return \Illuminate\Http\Response
      */
-    public function show(product $product )
+    public function show(product $product)
     {
-        
+        //
     }
 
     /**
@@ -68,10 +59,8 @@ class ProductController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit(product $product)
-    { 
-        dd("call");
-    //   $allproduct = $product::find($pid);
-    //   dd($allproduct);
+    {
+        //
     }
 
     /**
