@@ -73,9 +73,9 @@ if(!isset($_SESSION['userdata'])){
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto active" href="Customer">Home</a></li>
-          <li><a class="nav-link scrollto" href="#">Withdaw Amount</a></li>
-          <li><a class="nav-link scrollto" href="#">Desposite Amount</a></li>
-          <li><a class="nav-link scrollto" href="#">View Balance</a></li>
+          <li><a class="nav-link scrollto" href="withdrawal">Withdrawal Amount</a></li>
+          <li><a class="nav-link scrollto" href="deposite">Desposite Amount</a></li>
+          <li><a class="nav-link scrollto" href="viewbalance">View Balance</a></li>
           <li><a class="nav-link scrollto" href="logout">Logout</a></li>
 
          

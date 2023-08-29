@@ -77,7 +77,7 @@ if(!isset($_SESSION['userdata'])){
           <!-- <li><a class="nav-link scrollto" href="viewall">View Customer</a></li> -->
           <li><a class="nav-link scrollto" href="viewall">View All Customer</a></li>
           <li><a class="nav-link scrollto" href="search">Search Customer</a></li>
-          <li><a class="nav-link scrollto" href="#">Total Amount in Bank</a></li>
+          <li><a class="nav-link scrollto" href="totalamount">Total Amount in Bank</a></li>
           <li><a class="nav-link scrollto" href="logout">Logout</a></li>
          
           

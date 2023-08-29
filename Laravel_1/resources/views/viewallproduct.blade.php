@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+<a href="Add">Add</a>
 <div class="container">
     <div class="row justify-content-center">
         <table class="table table-striped">

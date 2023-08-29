@@ -19,8 +19,13 @@ Route::get('/', function () {
 Route::get('/product', function () {
     return view('viewallproduct');
 });
+Route::get('/Add', function () {
+    return view('add');
+});
+
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/product', [App\Http\Controllers\productController::class, 'index']);
+Route::post('/saveproduct', [App\Http\Controllers\productController::class, 'store']);

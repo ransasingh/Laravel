@@ -43,13 +43,13 @@ class controller extends model
                     include_once("view/Banker/Add.php");
                     if (isset($_POST['Add'])) {
                         array_pop($_POST);
-                       
+
                         $originalDate = $_POST['dob'];
                         $newDate = date('d/m/Y', strtotime($originalDate));
                         unset($_POST['dob']);
                         // echo $newDate;
                         //
-                        $data = array_merge($_POST,array("dob"=>$newDate));
+                        $data = array_merge($_POST, array("dob" => $newDate));
                         // echo "<pre>";
                         // print_r($data);
                         // echo "</pre>";
@@ -57,12 +57,9 @@ class controller extends model
                         echo "<pre>";
                         print_r($addres);
                         echo "</pre>";
-                        if($addres['Code'] == 1){
+                        if ($addres['Code'] == 1) {
                             header("location:viewall");
                         }
-
-
-
                     }
                     include_once("view/footer.php");
                     break;
@@ -73,6 +70,16 @@ class controller extends model
                     // print_r($viewusers['Data']);
                     // echo "</pre>";
                     include_once("view/Banker/viewall.php");
+                    include_once("view/footer.php");
+                    break;
+                case '/totalamount':
+
+                    $Amountres = $this->Amount('bank', array("role_id" => "2"));
+                    // echo "<pre>";
+                    // print_r($Amountres);
+                    // echo "</pre>";
+                    include_once("view/Banker/bankerheader.php");
+                    include_once("view/Banker/totalamount.php");
                     include_once("view/footer.php");
                     break;
                 case '/search':
@@ -110,6 +117,32 @@ class controller extends model
 
 
 
+                    break;
+                case '/deposite':
+                    if (isset($_POST['deposite'])) {
+                        array_pop($_POST);
+                        echo "<pre>";
+                        print_r($_POST);
+                        echo "</pre>";
+                        // $data = $_POST;
+                        $depositres = $this->select("bank", array("role_id" => '2', "accountno" => $_REQUEST['accountno']));
+                    echo "<pre>";
+                    print_r($depositres);
+                    echo "</pre>";
+                    }
+                    // include_once("view/Customer/customerheader.php");
+                    include_once("view/Customer/deposite.php");
+                    // include_once("view/footer.php");
+                    break;
+                case '/viewbalance':
+                    include_once("view/Customer/customerheader.php");
+                    include_once("view/Customer/viewbalance.php");
+                    include_once("view/footer.php");
+                    break;
+                case '/withdrawal':
+                    include_once("view/Customer/customerheader.php");
+                    include_once("view/Customer/withdrawal.php");
+                    include_once("view/footer.php");
                     break;
                 case '/logout':
                     session_destroy();
