@@ -113,7 +113,7 @@ class Controller extends model
                     break;
                 
                 case '/allusers':
-                    $allusers = $this->select("users");
+                    $allusers = $this->select("users",array("role_id" => 2));
                     // echo "<pre>";
                     // print_r($allusers);
                     // exit;
