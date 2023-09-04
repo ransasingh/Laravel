@@ -121,18 +121,27 @@ class controller extends model
                 case '/deposite':
                     if (isset($_POST['deposite'])) {
                         array_pop($_POST);
-                        echo "<pre>";
-                        print_r($_POST);
-                        echo "</pre>";
+                        // echo "<pre>";
+                        // print_r($_POST);
+                        // echo "</pre>";
                         // $data = $_POST;
                         $depositres = $this->select("bank", array("role_id" => '2', "accountno" => $_REQUEST['accountno']));
-                    echo "<pre>";
-                    print_r($depositres);
-                    echo "</pre>";
+                    // echo "<pre>";
+                    // print_r($depositres);
+                    // echo "</pre>";
                     }
-                    // include_once("view/Customer/customerheader.php");
+                    $openingBal =  $depositres["Data"][0]->openingbalance;
+                    $Depositamount = $_REQUEST['amount'];
+                    if($depositres["Code"] ==1 ){
+                        $depositres = $this->Update("bank",array("openingbalance"=>$openingBal  =  $openingBal + $Depositamount ),array("accountno"=>$_REQUEST['accountno']));
+                  
+                      
+                    } 
+                  
+                    
+                    include_once("view/Customer/customerheader.php");
                     include_once("view/Customer/deposite.php");
-                    // include_once("view/footer.php");
+                    include_once("view/footer.php");
                     break;
                 case '/viewbalance':
                     include_once("view/Customer/customerheader.php");

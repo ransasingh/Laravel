@@ -59,7 +59,7 @@
         </thead>
         <tbody>
             <tr>
-                <td><b><?php echo $openingBalance; ?>Rs</b></td>
+                <td><b><?php echo $openingBal; ?>Rs</b></td>
             </tr>
         </tbody>
     </table>

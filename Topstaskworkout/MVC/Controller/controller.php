@@ -127,7 +127,24 @@ class Controller extends model
                 case '/Edit':                                    
                     // include_once("Views/Admindashboard/adminheader.php");
                     include_once("Views/Admindashboard/edituser.php");
+                    $EditRes = $this->select("users", array("id" => $_GET['id']));
+                    // echo "<pre>";
+                    // print_r($EditRes['Data']);
+                    // echo "</pre>";                    
                     // include_once("Views/Admindashboard/adminfooter.php");
+                    if (isset($_POST['update'])) {
+                        // $data= $_POST;
+                        // echo "<pre>";
+                        // print_r($data);
+                        // echo "</pre>";                        
+                        $UpdateRes = $this->update("users", $data, array("id" => $_GET['id']));
+                        echo "<pre>";
+                        print_r($UpdateRes);
+                        echo "</pre>";
+                        if ($UpdateRes['Code'] == 1) {
+                            header("location:allusers");
+                        }
+                    }
                     break;
                 default:
 

@@ -123,7 +123,7 @@ class model
            
         }
         $SQL=rtrim($SQL,"AND");
-        echo  $SQL;
+        // echo  $SQL;
 
         
 
