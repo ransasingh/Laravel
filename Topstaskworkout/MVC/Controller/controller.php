@@ -111,40 +111,35 @@ class Controller extends model
                     include_once("Views/Admindashboard/dashboard.php");
                     include_once("Views/Admindashboard/adminfooter.php");
                     break;
-                
+
                 case '/allusers':
-                    $allusers = $this->select("users",array("role_id" => 2));
+                    $allusers = $this->select("users", array("role_id" => 2));
                     // echo "<pre>";
                     // print_r($allusers);
                     // exit;
-                    
+
                     include_once("Views/Admindashboard/adminheader.php");
                     include_once("Views/Admindashboard/allusers.php");
                     include_once("Views/Admindashboard/adminfooter.php");
                     break;
-             
-                
-                case '/Edit':                                    
-                    // include_once("Views/Admindashboard/adminheader.php");
-                    include_once("Views/Admindashboard/edituser.php");
-                    $EditRes = $this->select("users", array("id" => $_GET['id']));
+
+                case '/delete':
+                    $DeleteRes = $this->Delete("users", array("id" => $_GET['userid']));
+                    if ($DeleteRes['Code'] == 1) {
+                        header("location:allusers");
+                    }
+
+                    break;
+                case '/edit':
+                    $EditRes = $this->select("users", array("id" => $_GET['userid']));
                     // echo "<pre>";
                     // print_r($EditRes['Data']);
-                    // echo "</pre>";                    
-                    // include_once("Views/Admindashboard/adminfooter.php");
-                    if (isset($_POST['update'])) {
-                        // $data= $_POST;
-                        // echo "<pre>";
-                        // print_r($data);
-                        // echo "</pre>";                        
-                        $UpdateRes = $this->update("users", $data, array("id" => $_GET['id']));
-                        echo "<pre>";
-                        print_r($UpdateRes);
-                        echo "</pre>";
-                        if ($UpdateRes['Code'] == 1) {
-                            header("location:allusers");
-                        }
-                    }
+                    // echo "</pre>";
+                    include_once("Views/Admindashboard/edituser.php");
+                 
+
+                   
+
                     break;
                 default:
 

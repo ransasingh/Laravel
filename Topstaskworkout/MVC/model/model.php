@@ -111,7 +111,7 @@
             foreach ($data as $key => $value) {
                $SQL.= "key = '$value' ,";
             }
-            // echo $SQL;
+            echo $SQL;
             $SQL = rtrim($SQL,",");
             $SQL .= " WHERE";
             foreach ($where as $key => $value) {
@@ -131,10 +131,31 @@
             }
             return $ResponceData;
         }
-        function delete()
-        {
-            $SQL = "";
+        
+        function delete($tbl,$where){
+        $SQL = " DELETE FROM $tbl WHERE";
+        foreach ($where as $key => $value) {
+        $SQL .= " $key = '$value' AND";
         }
+        $SQL =rtrim($SQL,"AND");
+        // echo $SQL;
+        $SQLEx = $this->connection->query($SQL);
+        // print_r($SQLEx);
+        if($SQLEx >0){
+            $ResponceData['Data'] = "1";
+            $ResponceData['Msg'] = "Success";
+
+            $ResponceData['Code'] = "1";
+        } else {
+            $ResponceData['Data'] = "0";
+            $ResponceData['Msg'] = "Try Agian";
+            $ResponceData['Code'] = "0";
+        }
+        return $ResponceData;
+
+    }
+
+            
     }
     
 

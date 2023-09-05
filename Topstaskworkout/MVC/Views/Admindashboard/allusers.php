@@ -300,10 +300,11 @@
                         <td class="border-bottom-0">
                           <div class="d-flex align-items-center gap-2">
 
-                            <!-- <a href="edit?id=<?php echo $value->id; ?>"><button class="">Edit</button></a> -->
-                            <a href="Edit?id=<?php echo $value->id; ?>"><button type="button" class="btn btn-primary">Edit</button></a>
-                            <!-- <a href="delete?id=<?php echo $value->id; ?>">Delete</a> -->
-                            <a href="delete?id=<?php echo $value->id; ?>"><button type="button" class="btn btn-danger">Delete</button></a>
+                            <!-- <a href="Edit?userid=<?php echo $value->id; ?>"><button type="button" class="btn btn-primary">Edit</button></a> -->
+                           
+                            <a href="edit?userid=<?php echo $value->id; ?>"><button type="button" class="btn btn-primary">Edit</button></a></a>
+                            <a href="delete?userid=<?php echo $value->id; ?>"><button type="button" class="btn btn-danger">Delete</button></a>
+                            
                           </div>
                         </td>
                       </tr>
