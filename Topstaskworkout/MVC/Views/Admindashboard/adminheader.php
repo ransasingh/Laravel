@@ -15,8 +15,8 @@
     </ul>
     <div class="navbar-collapse justify-content-end px-0" id="navbarNav">
       <ul class="navbar-nav flex-row ms-auto align-items-center justify-content-end">
-        Hello <?php  echo $_SESSION['Userdata']->username;?>
-        <!-- <?php echo "<pre>"; print_r($_SESSION['Userdata']->username); ?> --> 
+        <!-- Hello <?php  echo $_SESSION['Userdata']->username;?>
+        <?php echo "<pre>"; print_r($_SESSION['Userdata']->username); ?>  -->
        
 
         // <!-- <a href="https://adminmart.com/product/modernize-free-bootstrap-admin-dashboard/" target="_blank" class="">Admin</a> -->

@@ -59,16 +59,28 @@ class Controller extends model
                         // echo "<pre>";
                         // print_r($_REQUEST);
                         $Loginres = $this->login($_POST['username'], $_POST['password']);
+                        if ($_POST['username'] != "" && $_POST['password'] != ""){
                         $_SESSION['Userdata'] = $Loginres['Data'];
                         // echo "<pre>";
                         // print_r($_SESSION['Userdata']);
                         // print_r($Loginres);
                         if ($Loginres['Code'] == 1) {
-
-                            header("location:Admindashboard");
+                            if ($Loginres['Data']->role_id == 1) {
+                                header("location:Admindashboard");
+                            } else {
+                                header("location:home");
+                            }
                         } else {
-                            echo "Invalid username and password";
+                            echo " <script>
+                        alert('Invalid User')
+                        </script> ";
                         }
+                    } else {
+                        echo " <script>
+                        alert('Enter  Username And Password!!!')
+                        </script> ";
+                    }
+                        
                     }
 
 
