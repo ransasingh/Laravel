@@ -70,8 +70,8 @@ class ProductController extends Controller
     public function edit(product $product)
     { 
         dd("call");
-    //   $allproduct = $product::find($pid);
-    //   dd($allproduct);
+      $allproduct = $product::find($pid);
+      dd($allproduct);
     }
 
     /**

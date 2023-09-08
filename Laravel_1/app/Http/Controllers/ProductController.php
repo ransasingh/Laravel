@@ -65,9 +65,11 @@ class ProductController extends Controller
      * @param  \App\Models\product  $product
      * @return \Illuminate\Http\Response
      */
-    public function edit(product $product)
+    public function edit($pid,product $product)
     {
-        //
+        $productById = $product::find($pid);
+        return view('editprod', compact('productById'));
+        dd( $productById);
     }
 
     /**
@@ -77,9 +79,15 @@ class ProductController extends Controller
      * @param  \App\Models\product  $product
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, product $product)
+    public function update($pid,Request $request, product $product)
     {
-        //
+        $productById = $product::find($pid);
+        $productById->product_title = $request->product_title;
+        $productById->product_decription= $request->product_decription;
+        $productById->price = $request->price;
+        $productById->quantity = $request->quantity;       
+        $productById->save();
+        return redirect('product');
     }
 
     /**
@@ -88,8 +96,10 @@ class ProductController extends Controller
      * @param  \App\Models\product  $product
      * @return \Illuminate\Http\Response
      */
-    public function destroy(product $product)
+    public function destroy($pid,product $product)
     {
-        //
+        $productById = $product::find($pid);
+        $productById->delete();
+        return redirect('/product')->with('success', 'Task deleted successfully');
     }
 }

@@ -34,7 +34,7 @@
                                 <td>{{ $data->product_price }}</td>
                                 <td>{{ $data->product_quantity }}</td>
                                 <td>
-                                    <a href="editproduct/{{ $data->id }}">Edit</a>&nbsp;
+                                    <a href="editproduct/{{ $data->id }}">Edit</a><br>
                                     <a href="deleteproduct/{{ $data->id }}">Delete</a>
                                 </td>
                             </tr>

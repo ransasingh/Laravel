@@ -27,3 +27,4 @@ Route::get('/product', [App\Http\Controllers\ProductController::class, 'index'])
 Route::view('/createproduct',"addproduct");
 Route::post('/saveproduct', [App\Http\Controllers\ProductController::class, 'store']);
 Route::any('/editproduct/{pid}', [App\Http\Controllers\ProductController::class, 'edit']);
+ 
