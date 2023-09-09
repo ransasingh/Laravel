@@ -119,24 +119,24 @@ class controller extends model
 
                     break;
                 case '/deposite':
-                    if (isset($_POST['deposite'])) {
-                        array_pop($_POST);
-                        // echo "<pre>";
-                        // print_r($_POST);
-                        // echo "</pre>";
-                        // $data = $_POST;
-                        $depositres = $this->select("bank", array("role_id" => '2', "accountno" => $_REQUEST['accountno']));
-                    // echo "<pre>";
-                    // print_r($depositres);
-                    // echo "</pre>";
-                    }
-                    $openingBal =  $depositres["Data"][0]->openingbalance;
-                    $Depositamount = $_REQUEST['amount'];
-                    if($depositres["Code"] ==1 ){
-                        $depositres = $this->Update("bank",array("openingbalance"=>$openingBal  =  $openingBal + $Depositamount ),array("accountno"=>$_REQUEST['accountno']));
+                    // if (isset($_POST['deposite'])) {
+                    //     array_pop($_POST);
+                    //     // echo "<pre>";
+                    //     // print_r($_POST);
+                    //     // echo "</pre>";
+                    //     // $data = $_POST;
+                    //     $depositres = $this->select("bank", array("role_id" => '2', "accountno" => $_REQUEST['accountno']));
+                    // // echo "<pre>";
+                    // // print_r($depositres);
+                    // // echo "</pre>";
+                    // }
+                    // $openingBal =  $depositres["Data"][0]->openingbalance;
+                    // $Depositamount = $_REQUEST['amount'];
+                    // if($depositres["Code"] ==1 ){
+                    //     $depositres = $this->Update("bank",array("openingbalance"=>$openingBal  =  $openingBal + $Depositamount ),array("accountno"=>$_REQUEST['accountno']));
                   
                       
-                    } 
+                    // } 
                   
                     
                     include_once("view/Customer/customerheader.php");
@@ -153,6 +153,12 @@ class controller extends model
                     include_once("view/Customer/withdrawal.php");
                     include_once("view/footer.php");
                     break;
+                    
+                // case '/Delete':
+                //     $DeleteRes = $this->delete("bank", array("id" => $_GET['userid']));
+                //     if ($DeleteRes['Code'] == 1) {
+                //         header("location:viewall");
+                //     }
                 case '/logout':
                     session_destroy();
                     header("location:login");
