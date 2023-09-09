@@ -44,6 +44,20 @@
                 <label for="phone" class="form-label">phone</label>
                 <input type="text" value="<?php echo $EditRes['Data'][0]->phone ;?>" name="phone" class="form-control" id="phone">
             </div>
+            <div class="col-md-6 offset-3">
+                <label for="">Hobby</label><br>
+                <?php 
+                $hobbyData = explode(",",$EditRes['Data'][0]->Hobby);
+                // echo "<br>";
+                // print_r($hobbyData) ;
+                // echo "<br>";
+                ?>
+                <input type="checkbox" name="hobby[]" id="cricket" value="cricket" <?php if(in_array("cricket",$hobbyData)){ echo "checked";} ?>><label for="cricket">cricket</label>
+                <input type="checkbox" name="hobby[]" id="music" value="music" <?php if(in_array("music",$hobbyData)){ echo "checked";} ?>><label for="music">music</label>
+                <input type="checkbox" name="hobby[]" id="reading" value="reading" <?php if(in_array("reading",$hobbyData)){ echo "checked";} ?>><label for="reading">reading</label>
+
+            </div>
+
 
             <div class="col-md-6 offset-4">
                 <button type="submit" name="update" class="btn btn-success">Update</button>

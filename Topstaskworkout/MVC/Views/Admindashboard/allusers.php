@@ -270,6 +270,9 @@
                         <h6 class="fw-semibold mb-0">phone</h6>
                       </th>
                       <th class="border-bottom-0">
+                        <h6 class="fw-semibold mb-0">Hobby</h6>
+                      </th>
+                      <th class="border-bottom-0">
                         <h6 class="fw-semibold mb-0">Action</h6>
                       </th>
                     </tr>
@@ -296,6 +299,9 @@
                         </td>
                         <td class="border-bottom-0">
                           <h6 class="fw-semibold mb-0 fs-4"><?php echo $value->phone ?></h6>
+                        </td>
+                        <td class="border-bottom-0">
+                          <h6 class="fw-semibold mb-0 fs-4"><?php echo $value->Hobby ?></h6>
                         </td>
                         <td class="border-bottom-0">
                           <div class="d-flex align-items-center gap-2">
