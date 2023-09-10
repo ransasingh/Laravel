@@ -36,8 +36,9 @@
           
             <div class="col-md-6 offset-3">
                 <label for="Gender">Gender</label><br>
-                <input type="radio" name="Gender" id="Male" value="Male" <?php if($EditRes['Data'][0]->Gender == 'Male'){ echo "checked";} ?> ><label for="Male">Male</label>
-                <input type="radio" name="Gender" id="Female" value="Female" <?php if($EditRes['Data'][0]->Gender == 'Female'){ echo "checked";} ?>><label for="Female" >Female</label>
+                <?php //echo $EditRes['Data'][0]->Gender ?>
+                <input type="radio" name="Gender" id="Male" value="Male" <?php if($EditRes['Data'][0]->Gender == 'male'){ echo "checked";} ?> ><label for="Male">Male</label>
+                <input type="radio" name="Gender" id="Female" value="Female" <?php if($EditRes['Data'][0]->Gender == 'female'){ echo "checked";} ?>><label for="Female" >Female</label>
             </div>
            
             <div class="col-md-6 offset-3">
@@ -52,8 +53,9 @@
                 // print_r($hobbyData) ;
                 // echo "<br>";
                 ?>
-                <input type="checkbox" name="hobby[]" id="cricket" value="cricket" <?php if(in_array("cricket",$hobbyData)){ echo "checked";} ?>><label for="cricket">cricket</label>
-                <input type="checkbox" name="hobby[]" id="music" value="music" <?php if(in_array("music",$hobbyData)){ echo "checked";} ?>><label for="music">music</label>
+              
+                <input type="checkbox" name="hobby[]" id="cricket" value="cricket" <?php if(in_array("Cricket",$hobbyData)){ echo "checked";} ?>><label for="cricket">cricket</label>
+                <input type="checkbox" name="hobby[]" id="music" value="music" <?php if(in_array("Music",$hobbyData)){ echo "checked";} ?>><label for="music">music</label>
                 <input type="checkbox" name="hobby[]" id="reading" value="reading" <?php if(in_array("reading",$hobbyData)){ echo "checked";} ?>><label for="reading">reading</label>
 
             </div>
