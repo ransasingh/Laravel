@@ -31,3 +31,4 @@ Route::get('/product', [App\Http\Controllers\productController::class, 'index'])
 Route::post('/saveproduct', [App\Http\Controllers\productController::class, 'store']);
 Route::any('/editproduct/{pid}', [App\Http\Controllers\productController::class, 'edit']);
 Route::any('/updateproduct/{pid}', [App\Http\Controllers\productController::class, 'update']);
+Route::any('/deleteproduct/{pid}', [App\Http\Controllers\productController::class, 'delete']);
