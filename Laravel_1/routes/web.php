@@ -32,3 +32,6 @@ Route::post('/saveproduct', [App\Http\Controllers\productController::class, 'sto
 Route::any('/editproduct/{pid}', [App\Http\Controllers\productController::class, 'edit']);
 Route::any('/updateproduct/{pid}', [App\Http\Controllers\productController::class, 'update']);
 Route::any('/deleteproduct/{pid}', [App\Http\Controllers\productController::class, 'delete']);
+
+Route::view('/templet','templet');
+Route::view('/admindashboard','admin.admindashboard');

@@ -3,7 +3,7 @@
     <header class="header_section ">
       <div class="container">
         <nav class="navbar navbar-expand-lg custom_nav-container">
-          <a class="navbar-brand" href="index.html">
+          <a class="navbar-brand" href="home">
             <span>
               Elaxi
             </span>
@@ -14,16 +14,16 @@
           <div class="collapse navbar-collapse ml-auto  " id="navbarSupportedContent">
             <ul class="navbar-nav  ">
               <li class="nav-item ">
-                <a class="nav-link" href="index.html">Home </a>
+                <a class="nav-link" href="home">Home </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="about.html">About </a>
+                <a class="nav-link" href="about">About </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="why.html">Why Us</a>
+                <a class="nav-link" href="why">Why Us</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="blog.html">Blog</a>
+                <a class="nav-link" href="blog">Blog</a>
               </li>
             </ul>
             <div class="user_option ">

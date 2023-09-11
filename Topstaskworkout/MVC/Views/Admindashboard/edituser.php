@@ -49,9 +49,9 @@
                 <label for="">Hobby</label><br>
                 <?php 
                 $hobbyData = explode(",",$EditRes['Data'][0]->Hobby);
-                // echo "<br>";
+                // echo "<pre>";
                 // print_r($hobbyData) ;
-                // echo "<br>";
+                // echo "</pre>";
                 ?>
               
                 <input type="checkbox" name="hobby[]" id="cricket" value="cricket" <?php if(in_array("Cricket",$hobbyData)){ echo "checked";} ?>><label for="cricket">cricket</label>

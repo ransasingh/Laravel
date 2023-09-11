@@ -17,6 +17,25 @@ class controller
 
                 break;
             
+            // case '/about':
+            // include_once("view/header.php");
+            // include_once("view/about.php");
+            // include_once("view/footer.php");
+
+            //     break;
+            // case '/blog':
+            // include_once("view/header.php");
+            // include_once("view/about.php");
+            // include_once("view/footer.php");
+
+            //     break;
+            // case '/why':
+            // include_once("view/header.php");
+            // include_once("view/about.php");
+            // include_once("view/footer.php");
+
+            //     break;
+            
             default:
                 # code...
                 break;
