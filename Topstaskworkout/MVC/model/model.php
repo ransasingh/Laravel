@@ -109,16 +109,16 @@
         {
             $SQL = "update $tbl set  ";
             foreach ($data as $key => $value) {
-               $SQL.= "key = '$value' ,";
+               $SQL.= "$key = '$value' ,";
             }
-            echo $SQL;
+            // echo $SQL;
             $SQL = rtrim($SQL,",");
             $SQL .= " WHERE";
             foreach ($where as $key => $value) {
                 $SQL.= " $key = '$value ' AND";
             }
             $SQL = rtrim($SQL,"AND");
-            echo $SQL;
+            // echo $SQL;
             $sqlex = $this->connection->query($SQL);
             if ($sqlex > 0) {
                 $ResponceData['Data'] = "1";

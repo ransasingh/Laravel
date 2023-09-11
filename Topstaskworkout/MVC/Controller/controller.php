@@ -154,7 +154,23 @@ class Controller extends model
                     // print_r($EditRes['Data']);
                     // echo "</pre>";
                     include_once("Views/Admindashboard/edituser.php");
-                 
+                    if (isset($_POST['update'])) {
+                        unset($_POST['update']);
+                        $hobbydata = implode(",", $_POST['hobby']);
+                        // echo $hobbydata;
+                        $Data = array_merge($_POST, array("hobby" => $hobbydata));
+                        // echo "<pre>";
+                        // print_r($Data);
+                        // echo "</pre>";
+                        $UpdateRes = $this->update("users", $Data, array("id" => $_GET['userid']));
+                        // echo "<pre>";
+                        // print_r($UpdateRes);
+                        // echo "</pre>";
+                       if (  $UpdateRes['Code']==1) {
+                       header("location=allusers");
+                       }
+                    }
+
 
                    
 

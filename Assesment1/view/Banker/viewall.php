@@ -61,13 +61,13 @@
                     <td><?php echo $value->accounttype; ?></td>
                     <td><?php echo $value->accountno; ?></td>
                     <td><?php echo $value->openingbalance; ?></td>
-                    <!-- <td>
+                    <td>
                        
                         <a href="edit?id=<?php echo $value->id; ?>">Edit</a>
                         <a href="delete?id=<?php echo $value->id; ?>">Delete</a>
-                    </td> -->
+                    </td>
                 </tr>
-            <?php  } ?>
+                <?php  } ?>
         
 
 

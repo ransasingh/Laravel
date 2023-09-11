@@ -154,11 +154,11 @@ class controller extends model
                     include_once("view/footer.php");
                     break;
                     
-                // case '/Delete':
-                //     $DeleteRes = $this->delete("bank", array("id" => $_GET['userid']));
-                //     if ($DeleteRes['Code'] == 1) {
-                //         header("location:viewall");
-                //     }
+                case '/Delete':
+                    $DeleteRes = $this->delete("bank", array("id" => $_GET['userid']));
+                    if ($DeleteRes['Code'] == 1) {
+                        header("location:viewall");
+                    }
                 case '/logout':
                     session_destroy();
                     header("location:login");
