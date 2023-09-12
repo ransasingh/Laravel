@@ -12,6 +12,7 @@
 
     <title>Update Form</title>
 </head>
+<a href="allusers">Home</a>
 
 
 <body>
@@ -37,8 +38,8 @@
             <div class="col-md-6 offset-3">
                 <label for="Gender">Gender</label><br>
                 <?php //echo $EditRes['Data'][0]->Gender ?>
-                <input type="radio" name="Gender" id="Male" value="Male" <?php if($EditRes['Data'][0]->Gender == 'male'){ echo "checked";} ?> ><label for="Male">Male</label>
-                <input type="radio" name="Gender" id="Female" value="Female" <?php if($EditRes['Data'][0]->Gender == 'female'){ echo "checked";} ?>><label for="Female" >Female</label>
+                <input type="radio" name="Gender" id="Male" value="Male" <?php if($EditRes['Data'][0]->Gender == 'Male'){ echo "checked";} ?> ><label for="Male">Male</label>
+                <input type="radio" name="Gender" id="Female" value="Female" <?php if($EditRes['Data'][0]->Gender == 'Female'){ echo "checked";} ?>><label for="Female" >Female</label>
             </div>
            
             <div class="col-md-6 offset-3">
@@ -54,10 +55,24 @@
                 // echo "</pre>";
                 ?>
               
-                <input type="checkbox" name="hobby[]" id="cricket" value="cricket" <?php if(in_array("Cricket",$hobbyData)){ echo "checked";} ?>><label for="cricket">cricket</label>
-                <input type="checkbox" name="hobby[]" id="music" value="music" <?php if(in_array("Music",$hobbyData)){ echo "checked";} ?>><label for="music">music</label>
+                <input type="checkbox" name="hobby[]" id="cricket" value="cricket" <?php if(in_array("cricket",$hobbyData)){ echo "checked";} ?>><label for="cricket">cricket</label>
+                <input type="checkbox" name="hobby[]" id="music" value="music" <?php if(in_array("music",$hobbyData)){ echo "checked";} ?>><label for="music">music</label>
                 <input type="checkbox" name="hobby[]" id="reading" value="reading" <?php if(in_array("reading",$hobbyData)){ echo "checked";} ?>><label for="reading">reading</label>
 
+            </div>
+            <div class="col-md-6 offset-3">
+                  <div class="col text-center">
+                    <select name="city" class="form-control" id="city">
+                      <option value="">--Select City--</option>
+                      <option value="Ahmedabad">Ahmedabad</option>
+                      <option value="Surat">Surat</option>
+                      <option value="Baroda">Baroda</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-6 offset-3">
+                <label for="Prof_pic" class="form-label">profile_pic</label>
+                <input type="File" value="<?php echo $EditRes['Data'][0]->profile_pic ;?>" class="form-control" name="profile_pic" id="profile_pic">
             </div>
 
 

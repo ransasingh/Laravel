@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="<?php echo $this->base_url; ?>assets/css/styles.min.css" />
 </head>
 
+
 <body>
   <!--  Body Wrapper -->
   <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full" data-sidebar-position="fixed" data-header-position="fixed">
@@ -152,7 +153,7 @@
     <!--  Main wrapper -->
     <div class="body-wrapper">
 
-      <div class="container-fluid">
+      <!-- <div class="container-fluid">
         <!--  Row 1 -->
         <div class="row">
           <div class="col-lg-8 d-flex align-items-strech">
@@ -273,6 +274,12 @@
                         <h6 class="fw-semibold mb-0">Hobby</h6>
                       </th>
                       <th class="border-bottom-0">
+                        <h6 class="fw-semibold mb-0">	City</h6>
+                      </th>
+                      <th class="border-bottom-0">
+                        <h6 class="fw-semibold mb-0">	profile_pic</h6>
+                      </th>
+                      <th class="border-bottom-0">
                         <h6 class="fw-semibold mb-0">Action</h6>
                       </th>
                     </tr>
@@ -304,6 +311,12 @@
                           <h6 class="fw-semibold mb-0 fs-4"><?php echo $value->Hobby ?></h6>
                         </td>
                         <td class="border-bottom-0">
+                          <h6 class="fw-semibold mb-0 fs-4"><?php echo $value->	City ?></h6>
+                        </td>
+                        <td class="border-bottom-0">
+                          <h6 class="fw-semibold mb-0 fs-4"><?php echo $value->	profile_pic ?></h6>
+                        </td>
+                        <td class="border-bottom-0">
                           <div class="d-flex align-items-center gap-2">
 
                             <!-- <a href="Edit?userid=<?php echo $value->id; ?>"><button type="button" class="btn btn-primary">Edit</button></a> -->
@@ -329,7 +342,7 @@
             </div>
           </div>
         </div>
-      </div>
+      <!-- </div> --> -->
       <!-- <div class="row">
           <div class="col-sm-6 col-xl-3">
             <div class="card overflow-hidden rounded-2">
