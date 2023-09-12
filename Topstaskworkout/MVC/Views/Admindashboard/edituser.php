@@ -60,16 +60,27 @@
                 <input type="checkbox" name="hobby[]" id="reading" value="reading" <?php if(in_array("reading",$hobbyData)){ echo "checked";} ?>><label for="reading">reading</label>
 
             </div>
+            <div >
             <div class="col-md-6 offset-3">
-                  <div class="col text-center">
-                    <select name="city" class="form-control" id="city">
-                      <option value="">--Select City--</option>
-                      <option value="Ahmedabad">Ahmedabad</option>
-                      <option value="Surat">Surat</option>
-                      <option value="Baroda">Baroda</option>
-                    </select>
-                  </div>
-                </div>
+                <label for="" >City:</label>
+                <?php
+                //   echo "<pre>";
+                //   print_r($EditRes['Data'][0]);
+                //   echo "</pre>";
+                    ?>
+                <select class="form-control">
+                    <option value="checked" >Select City</option>
+                   
+                    
+                    <?php  foreach ($CitiesData['Data'] as $key => $value)  { 
+                       
+                        ?>
+                      <option  <?php if ( $EditRes['Data'][0]->city==$value->cityid ) { echo "selected";  } ?>  value="<?php  $value->cityid; ?>"><?php echo $value->cityname; ?></option>
+                     <?php }
+                      ?>  
+                </select>
+               
+            </div>
                 <div class="col-md-6 offset-3">
                 <label for="Prof_pic" class="form-label">profile_pic</label>
                 <input type="File" value="<?php echo $EditRes['Data'][0]->profile_pic ;?>" class="form-control" name="profile_pic" id="profile_pic">

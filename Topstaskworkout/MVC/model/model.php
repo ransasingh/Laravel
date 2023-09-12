@@ -50,7 +50,7 @@
             }
             return $Res;
         }
-        function select($tbl,$where)
+        function select($tbl,$where ="")
         {
             $SQL = "Select * from $tbl ";          
            

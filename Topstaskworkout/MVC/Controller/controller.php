@@ -148,12 +148,16 @@ class Controller extends model
                     }
 
                     break;
-                case '/edit':
-                    $EditRes = $this->select("users", array("id" => $_GET['userid']));
-                    // echo "<pre>";
-                    // print_r($EditRes['Data']);
-                    // echo "</pre>";
-                    include_once("Views/Admindashboard/edituser.php");
+                    case '/edit':
+                        $CitiesData = $this->select("city");
+                        $EditRes = $this->select("users", array("id" => $_GET['userid']));
+                        // echo "<pre>";
+                        // print_r($EditRes['Data']);
+                        // echo "</pre>";
+                        // echo "<pre>";
+                        // print_r($CitiesData);
+                        // echo "</pre>";
+                        include_once("Views/Admindashboard/edituser.php");
                     if (isset($_POST['update'])) {
                         unset($_POST['update']);
                         $hobbydata = implode(",", $_POST['hobby']);
