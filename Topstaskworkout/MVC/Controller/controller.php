@@ -105,13 +105,13 @@ class Controller extends model
                         // echo "<pre>";
                         // print_r($hobbydata);
                         // echo "<pre>";
-                        //     print_r($data);
-                        echo "<pre>";
-                        print_r($data);
-                        echo "</pre>";
+                            // print_r($data);
+                        // echo "<pre>";
+                        // print_r($data);
+                        // echo "</pre>";
 
                         $insertres = $this->insert("users", $data);
-                        print_r($insertres);
+                        // print_r($insertres);
                         if ($insertres['Code'] == 1) {
                             header("location:login");
                         }
@@ -149,8 +149,8 @@ class Controller extends model
 
                     break;
                     case '/edit':
+                        $EditRes = $this->select("users", array("id" => $_GET['userid']),array("city"=>"users.city = city.cityid "));
                         $CitiesData = $this->select("city");
-                        $EditRes = $this->select("users", array("id" => $_GET['userid']));
                         // echo "<pre>";
                         // print_r($EditRes['Data']);
                         // echo "</pre>";
@@ -160,17 +160,18 @@ class Controller extends model
                         include_once("Views/Admindashboard/edituser.php");
                     if (isset($_POST['update'])) {
                         unset($_POST['update']);
+                     
                         $hobbydata = implode(",", $_POST['hobby']);
                         // echo $hobbydata;
-                        $Data = array_merge($_POST, array("hobby" => $hobbydata));
-                        // echo "<pre>";
-                        // print_r($Data);
-                        // echo "</pre>";
+                        $Data = array_merge($_POST, array("hobby" => $hobbydata,"City"=>$_POST['city']));
+                        echo "<pre>";
+                        print_r($Data);
+                        echo "</pre>";
                         $UpdateRes = $this->update("users", $Data, array("id" => $_GET['userid']));
                         // echo "<pre>";
                         // print_r($UpdateRes);
                         // echo "</pre>";
-                       if (  $UpdateRes['Code']==1) {
+                       if ($UpdateRes['Code']==1) {
                        header("location=allusers");
                        }
                     }

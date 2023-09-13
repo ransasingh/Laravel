@@ -258,6 +258,9 @@
                       <th class="border-bottom-0">
                         <h6 class="fw-semibold mb-0">Id</h6>
                       </th>
+                      <!-- <th class="border-bottom-0">
+                        <h6 class="fw-semibold mb-0">fullname</h6>
+                      </th> -->
                       <th class="border-bottom-0">
                         <h6 class="fw-semibold mb-0">User Name</h6>
                       </th>
@@ -292,6 +295,9 @@
                         <td class="border-bottom-0">
                           <h6 class="fw-semibold mb-0"><?php echo  $index; ?></h6>
                         </td>
+                        <!-- <td class="border-bottom-0">
+                          <h6 class="fw-semibold mb-0"></h6>
+                        </td> -->
                         <td class="border-bottom-0">
                           <h6 class="fw-semibold mb-1"><?php echo $value->username ?></h6>
                           <span class="fw-normal">Web Designer</span>

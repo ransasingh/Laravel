@@ -50,10 +50,17 @@
             }
             return $Res;
         }
-        function select($tbl,$where ="")
+        function select($tbl,$where ="",$join="")
         {
-            $SQL = "Select * from $tbl ";          
-           
+            $SQL = "Select * from $tbl ";  
+            
+            if($join != ""){
+                foreach ($join as $key => $value) {
+                 $SQL.=" JOIN $key ON $value";
+                }
+            }
+              
+
             if ($where != "") {
                 $SQL .= " WHERE ";
                 foreach ($where as $key => $value) {
@@ -64,6 +71,7 @@
             // echo $SQL;
             // exit;
             $SQLEx = $this->connection->query($SQL);
+            // print_r($SQLEx);
 
             if ($SQLEx->num_rows > 0) {
                 while ($row = $SQLEx->fetch_object()) {
@@ -161,6 +169,3 @@
 
 
 
-
-// $modelobj= new model();
-// $modelobj->insert("user",array("username"=>"Ranjeet","Password"=>123,"Gender"=>"Male"));

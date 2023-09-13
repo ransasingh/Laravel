@@ -26,6 +26,10 @@
             // print_r($EditRes['Data'][0]->Username);
             // echo "</pre>";
             ?>
+              <!-- <div class="col-md-6 offset-3">
+                <label for="fullname" class="form-label">Full name</label>
+                <input type="text" class="form-control" value="<?php $EditRes['Data'][0]->fullname  ?>" name="fullname" id="fullname" required>
+            </div> -->
             <div class="col-md-6 offset-3">
                 <label for="username" class="form-label">User Name</label>
                 <input type="text" value="<?php echo $EditRes['Data'][0]->username ;?>" class="form-control" name="username" id="Username">
@@ -64,9 +68,10 @@
             <div class="col-md-6 offset-3">
                 <label for="" >City:</label>
                 <?php
-                //   echo "<pre>";
-                //   print_r($EditRes['Data'][0]);
-                //   echo "</pre>";
+                  echo "<pre>";
+                //   print_r( $EditRes['Data'][0]->City);
+            
+                  echo "</pre>";
                     ?>
                 <select class="form-control">
                     <option value="checked" >Select City</option>
@@ -75,7 +80,8 @@
                     <?php  foreach ($CitiesData['Data'] as $key => $value)  { 
                        
                         ?>
-                      <option  <?php if ( $EditRes['Data'][0]->city==$value->cityid ) { echo "selected";  } ?>  value="<?php  $value->cityid; ?>"><?php echo $value->cityname; ?></option>
+                        
+                      <option  <?php if ( $EditRes['Data'][0]->City==$value->cityid ) { echo "selected";  } ?>  value="<?php echo  $value->cityid; ?>"><?php echo $value->cityname; ?></option>
                      <?php }
                       ?>  
                 </select>

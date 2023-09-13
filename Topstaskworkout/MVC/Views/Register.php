@@ -39,14 +39,14 @@
             </div>
             <div class="col-md-6 offset-3">
                 <label for="gender" class="form-label">Gender</label><br>
-                <input type="radio" id="male" name="gender" value="male"><label for="male">Male</label>
-                <input type="radio" id="female" name="gender" value="female"><label for="female">female</label>
+                <input type="radio" id="Male" name="gender" value="Male"><label for="Male">Male</label>
+                <input type="radio" id="Female" name="gender" value="Female"><label for="Female">female</label>
             </div>
             <div class="col-md-6 offset-3">
                 <label for="">Hobby</label><br>
-                <input type="checkbox" name="Hobby[]" id="Cricket" value="Cricket"><label for="Cricket">Cricket</label>
-                <input type="checkbox" name="Hobby[]" id="Music" value="Music"><label for="Music">Music</label>
-                <input type="checkbox" name="Hobby[]" id="Reading" value="Reading"><label for="Reading">Reading</label>
+                <input type="checkbox" name="Hobby[]" id="cricket" value="cricket"><label for="cricket">Cricket</label>
+                <input type="checkbox" name="Hobby[]" id="music" value="music"><label for="music">Music</label>
+                <input type="checkbox" name="Hobby[]" id="reading" value="reading"><label for="reading">Reading</label>
 
             </div>
             <div class="row mt-3">
@@ -60,16 +60,13 @@
                     </select>
                 </div>
             </div>
+            <div class="col-md-6 offset-3">
+                <label for="profile_pic" class="form-label">Profile_pic</label>
+                <input type="File"  class="form-control" name="profile_pic" id="profile_pic" required>
+            </div>
 
 
 
-            <!-- <div class="col-md-6 offset-3">
-                <label for="" >Hobby</label><br>
-                <input type="checkbox" name="Hobby[]"  id="Cricket"  value="Cricket"><label for="Cricket" >Cricket</label>
-                <input type="checkbox" name="Hobby[]"  id="Music"  value="Music"><label for="Music" >Music</label>
-                <input type="checkbox" name="Hobby[]"  id="Reading"  value="Reading"><label for="Reading" >Reading</label>
-               
-            </div> -->
             <div class="col-md-6 offset-4">
 
                 <button type="Submit" name="btn-regist" class="btn btn-success">register</button>
