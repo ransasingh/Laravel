@@ -149,7 +149,10 @@ class Controller extends model
 
                     break;
                     case '/edit':
-                        $EditRes = $this->select("users", array("id" => $_GET['userid']),array("city"=>"users.city = city.cityid "));
+                        
+                        // $EditRes = $this->select("users", array("id" => $_GET['userid']),array("city"=>"users.city = city.cityid "));
+                        $EditRes = $this->select("users", array("id" => $_GET['userid']));
+                        
                         $CitiesData = $this->select("city");
                         // echo "<pre>";
                         // print_r($EditRes['Data']);
@@ -164,9 +167,9 @@ class Controller extends model
                         $hobbydata = implode(",", $_POST['hobby']);
                         // echo $hobbydata;
                         $Data = array_merge($_POST, array("hobby" => $hobbydata,"City"=>$_POST['city']));
-                        echo "<pre>";
-                        print_r($Data);
-                        echo "</pre>";
+                        // echo "<pre>";
+                        // print_r($Data);
+                        // echo "</pre>";
                         $UpdateRes = $this->update("users", $Data, array("id" => $_GET['userid']));
                         // echo "<pre>";
                         // print_r($UpdateRes);
