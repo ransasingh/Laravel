@@ -20,84 +20,105 @@
         <div class="text-center">
             <h2><b>Update Form</b></h2>
         </div>
-        <form method="post" class="row g-3">
+        <form method="post" enctype="multipart/form-data" class="row g-3">
             <?php
             // echo "<pre>";
             // print_r($EditRes['Data'][0]->Username);
             // echo "</pre>";
             ?>
-              <!-- <div class="col-md-6 offset-3">
+            <!-- <div class="col-md-6 offset-3">
                 <label for="fullname" class="form-label">Full name</label>
                 <input type="text" class="form-control" value="<?php $EditRes['Data'][0]->fullname  ?>" name="fullname" id="fullname" required>
             </div> -->
             <div class="col-md-6 offset-3">
                 <label for="username" class="form-label">User Name</label>
-                <input type="text" value="<?php echo $EditRes['Data'][0]->username ;?>" class="form-control" name="username" id="Username">
+                <input type="text" value="<?php echo $EditRes['Data'][0]->username; ?>" class="form-control" name="username" id="Username">
             </div>
             <div class="col-md-6 offset-3">
                 <label for="email" class="form-label">Email</label>
-                <input type="email" value="<?php echo $EditRes['Data'][0]->email ;?>" name="email" class="form-control" id="email">
+                <input type="email" value="<?php echo $EditRes['Data'][0]->email; ?>" name="email" class="form-control" id="email">
             </div>
-          
+
             <div class="col-md-6 offset-3">
                 <label for="Gender">Gender</label><br>
-                <?php //echo $EditRes['Data'][0]->Gender ?>
-                <input type="radio" name="Gender" id="Male" value="Male" <?php if($EditRes['Data'][0]->Gender == 'Male'){ echo "checked";} ?> ><label for="Male">Male</label>
-                <input type="radio" name="Gender" id="Female" value="Female" <?php if($EditRes['Data'][0]->Gender == 'Female'){ echo "checked";} ?>><label for="Female" >Female</label>
+                <?php //echo $EditRes['Data'][0]->Gender 
+                ?>
+                <input type="radio" name="Gender" id="Male" value="Male" <?php if ($EditRes['Data'][0]->Gender == 'Male') {
+                                                                                echo "checked";
+                                                                            } ?>><label for="Male">Male</label>
+                <input type="radio" name="Gender" id="Female" value="Female" <?php if ($EditRes['Data'][0]->Gender == 'Female') {
+                                                                                    echo "checked";
+                                                                                } ?>><label for="Female">Female</label>
             </div>
-           
+
             <div class="col-md-6 offset-3">
                 <label for="phone" class="form-label">phone</label>
-                <input type="text" value="<?php echo $EditRes['Data'][0]->phone ;?>" name="phone" class="form-control" id="phone">
+                <input type="text" value="<?php echo $EditRes['Data'][0]->phone; ?>" name="phone" class="form-control" id="phone">
             </div>
             <div class="col-md-6 offset-3">
                 <label for="">Hobby</label><br>
-                <?php 
-                $hobbyData = explode(",",$EditRes['Data'][0]->Hobby);
+                <?php
+                $hobbyData = explode(",", $EditRes['Data'][0]->Hobby);
                 // echo "<pre>";
                 // print_r($hobbyData) ;
                 // echo "</pre>";
                 ?>
-              
-                <input type="checkbox" name="hobby[]" id="cricket" value="cricket" <?php if(in_array("cricket",$hobbyData)){ echo "checked";} ?>><label for="cricket">cricket</label>
-                <input type="checkbox" name="hobby[]" id="music" value="music" <?php if(in_array("music",$hobbyData)){ echo "checked";} ?>><label for="music">music</label>
-                <input type="checkbox" name="hobby[]" id="reading" value="reading" <?php if(in_array("reading",$hobbyData)){ echo "checked";} ?>><label for="reading">reading</label>
+
+                <input type="checkbox" name="hobby[]" id="cricket" value="cricket" <?php if (in_array("cricket", $hobbyData)) {
+                                                                                        echo "checked";
+                                                                                    } ?>><label for="cricket">cricket</label>
+                <input type="checkbox" name="hobby[]" id="music" value="music" <?php if (in_array("music", $hobbyData)) {
+                                                                                    echo "checked";
+                                                                                } ?>><label for="music">music</label>
+                <input type="checkbox" name="hobby[]" id="reading" value="reading" <?php if (in_array("reading", $hobbyData)) {
+                                                                                        echo "checked";
+                                                                                    } ?>><label for="reading">reading</label>
 
             </div>
-            <div >
-            <div class="col-md-6 offset-3">
-                <label for="" >City:</label>
-                <?php
-                  echo "<pre>";
-                //   print_r( $EditRes['Data'][0]->City);
-            
-                  echo "</pre>";
-                    ?>
-                <select class="form-control">
-                    <option value="checked" >Select City</option>
-                   
-                    
-                    <?php  foreach ($CitiesData['Data'] as $key => $value)  { 
-                       
-                        ?>
-                        
-                      <option  <?php if ( $EditRes['Data'][0]->City==$value->cityid ) { echo "selected";  } ?>  value="<?php echo  $value->cityid; ?>"><?php echo $value->cityname; ?></option>
-                     <?php }
-                      ?>  
-                </select>
-               
-            </div>
+            <div>
                 <div class="col-md-6 offset-3">
-                <label for="Prof_pic" class="form-label">profile_pic</label>
-                <input type="File" value="<?php echo $EditRes['Data'][0]->profile_pic ;?>" class="form-control" name="profile_pic" id="profile_pic">
-            </div>
+                    <label for="">City:</label>
+                    <?php
+
+                    // echo "<pre>";
+                    // print_r($EditRes['Data'][0]->City);
+                    // echo "</pre>";
+                    // echo "<pre>";
+                    // print_r($CitiesData['Data']);
+                    // echo "</pre>";
 
 
-            <div class="col-md-6 offset-4">
-                <button type="submit" name="update" class="btn btn-success">Update</button>
-                <button type="reset" value="Cancel" class="btn btn-danger">Cancel</button>
-            </div>
-           
+                    ?>
+                    <select class="form-control" name="City" id="City" class="form-control">
+
+                        <option value="checked">Select City</option>
+
+
+                        <?php foreach ($CitiesData['Data'] as $key => $value) {
+
+                        ?>
+
+                            <option <?php if ($EditRes['Data'][0]->City == $value->cityid) {
+                                        echo "selected";
+                                    } ?> value="<?php echo  $value->cityid; ?>"><?php echo $value->cityname; ?></option>
+                        <?php }
+                        ?>
+                    </select>
+
+                </div>
+                <div class="col-md-6 offset-3">
+                    <label for="Prof_pic" class="form-label">profile_pic</label>
+                    <input type="File" value="<?php echo $EditRes['Data'][0]->profile_pic; ?>" class="form-control" name="profile_pic" id="profile_pic">
+                    <img src="Uploads/<?php echo $EditRes['Data'][0]->profile_pic; ?>" width="100px" height="100px" alt="Image Not Found">
+                    <input type="hidden" name="old_img" value="<?php echo $EditRes['Data'][0]->profile_pic; ?>">
+                </div>
+
+
+                <div class="col-md-6 offset-4">
+                    <button type="submit" name="update" class="btn btn-success">Update</button>
+                    <button type="reset" value="Cancel" class="btn btn-danger">Cancel</button>
+                </div>
+
         </form>
     </div>
 

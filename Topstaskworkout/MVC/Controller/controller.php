@@ -59,28 +59,27 @@ class Controller extends model
                         // echo "<pre>";
                         // print_r($_REQUEST);
                         $Loginres = $this->login($_POST['username'], $_POST['password']);
-                        if ($_POST['username'] != "" && $_POST['password'] != ""){
-                        $_SESSION['Userdata'] = $Loginres['Data'];
-                        // echo "<pre>";
-                        // print_r($_SESSION['Userdata']);
-                        // print_r($Loginres);
-                        if ($Loginres['Code'] == 1) {
-                            if ($Loginres['Data']->role_id == 1) {
-                                header("location:Admindashboard");
+                        if ($_POST['username'] != "" && $_POST['password'] != "") {
+                            $_SESSION['Userdata'] = $Loginres['Data'];
+                            // echo "<pre>";
+                            // print_r($_SESSION['Userdata']);
+                            // print_r($Loginres);
+                            if ($Loginres['Code'] == 1) {
+                                if ($Loginres['Data']->role_id == 1) {
+                                    header("location:Admindashboard");
+                                } else {
+                                    header("location:home");
+                                }
                             } else {
-                                header("location:home");
+                                echo " <script>
+                        alert('Invalid User')
+                        </script> ";
                             }
                         } else {
                             echo " <script>
-                        alert('Invalid User')
-                        </script> ";
-                        }
-                    } else {
-                        echo " <script>
                         alert('Enter  Username And Password!!!')
                         </script> ";
-                    }
-                        
+                        }
                     }
 
 
@@ -105,7 +104,7 @@ class Controller extends model
                         // echo "<pre>";
                         // print_r($hobbydata);
                         // echo "<pre>";
-                            // print_r($data);
+                        // print_r($data);
                         // echo "<pre>";
                         // print_r($data);
                         // echo "</pre>";
@@ -125,16 +124,18 @@ class Controller extends model
                     break;
 
                 case '/allusers':
-                    $allusers = $this->select("users", array("role_id" => 2));
+                    // $allusers = $this->select("users", array("role_id" => 2));
+                    // $allUsers = $this->selectjoin("users", array("cities_data" => "cities_data.id=users.city"), "users.id,username,fullname,email,password,role_id,mobile,gender,hobby,prof_pic,city,cities_data.name");
+                    $allusers = $this->selectjoin("users", array("city" => "city.cityid = users.City"), "users.id,fullname,username,password,email,dob,phone,Gender,role_id,Hobby,City,profile_pic,city.cityname", array("role_id" => 2));
                     // echo "<pre>";
                     // print_r($allusers);
                     // exit;
 
-                    include_once("Views/Admindashboard/adminheader.php");
+                    // include_once("Views/Admindashboard/adminheader.php");
                     include_once("Views/Admindashboard/allusers.php");
                     include_once("Views/Admindashboard/adminfooter.php");
                     break;
-                    
+
                 case '/allusers':
                     $allusers = $this->select("users", array("role_id" => 2));
                     // echo "<pre>";
@@ -142,45 +143,105 @@ class Controller extends model
                     // exit;
 
                 case '/delete':
-                    $DeleteRes = $this->Delete("users", array("id" => $_GET['userid']));
+                    $DeleteRes = $this->delete("users", array("id" => $_GET['userid']));
                     if ($DeleteRes['Code'] == 1) {
                         header("location:allusers");
                     }
 
                     break;
-                    case '/edit':
-                        
-                        // $EditRes = $this->select("users", array("id" => $_GET['userid']),array("city"=>"users.city = city.cityid "));
-                        $EditRes = $this->select("users", array("id" => $_GET['userid']));
-                        
-                        $CitiesData = $this->select("city");
-                        // echo "<pre>";
-                        // print_r($EditRes['Data']);
-                        // echo "</pre>";
-                        // echo "<pre>";
-                        // print_r($CitiesData);
-                        // echo "</pre>";
-                        include_once("Views/Admindashboard/edituser.php");
+                case '/edit':
+
+                    // $EditRes = $this->select("users", array("id" => $_GET['userid']),array("city"=>"users.city = city.cityid "));
+                    $EditRes = $this->select("users", array("id" => $_GET['userid']));
+
+                    $CitiesData = $this->select("city");
+
+                    include_once("Views/Admindashboard/edituser.php");
                     if (isset($_POST['update'])) {
                         unset($_POST['update']);
-                     
+                        // echo "<pre>";
+                        // print_r($_FILES);
+                        // echo "</pre>";
+                        if ($_FILES['profile_pic']['error'] == 0) {
+                            $profile_pic = $_FILES["profile_pic"]["name"];
+                            $target_dir = "Uploads/";
+                            $Filename = $target_dir . basename($_FILES["profile_pic"]["name"]);
+                            $uploadOk = 1;
+                            $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+
+                            // $check = getimagesize($_FILES["profile_pic"]["tmp_name"]);
+                            // if ($check !== false) {
+                            //     echo "File is an image - " . $check["mime"] . ".";
+                            //     $uploadOk = 1;
+                            // } else {
+                            //     echo "File is not an image.";
+                            //     $uploadOk = 0;
+                            // }
+
+
+                            // Check if file already exists
+                            // if (file_exists($Filename)) {
+                            //     echo "Sorry, file already exists.";
+                            //     $uploadOk = 0;
+                            // }
+
+                            // Check file size
+                            if ($_FILES["profile_pic"]["size"] > 500000) {
+                                echo "Sorry, your file is too large.";
+                                $uploadOk = 0;
+                            }
+
+                            // Allow certain file formats
+                            // if (
+                            //     $imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+                            //     && $imageFileType != "gif"
+                            // ) {
+                            //     echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+                            //     $uploadOk = 0;
+                            // }
+
+                            // Check if $uploadOk is set to 0 by an error
+                            if ($uploadOk == 0) {
+                                echo "Sorry, your file was not uploaded.";
+                                // if everything is ok, try to upload file
+                            } else {
+                                if (move_uploaded_file($_FILES["profile_pic"]["tmp_name"], $Filename)) {
+                                   
+                                    // echo "The file " . htmlspecialchars(basename($_FILES["profile_pic"]["name"])) . " has been uploaded.";
+                                } else {
+                                    echo "Sorry, there was an error uploading your file.";
+                                }
+                            }
+                        } else {
+
+                            $profile_pic = $_REQUEST['old_img'];
+                        }
+
+
+
+                        // exit;
+
+
+
+
+
+
                         $hobbydata = implode(",", $_POST['hobby']);
-                        // echo $hobbydata;
-                        $Data = array_merge($_POST, array("hobby" => $hobbydata,"City"=>$_POST['city']));
+                        unset($_POST['old_img']);
+
+                        $Data = array_merge($_POST, array("hobby" => $hobbydata, "profile_pic" =>$profile_pic));
                         // echo "<pre>";
                         // print_r($Data);
                         // echo "</pre>";
                         $UpdateRes = $this->update("users", $Data, array("id" => $_GET['userid']));
-                        // echo "<pre>";
-                        // print_r($UpdateRes);
-                        // echo "</pre>";
-                       if ($UpdateRes['Code']==1) {
-                       header("location=allusers");
-                       }
+
+                        if ($UpdateRes['Code'] == 1) {
+                            header("location:allusers");
+                        }
                     }
 
 
-                   
+
 
                     break;
                 default:

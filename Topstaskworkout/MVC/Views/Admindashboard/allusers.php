@@ -280,7 +280,7 @@
                         <h6 class="fw-semibold mb-0">	City</h6>
                       </th>
                       <th class="border-bottom-0">
-                        <h6 class="fw-semibold mb-0">	profile_pic</h6>
+                        <h6 class="fw-semibold mb-0">	Image</h6>
                       </th>
                       <th class="border-bottom-0">
                         <h6 class="fw-semibold mb-0">Action</h6>
@@ -317,10 +317,10 @@
                           <h6 class="fw-semibold mb-0 fs-4"><?php echo $value->Hobby ?></h6>
                         </td>
                         <td class="border-bottom-0">
-                          <h6 class="fw-semibold mb-0 fs-4"><?php echo $value->	City ?></h6>
+                          <h6 class="fw-semibold mb-0 fs-4"><?php echo $value->	cityname ?></h6>
                         </td>
                         <td class="border-bottom-0">
-                          <h6 class="fw-semibold mb-0 fs-4"><?php echo $value->	profile_pic ?></h6>
+                          <h6 class="fw-semibold mb-0 fs-4"><img src="Uploads/<?php echo $value->	profile_pic ; ?>" width="100px" height="100px" alt="">   </h6>
                         </td>
                         <td class="border-bottom-0">
                           <div class="d-flex align-items-center gap-2">

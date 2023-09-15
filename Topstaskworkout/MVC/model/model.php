@@ -86,8 +86,8 @@
             }
             return $Res;
         }
-        function selectjoin($tbl, $join, $clm = "*", $whr = "")
-        { {
+        function selectjoin($tbl, $join, $clm = "*", $where = "")
+         {
                 $SQL = "Select $clm from $tbl ";
                 foreach ($join as $jkey => $jvalue) {
                     $SQL .= "JOIN $jkey ON $jvalue";
@@ -101,7 +101,7 @@
                     }
                 }
                 $SQL = rtrim($SQL, "AND");
-                echo $SQL;
+                // echo $SQL;
                 // exit;
                 $SQLEx = $this->connection->query($SQL);
                 // print_r($SQLEx);
@@ -160,7 +160,10 @@
                 }
                 $SQL = rtrim($SQL, "AND");
                 // echo $SQL;
+                // exit;
                 $sqlex = $this->connection->query($SQL);
+                // print_r($sqlex);
+                // exit;
                 if ($sqlex > 0) {
                     $ResponceData['Data'] = "1";
                     $ResponceData['Msg'] = "Success";
@@ -195,5 +198,6 @@
                 }
                 return $ResponceData;
             }
-        }
+        
     }
+   
