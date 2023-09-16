@@ -1,3 +1,11 @@
+<!-- <?php
+if(!isset($_POST['login'])){
+  header("location:login");
+}
+
+?> -->
+
+
 <div class="hero_area">
     <!-- header section strats -->
     <header class="header_section ">
@@ -27,7 +35,7 @@
               </li>
             </ul>
             <div class="user_option ">
-              <a href="" class="">
+              <a href="login" class="">
                 Login / signUp
               </a>
             </div>
