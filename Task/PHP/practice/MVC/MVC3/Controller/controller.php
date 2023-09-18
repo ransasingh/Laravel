@@ -67,5 +67,6 @@ class controller extends model
             header("location:home");
         }
     }
+    
 }
 $controller = new controller;

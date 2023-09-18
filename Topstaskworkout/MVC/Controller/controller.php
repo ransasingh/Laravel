@@ -206,7 +206,7 @@ class Controller extends model
                                 // if everything is ok, try to upload file
                             } else {
                                 if (move_uploaded_file($_FILES["profile_pic"]["tmp_name"], $Filename)) {
-                                   
+
                                     // echo "The file " . htmlspecialchars(basename($_FILES["profile_pic"]["name"])) . " has been uploaded.";
                                 } else {
                                     echo "Sorry, there was an error uploading your file.";
@@ -229,7 +229,7 @@ class Controller extends model
                         $hobbydata = implode(",", $_POST['hobby']);
                         unset($_POST['old_img']);
 
-                        $Data = array_merge($_POST, array("hobby" => $hobbydata, "profile_pic" =>$profile_pic));
+                        $Data = array_merge($_POST, array("hobby" => $hobbydata, "profile_pic" => $profile_pic));
                         // echo "<pre>";
                         // print_r($Data);
                         // echo "</pre>";
@@ -243,6 +243,29 @@ class Controller extends model
 
 
 
+                    break;
+
+                case '/addusers':
+                   
+                    include_once("Views/Admindashboard/adduser.php");
+                    
+                    if (isset($_POST['register'])) {
+                       
+                        $hobbydata = implode(",", $_POST['hobby']);
+                        // array_pop($_POST);
+                        // echo $hobbydata;
+                        // exit;
+                        $data = array_merge($_POST, array("Hobby" => $hobbydata));
+                        $InsertRes = $this->register("users", $data);
+
+                        echo "<pre>";
+                        print_r($InsertRes);
+                        echo "</pre>";
+                        exit;
+                        if ($InsertRes['Code'] = 1) {
+                            header("location:allusers");
+                        }
+                    }
                     break;
                 default:
 
