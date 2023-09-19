@@ -21,6 +21,11 @@ switch ($_SERVER["PATH_INFO"]) {
         include_once("Views//admin/admindashboard.php");
         include_once("Views//admin/adminfooter.php");
         break;
+    case '/allproduct':
+        include_once("Views/admin/adminheader.php");
+        include_once("Views//admin/allproduct.php");
+        include_once("Views//admin/adminfooter.php");
+        break;
     case '/login':
         // include_once("Views/admin/adminheader.php");
         include_once("Views//admin/login.php");

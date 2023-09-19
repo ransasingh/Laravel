@@ -2,3 +2,9 @@ https://www.sql-practice.com/
 .......
 project task downloaded link
 https://projectsgeek.com/2016/01/online-vehicle-showroom-project.html#:~:text=This%20system%20will%20allow%20users,models%20will%20also%20be%20available.
+
+
+
+.......
+task
+...create menu (dynamic) on text area and input a menu on main website page (core php,mvc framework,Laravel ).
