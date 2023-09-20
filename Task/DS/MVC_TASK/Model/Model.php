@@ -5,7 +5,7 @@
 
         function __construct(protected $connection = null)
         {
-            $result = $this->connection = new mysqli("localhost", "root", "", "mvc_task");
+            $result = $this->connection = new mysqli("localhost", "root", "", "mvc_task'");
             // if($result){
             //   echo  " <script>
             //     alert('Connection Success');

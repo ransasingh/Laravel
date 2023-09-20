@@ -202,25 +202,25 @@ class Controller extends Model
                         $cpassword = md5($_POST['cpassword']);
                         unset($_POST['password'], $_POST['cpassword']);
                         $data = array_merge($_POST, array("password" => $password, 'cpassword' => $cpassword));
-                        // if ($password == $cpassword) {
-                        //     if ($Emailcheck['Data'][0]->email != $_POST['email']) {
-                        //         $InsertRes = $this->Insert("users", $data);
-                        //         if ($InsertRes['Code'] == 1) {
-                        //             echo  " <script>
-                        //                  alert('User Registration Successfully')
-                        //                  window.location.href='login'
-                        //                  </script>";
-                        //         }
-                        //     } else {
-                        //         echo  " <script>
-                        //          alert('User Email Allreday Register');
-                        //          </script>";
-                        //     }
-                        // } else {
-                        //     echo  " <script>
-                        //          alert('Enter Correct Confrom Password');
-                        //          </script>";
-                        // }
+                        if ($password == $cpassword) {
+                            if ($Emailcheck['Data'][0]->email != $_POST['email']) {
+                                $InsertRes = $this->Insert("users", $data);
+                                if ($InsertRes['Code'] == 1) {
+                                    echo  " <script>
+                                         alert('User Registration Successfully')
+                                         window.location.href='login'
+                                         </script>";
+                                }
+                            } else {
+                                echo  " <script>
+                                 alert('User Email Allreday Register');
+                                 </script>";
+                            }
+                        } else {
+                            echo  " <script>
+                                 alert('Enter Correct Confrom Password');
+                                 </script>";
+                        }
                         // echo "<pre>";
                         // print_r($InsertRes);
                         // echo "</pre>";

@@ -153,8 +153,8 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                         <li class="dropdown profile_details_drop">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                                 <div class="profile_img">
-                                    <span class="prfil-img"><img src="<?php echo $this->baseURL; ?>admin/images/shailesh.jpg" width="30px" alt=""> </span>
-                                    <div class="user-name">
+                                    <!-- <span class="prfil-img"><img src="<?php echo $this->baseURL; ?>admin/images/shailesh.jpg" width="30px" alt=""> </span>
+                                    <div class="user-name"> -->
                                         <h3>Hello <span><?php echo $_SESSION['userdata'][0]->name; ?></span></h2>
                                             <?php
                                             // echo "<pre>";

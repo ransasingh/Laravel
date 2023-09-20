@@ -131,16 +131,17 @@ class Controller extends model
                     // print_r($allusers);
                     // exit;
 
-                    // include_once("Views/Admindashboard/adminheader.php");
+                    include_once("Views/Admindashboard/adminheader.php");
                     include_once("Views/Admindashboard/allusers.php");
                     include_once("Views/Admindashboard/adminfooter.php");
                     break;
 
-                case '/allusers':
-                    $allusers = $this->select("users", array("role_id" => 2));
-                    // echo "<pre>";
-                    // print_r($allusers);
-                    // exit;
+                    // case '/allusers':
+                    //     $allusers = $this->select("users", array("role_id" => 2));
+                    //     echo "<pre>";
+                    //     print_r($allusers);
+                    //     echo "</pre>";
+                    //     exit;
 
                 case '/delete':
                     $DeleteRes = $this->delete("users", array("id" => $_GET['userid']));
@@ -150,6 +151,9 @@ class Controller extends model
 
                     break;
                 case '/edit':
+                    include_once("Views/Admindashboard/adminheader.php");                
+                    
+                    include_once("Views/Admindashboard/adminfooter.php");
 
                     // $EditRes = $this->select("users", array("id" => $_GET['userid']),array("city"=>"users.city = city.cityid "));
                     $EditRes = $this->select("users", array("id" => $_GET['userid']));
@@ -216,15 +220,7 @@ class Controller extends model
 
                             $profile_pic = $_REQUEST['old_img'];
                         }
-
-
-
                         // exit;
-
-
-
-
-
 
                         $hobbydata = implode(",", $_POST['hobby']);
                         unset($_POST['old_img']);
@@ -246,23 +242,30 @@ class Controller extends model
                     break;
 
                 case '/addusers':
-                   
+
+                    include_once("Views/Admindashboard/adminheader.php");                
                     include_once("Views/Admindashboard/adduser.php");
-                    
+                    include_once("Views/Admindashboard/adminfooter.php");
+
                     if (isset($_POST['register'])) {
-                       
+
                         $hobbydata = implode(",", $_POST['hobby']);
-                        // array_pop($_POST);
+                        array_pop($_POST);
                         // echo $hobbydata;
+                        unset($_POST['hobby']);
+                        // echo "<pre>";
+                        // print_r($_POST);
+
+                        // echo "</pre>";
                         // exit;
                         $data = array_merge($_POST, array("Hobby" => $hobbydata));
                         $InsertRes = $this->register("users", $data);
 
-                        echo "<pre>";
-                        print_r($InsertRes);
-                        echo "</pre>";
-                        exit;
-                        if ($InsertRes['Code'] = 1) {
+                        // echo "<pre>";
+                        // print_r($InsertRes);
+                        // echo "</pre>";
+                        // exit;
+                        if ($InsertRes['Code'] == 1) {
                             header("location:allusers");
                         }
                     }

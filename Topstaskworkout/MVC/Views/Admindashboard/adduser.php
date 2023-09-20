@@ -10,6 +10,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <title>Register</title>
+    <a href="allusers">Home</a>
 </head>
 
 
@@ -24,6 +25,10 @@
                 <input type="text" class="form-control" name="username" id="username">
             </div>
             <div class="col-md-6 offset-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" name="password" id="password">
+            </div>
+            <div class="col-md-6 offset-3">
                 <label for="email" class="form-label">Email</label>
                 <input type="email" name="email" class="form-control" id="email">
             </div>
@@ -32,23 +37,30 @@
                 <input type="password" name="password" class="form-control" id="password">
             </div> -->
             <div class="col-md-6 offset-3">
-                <label for="gender">Gender</label><br>
-                <input type="radio" name="gender" id="Male" value="Male"><label for="Male">Male</label>
-                <input type="radio" name="gender" id="Female" value="Female"><label for="Female">Female</label>
-            </div>
-            <div class="col-md-6 offset-3">
                 <label for="phone" class="form-label">phone</label>
                 <input type="number" name="phone" class="form-control" id="phone">
             </div>
             <div class="col-md-6 offset-3">
+                <label for="gender">Gender</label><br>
+                <input type="radio" name="gender" id="Male" value="Male"><label for="Male">Male</label>
+                <input type="radio" name="gender" id="Female" value="Female"><label for="Female">Female</label>
+            </div>
+            
+            <div class="col-md-6 offset-3">
                 <label for="city" class="form-label">City</label>
                <select name="city" id=""><br>
-               <option value="Ahmdabad">Select</option>
-               <option value="Ahmdabad">Ahmdabad</option>
-               <option value="Ahmdabad">Surat</option>
-               <option value="Ahmdabad">Rajasthan</option>
+             
+               <option value="">Select</option>
+               <option value="1">Ahmdabad</option>
+               <option value="2">Surat</option>
+               <option value="3">Rajasthan</option>
                </select>
             </div>
+            <div class="col-md-6 offset-3">
+                    <label for="Prof_pic" class="form-label">profile_pic</label>
+                    <input type="File" value="" class="form-control" name="profile_pic" id="profile_pic">
+                    
+                </div>
             <div class="col-md-6 offset-3">
                 <label for="">Hobby</label><br>
                 <input type="checkbox" name="hobby[]" id="cricket" value="cricket"><label for="cricket">cricket</label>
