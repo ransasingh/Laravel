@@ -75,6 +75,26 @@ class Controller extends Model
                     // include_once("Views/customer/customerheader.php");
                     include_once("Views/customer/booktable.php");
                     // include_once("Views/footer.php");
+                    if(isset($_POST['book'])){
+                       array_pop($_POST);
+                        // echo "<pre>";
+                        // print_r($_POST);
+                        // echo "</pre>";
+                        $bookres= $this->Insert("booking",$_POST);
+                        //  echo "<pre>";
+                        // print_r($bookres);
+                        // echo "</pre>";
+                        // exit;
+                        if ($bookres['Data']==1) {
+
+                            echo "<script>
+                            alert('You Are SuccessFully booked !!!!')
+                            window.location.href='customer';
+                            </script>";
+                        }
+
+                    }
+                    exit;
                     break;
                 case '/about':
                     include_once("Views/header.php");

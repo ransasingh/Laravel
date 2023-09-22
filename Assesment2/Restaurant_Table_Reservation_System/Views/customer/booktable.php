@@ -7,6 +7,7 @@
     <title>Sign Up</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
+<!-- <a href="admin">home</a> -->
 
 <body>
     <div class="container">
@@ -44,7 +45,7 @@
                     <input type="Text"  class="form-control" name="number of adults" id="number of adults" required>
                 </div>
             </div>
-            </div>
+           
            
             <div class="row mb-2">
                 <div class="col-6 offset-3">
@@ -52,11 +53,11 @@
                     <input type="Text"  class="form-control" name="number of children" id="number of children" required>
                 </div>
             </div>
-           
+            </div>
             
             <div class="row mb-2">
                 <div class="col-6 offset-5">
-                   <input type="submit" class="btn btn-success value="Reserve A Table" name="Reserve A Table" id="Reserve A Table">
+                   <input type="submit" class="btn btn-success value="Reserve A Table" name="book" id="book">
                    <input type="reset" class="btn btn-danger" >
              </div>
             </div>

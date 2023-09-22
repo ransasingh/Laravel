@@ -29,18 +29,13 @@
             <div class="row mb-2">
                 <div class="col-6 offset-5">
                     <input type="submit" class="btn btn-success" value="Sign In" name="login" id="login">
-
+                    <a href="register" >Click Here To Register</a>
                 </div>
             </div>
 
 
         </form>
-        <div class="row mb-2">
-            <div class="col-3 offset-4">
-                <a class="btn btn-secondary" href="register">Click Here To Register</a>
 
-            </div>
-        </div>
     </div>
 </body>
 
