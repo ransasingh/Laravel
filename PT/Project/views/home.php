@@ -23,7 +23,7 @@
                   </div>
                   <div class="col-md-6">
                     <div class="img-box">
-                      <img src="<?php echo $this->baseURL;?>images/slider-img.png" alt="">
+                      <img src="<?php echo  $this->base_url; ?>images/slider-img.png" alt="">
                     </div>
                   </div>
                 </div>
@@ -47,7 +47,7 @@
                   </div>
                   <div class="col-md-6">
                     <div class="img-box">
-                      <img src="<?php echo $this->baseURL;?>images/slider-img.png" alt="">
+                      <img src="<?php echo  $this->base_url; ?>images/slider-img.png" alt="">
                     </div>
                   </div>
                 </div>
@@ -71,7 +71,7 @@
                   </div>
                   <div class="col-md-6">
                     <div class="img-box">
-                      <img src="<?php echo $this->baseURL;?>images/slider-img.png" alt="">
+                      <img src="<?php echo  $this->base_url; ?>images/slider-img.png" alt="">
                     </div>
                   </div>
                 </div>
@@ -167,7 +167,7 @@
       <div class="row">
         <div class="col-md-6">
           <div class="img-box">
-            <img src="<?php echo $this->baseURL;?>images/about-img.png" alt="">
+            <img src="<?php echo  $this->base_url; ?>images/about-img.png" alt="">
           </div>
         </div>
         <div class="col-md-6">
@@ -208,7 +208,7 @@
           <div class="col-md-4">
             <div class="box b1">
               <div class="img-box">
-                <img src="<?php echo $this->baseURL;?>images/w1.png" alt="" class="" />
+                <img src="<?php echo  $this->base_url; ?>images/w1.png" alt="" class="" />
               </div>
               <div class="detail-box">
                 <h5>
@@ -225,7 +225,7 @@
           <div class="col-md-4">
             <div class="box b2">
               <div class="img-box">
-                <img src="<?php echo $this->baseURL;?>images/w2.png" alt="" class="" />
+                <img src="<?php echo  $this->base_url; ?>images/w2.png" alt="" class="" />
               </div>
               <div class="detail-box">
                 <h5>
@@ -242,7 +242,7 @@
           <div class="col-md-4">
             <div class="box b3">
               <div class="img-box">
-                <img src="<?php echo $this->baseURL;?>images/w3.png" alt="" class="" />
+                <img src="<?php echo  $this->base_url; ?>images/w3.png" alt="" class="" />
               </div>
               <div class="detail-box">
                 <h5>
@@ -283,17 +283,17 @@
             </p>
             <div class="btn-box">
               <a href="">
-                <img src="<?php echo $this->baseURL;?>images/app_store.png" alt="">
+                <img src="<?php echo  $this->base_url; ?>images/app_store.png" alt="">
               </a>
               <a href="">
-                <img src="<?php echo $this->baseURL;?>images/google_play.png" alt="">
+                <img src="<?php echo  $this->base_url; ?>images/google_play.png" alt="">
               </a>
             </div>
           </div>
         </div>
         <div class="col-md-6">
           <div class="img-box">
-            <img src="<?php echo $this->baseURL;?>images/app-img.png" alt="">
+            <img src="<?php echo  $this->base_url; ?>images/app-img.png" alt="">
           </div>
         </div>
       </div>
@@ -315,7 +315,7 @@
         <div class="col-md-6">
           <div class="box">
             <div class="img-box">
-              <img src="<?php echo $this->baseURL;?>images/b1.jpg" alt="">
+              <img src="<?php echo  $this->base_url; ?>images/b1.jpg" alt="">
             </div>
             <div class="detail-box">
               <h6 class="blog_date">
@@ -336,7 +336,7 @@
         <div class="col-md-6">
           <div class="box">
             <div class="img-box">
-              <img src="<?php echo $this->baseURL;?>images/b2.jpg" alt="">
+              <img src="<?php echo  $this->base_url; ?>images/b2.jpg" alt="">
             </div>
             <div class="detail-box">
               <h6 class="blog_date">
@@ -375,13 +375,13 @@
         <div id="carouselExample2Controls" class="carousel slide" data-ride="carousel">
           <ol class="carousel-indicators">
             <li data-target="#carouselExample2Controls" data-slide-to="0" class="active">
-              <img src="<?php echo $this->baseURL;?>images/c1.jpg" alt="">
+              <img src="<?php echo  $this->base_url; ?>images/c1.jpg" alt="">
             </li>
             <li data-target="#carouselExample2Controls" data-slide-to="1">
-              <img src="<?php echo $this->baseURL;?>images/c2.jpg" alt="">
+              <img src="<?php echo  $this->base_url; ?>images/c2.jpg" alt="">
             </li>
             <li data-target="#carouselExample2Controls" data-slide-to="2">
-              <img src="<?php echo $this->baseURL;?>images/c3.jpg" alt="">
+              <img src="<?php echo  $this->base_url; ?>images/c3.jpg" alt="">
             </li>
           </ol>
           <div class="carousel-inner">

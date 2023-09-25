@@ -11,23 +11,23 @@
   <meta name="keywords" content="" />
   <meta name="description" content="" />
   <meta name="author" content="" />
-  <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+  <link rel="shortcut icon" href="<?php echo  $this->base_url; ?>images/favicon.png" type="image/x-icon">
 
   <title>Elaxi</title>
 
   <!-- slider stylesheet -->
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css" />
+  <link rel="stylesheet" type="text/css" href="<?php echo  $this->base_url; ?>https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css" />
 
   <!-- bootstrap core css -->
-  <link rel="stylesheet" type="text/css" href="<?php echo $this->baseURL;?>css/bootstrap.css" />
+  <link rel="stylesheet" type="text/css" href="<?php echo  $this->base_url; ?>css/bootstrap.css" />
   <!-- font awesome style -->
-  <link href="<?php echo $this->baseURL;?>css/font-awesome.min.css" rel="stylesheet" />
+  <link href="<?php echo  $this->base_url; ?>css/font-awesome.min.css" rel="stylesheet" />
   <!-- fonts style -->
   <link href="https://fonts.googleapis.com/css?family=Dosis:500|Poppins:400,600,700&display=swap" rel="stylesheet">
   <!-- Custom styles for this template -->
-  <link href="<?php echo $this->baseURL;?>css/style.css" rel="stylesheet" />
+  <link href="<?php echo  $this->base_url; ?>css/style.css" rel="stylesheet" />
   <!-- responsive style -->
-  <link href="<?php echo $this->baseURL;?>css/responsive.css" rel="stylesheet" />
+  <link href="<?php echo  $this->base_url; ?>css/responsive.css" rel="stylesheet" />
 </head>
 
 <body>

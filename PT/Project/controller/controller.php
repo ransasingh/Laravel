@@ -1,32 +1,38 @@
 <?php
-class controller {
-    public $baseURL = "";
-    function __construct()
+class Controller
+{
+    public $base_url = "";
+    public function __construct()
     {
     
-        $this->baseURL= "http://localhost/Laravel/PT/Project/Assests/";
+        $this->base_url = "http://localhost/Laravel/PT/Project/Assests/";
     // echo "<pre>";
     // print_r($_SERVER);
     // echo "</pre>";
-    switch ($_SERVER['PATH_INFO']) {
-        case '/home':
-           include_once("views/header.php");
-           include_once("views/home.php");
-           include_once("views/footer.php");
-
-            break;
-        
+    if (isset($_SERVER['PATH_INFO'])) {
+        switch ($_SERVER['PATH_INFO']) {
+            case '/home':
+                include_once("Views/header.php");
+                include_once("Views/home.php");
+                include_once("Views/footer.php");
+                break;
         default:
             # code...
             break;
+    }
+}
+else {
+    header("location:home");
+}
     }
 }
 
 
 
 
-}
-$controller= new controller();
+
+
+$Controller = new Controller;
 
 
 

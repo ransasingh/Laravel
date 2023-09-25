@@ -10,9 +10,9 @@
   <!-- footer section -->
 
 
-  <script src="<?php echo $this->baseURL;?>js/jquery-3.4.1.min.js"></script>
-  <script src="<?php echo $this->baseURL;?>js/bootstrap.js"></script>
-  <script src="<?php echo $this->baseURL;?>js/custom.js"></script>
+  <script src="<?php echo  $this->base_url; ?>js/jquery-3.4.1.min.js"></script>
+  <script src="<?php echo  $this->base_url; ?>js/bootstrap.js"></script>
+  <script src="<?php echo  $this->base_url; ?>js/custom.js"></script>
 
 </body>
 
