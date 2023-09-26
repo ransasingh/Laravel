@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: sans-serif;
+        }
+
+        .row {
+            display: flex;
+        }
+
+        #container {
+            width: 900px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background-color: white;
+            padding: 15px;
+        }
+
+        .col {
+            flex: 1 0 0%;
+            margin: 50px 20px;
+        }
+
+
+        .underline-effect {
+            position: relative;
+        }
+        .underline-effect::before {
+            content: "";
+            position: absolute;
+            width: 0px;
+            left: 0;
+            bottom: 0;
+            height: 2px;
+            background-color: rgb(0, 255, 0);
+            transition: all 0.25s ease-out;
+            animation: effect 1s ease-in infinite;
+        }
+        @keyframes effect {
+            0%{  width: 0px;background-color: rgb(226, 213, 186); }
+            20%{ width: 10px; background-color: rgb(127, 162, 22);}
+            80%{width: 15px; background-color: rgb(85, 9, 28);}
+            100%{width: 20px;background-color: rgb(0, 149, 255);}
+        }
+       
+        .form-control{
+            border: 0;
+            border-bottom: 1px solid grey;
+            width: 80%;
+            padding: 5px 25px;
+            margin: 10px;
+        }
+        input:focus,input:focus-visible,input:focus-within{
+            /* border: 0 !important; */
+            outline: 0;
+            border-bottom: 2px solid rgb(33, 32, 32);
+
+        }
+        .icon{
+            position: absolute;
+            bottom: 15px;
+            left: 10px;
+        }
+        .posi-rele{
+            position: relative;
+        }
+    </style>
+</head>
+
+<body style="background-color: #4070f3;">
+
+    <div id="container">
+        <div class="row">
+            <div class="col">
+                <div class="card">
+
+                    <h3 class="underline-effect">Login</h3>
+                    <div class="inp posi-rele">
+                        <i class="fa-solid fa-envelope icon"></i>
+                        <input type="text" class="form-control" placeholder="Enter Your Email" name="" id="">
+                    </div>
+                    <div class="inp posi-rele">
+                        <i class="fa-solid fa-envelope icon"></i>
+                        <input type="text" class="form-control" placeholder="Enter Your Email" name="" id="">
+                    </div>
+                    <div class="inp posi-rele">
+                        <i class="fa-solid fa-envelope icon"></i>
+                        <input type="text" class="form-control" placeholder="Enter Your Email" name="" id="">
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <h3 class="underline-effect">Registration</h3>
+
+                    <div class="inp">
+                        <input type="text" class="form-control" name="" id="">
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

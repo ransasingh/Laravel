@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script>
+        function btnclick() {
+            console.log("onclick='btnclick()'");
+        }
+        document.getElementById("btneventlist").addEventListener("click",function () {
+            console.log("addEventListener");
+        })
+    </script> -->
+
+</head>
+<body>
+    
+
+    <h2>Event Handler Example</h2>
+    <p>&lt;input type="button" value="btn" name="inp2" onclick="" id="inp2"&gt;</p>
+    <input type="button" value="btn" name="inp2" onclick="btnclick()" id="inp2">
+    <h2>Event Listner Example</h2>
+    <p>&lt;input type="button" value="btn" name="inp2" id="inp2"&gt; </p>
+    <input type="button" value="btn" name="inp2" id="btneventlist">
+
+    
+    <script>
+        function btnclick() {
+            console.log("onclick='btnclick()'");
+        }
+        document.getElementById("btneventlist").addEventListener("click",function () {
+            console.log("addEventListener");
+        })
+    </script>
+
+</body>
+</html>
