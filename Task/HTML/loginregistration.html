@@ -15,6 +15,8 @@
 
         body {
             font-family: sans-serif;
+            background-color: #4070f3;
+
         }
 
         .row {
@@ -79,10 +81,13 @@
         .posi-rele{
             position: relative;
         }
+        {
+
+        }
     </style>
 </head>
 
-<body style="background-color: #4070f3;">
+<body >
 
     <div id="container">
         <div class="row">
@@ -92,26 +97,72 @@
                     <h3 class="underline-effect">Login</h3>
                     <div class="inp posi-rele">
                         <i class="fa-solid fa-envelope icon"></i>
-                        <input type="text" class="form-control" placeholder="Enter Your Email" name="" id="">
+                        <input type="email" class="form-control" placeholder="Enter Your Email" name="email" id="">
                     </div>
                     <div class="inp posi-rele">
-                        <i class="fa-solid fa-envelope icon"></i>
-                        <input type="text" class="form-control" placeholder="Enter Your Email" name="" id="">
+                        <i class="fa fa-lock icon"></i>
+                        <input type="password" class="form-control" placeholder="confirm a password" name="password" id="">
+                   
                     </div>
-                    <div class="inp posi-rele">
-                        <i class="fa-solid fa-envelope icon"></i>
-                        <input type="text" class="form-control" placeholder="Enter Your Email" name="" id="">
+                    <div class="input-group-text">
+                        <input type="checkbox" aria-label="Checkbox for following text input">
+                        <label for="Remember me">&nbsp Remember me</label>
+                      <a href="#" class="link-primary"  >Forgot password</a>
+                      </div>
+                   
+                    <div >
+                        
+                        <input type="submit" class="form-control"  name="Login" id="Login" value="Login now">
+                  
                     </div>
+                    <div>
+                        don't have an account?<a href="#" class="link-primary">Signup now</a>
+                       
+                       </div>
+                  
+                   
+                    
                 </div>
             </div>
             <div class="col">
                 <div class="card">
                     <h3 class="underline-effect">Registration</h3>
 
-                    <div class="inp">
-                        <input type="text" class="form-control" name="" id="">
-                       
+                    <div class="inp posi-rele">
+                        <i class="fa-solid fa-user icon"></i>
+                        <input type="text" class="form-control" placeholder="Enter Your name" name="name" id="">
                     </div>
+
+                    <div class="inp posi-rele">
+                        <i class="fa-solid fa-envelope icon"></i>
+                        <input type="email" class="form-control" placeholder="Enter Your Email" name="email" id="">
+                    </div>
+
+                    <div class="inp posi-rele">
+                        <i class="fa fa-lock icon"></i>
+                        <input type="password" class="form-control" placeholder="create a password" name="password" id="">
+                    </div>
+                    <div class="inp posi-rele">
+                        <i class="fa fa-lock icon"></i>
+                        <input type="password" class="form-control" placeholder="confirm a password" name="cpassword" id="">
+                    </div>
+                    <div class="input-group-text">
+                        <input type="checkbox" aria-label="Checkbox for following text input">
+                        <label for="Remember me">&nbsp I accept all terms & condition</label>
+                      </div>
+                    <div >
+                        
+                        <input type="submit" class="form-control"  name="Register" id="Register" value="Register now">
+                  
+                    </div>
+                   <div>
+                    Already have an account?<a href="#" class="link-primary">Login now</a>
+                   
+                   </div>
+                
+
+                 
+                    
                 </div>
             </div>
         </div>
