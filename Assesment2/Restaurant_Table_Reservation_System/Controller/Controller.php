@@ -66,6 +66,16 @@ class Controller extends Model
                     // include_once("Views/footer.php");
 
                     break;
+                case '/bookdata':
+                    $bookdata = $this->Select("booking");
+                    // echo "<pre>";
+                    // print_r($bookdata['Data']);
+                    // echo "</pre>";
+                    // include_once("Views/admin/adminheader.php");
+                    include_once("Views/admin/bookdata.php");
+                    // include_once("Views/footer.php");
+
+                    break;
                 case '/customer':
                     include_once("Views/customer/customerheader.php");
                     include_once("Views/home.php");
@@ -94,7 +104,7 @@ class Controller extends Model
                         }
 
                     }
-                    exit;
+                    // exit;
                     break;
                 case '/about':
                     include_once("Views/header.php");

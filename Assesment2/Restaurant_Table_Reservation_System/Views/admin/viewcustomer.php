@@ -40,8 +40,8 @@
                         <td><?php echo $value->email; ?></td>
                         <td><?php echo $value->phone; ?></td>
                         <td>
-                            <a class="text-light" href="editcustomer?id=<?php echo $value->id; ?>">Edit</a>
-                           &nbsp; <a class="text-light" href="deletecustomer?id=<?php echo $value->id; ?>">Delete</a>
+                            <a class="text-dark" href="editcustomer?id=<?php echo $value->id; ?>">Edit</a>
+                           &nbsp; <a class="text-dark" href="deletecustomer?id=<?php echo $value->id; ?>">Delete</a>
                         </td>
                     </tr>
 

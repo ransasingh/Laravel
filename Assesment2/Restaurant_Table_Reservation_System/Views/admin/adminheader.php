@@ -16,7 +16,7 @@ if(!isset($_SESSION["UserData"])){
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Restaurantly Bootstrap Template - Index</title>
+  <title>Restaurantly </title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -79,7 +79,7 @@ if(!isset($_SESSION["UserData"])){
         <ul>
           <li><a class="nav-link scrollto active" href="admin">Home</a></li>
           <li><a class="nav-link scrollto" href="viewcustomer">View All Customer</a></li>
-          <li><a class="nav-link scrollto" href="#">Table Book Data</a></li>
+          <li><a class="nav-link scrollto" href="bookdata">Table Book Data</a></li>
           <!-- <li><a class="nav-link scrollto" href="#menu">Menu</a></li>
           <li><a class="nav-link scrollto" href="#specials">Specials</a></li>
           <li><a class="nav-link scrollto" href="#events">Events</a></li>
