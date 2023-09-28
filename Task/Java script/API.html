@@ -15,17 +15,17 @@
         fetch("https://jayramin.000webhostapp.com/allusers").then((res)=>res.json()).then((result)=>{
             
             console.log(result.Data);
-            // HTMLData = ''
-            // result.Data.forEach(element => {
-            //     // console.log(element);
-            //     HTMLData += '<li>'+element.username+'</li>'
-            // });
+            HTMLData = ''
+            result.Data.forEach(element => {
+                // console.log(element);
+                HTMLData += '<li>'+element.username+'</li>'
+            });
             console.log(result);
             document.getElementById("list").innerHTML=HTMLData
         })
-    // // fetch("'https://fakestoreapi.com/products/1'").then(response => response.json())
-    // //   .then(json => console.log(json))
-    // //   console.log(response);
+    // fetch("'https://fakestoreapi.com/products/1'").then(response => response.json())
+    //   .then(json => console.log(json))
+    //   console.log(response);
     // fetch('https://fakestoreapi.com/products/1')
     //         .then(res=>res.json())
     //         .then(json=>console.log(json))
