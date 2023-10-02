@@ -12,8 +12,16 @@ class model{
         //     }
         // }
     }
-    function select($tbl){
+    function select($tbl,$where=""){
          $SQL= "select * from $tbl";
+         if ($where!="") {
+            $SQL.=" where ";
+            foreach ($where as $key => $value) {
+                $SQL.= " $key='$value' AND";
+            }
+            $SQL= rtrim($SQL,"AND");
+         }
+        //  echo $SQL;
         $SQLEx = $this->connection->query($SQL);
         // print_r($SQLEx);
         if ($SQLEx->num_rows>0) {

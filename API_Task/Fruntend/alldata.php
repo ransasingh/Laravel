@@ -28,9 +28,9 @@
     <script>
         async function getdata() {
             const response = await fetch("http://localhost/Laravel/API_Task/Backend/data");
-            console.log(response)
+            // console.log(response)
             const data = await response.json();
-            console.log(data.Data);
+            // console.log(data.Data);
             let Htmllist =""
             data.Data.forEach(element => {
                 console.log(element);
