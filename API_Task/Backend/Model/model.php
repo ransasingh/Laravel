@@ -64,4 +64,34 @@ class model{
                 }
                 return $Res;
             }
+            function update( $tbl,$data,$where){
+                $SQL = "update $tbl set ";
+                // echo $SQL;
+                exit;
+
+                foreach ($data as $key => $value) {
+                    $SQL .= "$key = '$value' ,";
+                    $SQL = rtrim($SQL, ",");
+                $SQL .= " WHERE";
+                foreach ($where as $key => $value) {
+                    $SQL .= " $key = '$value ' AND";
+                }
+                $SQL = rtrim($SQL, "AND");
+                // echo $SQL;
+                // exit;
+                $sqlex = $this->connection->query($SQL);
+                // print_r($sqlex);
+                // exit;
+                if ($sqlex > 0) {
+                    $ResponceData['Data'] = "1";
+                    $ResponceData['Msg'] = "Success";
+                    $ResponceData['Code'] = "1";
+                } else {
+                    $ResponceData['Data'] = "0";
+                    $ResponceData['Msg'] = "Try Again";
+                    $ResponceData['Code'] = "0";
+                }
+                return $ResponceData;
+                }
+            }
 }

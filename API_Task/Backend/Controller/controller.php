@@ -42,10 +42,15 @@ class controller extends model
          
           echo json_encode($InsertRes);
 
-
+          break;
+        case '/showall':
+          
+          $showall = $this->select('todo');
+         
+          echo json_encode($showall);
 
           break;
-
+          
         default:
           # code...
           break;

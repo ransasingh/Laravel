@@ -34,27 +34,36 @@
 
         </table>
     </form>
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-  
+    <hr>
+    <div class="table-responsive-sm">
+        <table class="table table-striped">
+            <thead>
+                <td>Title</td>
+                <td>Status</td>
+                <td>Action</td>
+            </thead>
+            <tbody id="showall"></tbody>
+        </table>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
-    <script>
-        // document.getElementById('todo').addEventListener('submit', function(event) {
-        // console.log("Called");
-        // //    alert("add");
-        $("#todo").on("submit", function(event) {
+
+        <script>
+            // document.getElementById('todo').addEventListener('submit', function(event) {
+            // console.log("Called");
+            // //    alert("add");
+            $("#todo").on("submit", function(event) {
                 event.preventDefault();
                 // let FormData = $('#todo').serialize()
                 // let FormData = $('#todo').serializeArray()
                 //  console.log(FormData);
-      
+
                 tododata = {}
-               
-            $.each($('#todo').serializeArray(), function() {
-                tododata[this.name] = this.value;
-            })
-        console.log(tododata);
-        fetch("http://localhost/Laravel/API_Task/Backend/Todoadd",
-        {
+
+                $.each($('#todo').serializeArray(), function() {
+                    tododata[this.name] = this.value;
+                })
+                console.log(tododata);
+                fetch("http://localhost/Laravel/API_Task/Backend/Todoadd", {
                     headers: {
                         'Accept': 'application/json',
                         'Content-Type': 'application/json'
@@ -62,11 +71,32 @@
                     method: "POST",
                     body: JSON.stringify(tododata)
                 }).then((res) => res.json()).then((Response => {
-                    console.log(Response);
-                }
-        ))
-    })
-    </script>
+                    // console.log(Response);
+                    showall();
+
+                }))
+            })
+            async function showall() {
+                const response = await fetch("http://localhost/Laravel/API_Task/Backend/showall");
+                // console.log(response)
+                const data = await response.json();
+                // console.log(data.Data);
+                let Htmllist = ""
+                data.Data.forEach(element => {
+                    console.log(element);
+                    Htmllist += `<tr><td>${element.Title}</td>
+                <td>${element.Status}</td>
+                <td>
+                <button type="button"  class="btn btn-link">Edit</button>
+                <button type="button" class="btn btn-link">Delete</button>                 
+                </td>              
+                </tr>`
+                });
+                document.getElementById("showall").innerHTML = Htmllist
+
+            }
+            showall();
+        </script>
 
 
 </body>
