@@ -22,7 +22,7 @@ class controller extends model
           echo json_encode($checkdatabyemail);
           break;
         case '/checkpostmethod':
-      
+
           // echo "<pre>";
           // print_r($_REQUEST);
           // $data = json_decode(file_get_contents('php://input'));
@@ -33,7 +33,17 @@ class controller extends model
           // var_dump($data);
           // echo json_encode(["data"=>"checking"]);
           echo json_encode($data);
-        
+
+          break;
+        case '/Todoadd':
+          $data = json_decode(file_get_contents('php://input'), true);
+          // print_r($data);
+          $InsertRes = $this->insert('todo',$data);
+         
+          echo json_encode($InsertRes);
+
+
+
           break;
 
         default:
