@@ -1,0 +1,38 @@
+{
+  "menu": [
+    {
+      "url": "/",
+      "name": "Dashboard",
+      "icon": "menu-icon tf-icons bx bx-home-circle",
+      "slug": "dashboard-analytics"
+    },
+    {
+      "name": "Users",
+      "icon": "menu-icon tf-icons bx bx-layout",
+      "slug": "Users",
+      "submenu": [
+       
+       
+        {
+          "url": "/Allusers",
+          "name": "Allusers",
+          "slug": "Allusers"
+        }
+        
+        
+      ]
+    }
+    
+    
+        
+       
+   
+      
+        
+       
+    
+   
+    
+    
+  ]
+}
