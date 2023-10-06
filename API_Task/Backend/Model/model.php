@@ -40,12 +40,11 @@ class model{
         return  $Res;
      
     }
+
+    // insert query
     function insert($tbl, $data)
             {
-                // echo "<pre>";
-                // print_r($data);
-                // $clm= array_keys( $data);
-                // print_r($clm);
+
                 $clm = implode(",", array_keys($data));
                 $vals = implode("','", $data);
 
@@ -64,34 +63,65 @@ class model{
                 }
                 return $Res;
             }
+
+    // update quyery        
             function update( $tbl,$data,$where){
+
+                
                 $SQL = "update $tbl set ";
-                // echo $SQL;
-                exit;
+              
 
                 foreach ($data as $key => $value) {
                     $SQL .= "$key = '$value' ,";
+                    }
+
                     $SQL = rtrim($SQL, ",");
-                $SQL .= " WHERE";
+                   $SQL .= " WHERE";
                 foreach ($where as $key => $value) {
                     $SQL .= " $key = '$value ' AND";
                 }
+
                 $SQL = rtrim($SQL, "AND");
-                // echo $SQL;
-                // exit;
+                
                 $sqlex = $this->connection->query($SQL);
                 // print_r($sqlex);
                 // exit;
-                if ($sqlex > 0) {
+                    if ($sqlex > 0) {
+                        $ResponceData['Data'] = "1";
+                        $ResponceData['Msg'] = "Success";
+                        $ResponceData['Code'] = "1";
+                    } else {
+                        $ResponceData['Data'] = "0";
+                        $ResponceData['Msg'] = "Try Again";
+                        $ResponceData['Code'] = "0";
+                    }
+                return $ResponceData;
+                
+            }
+            function delete($tbl, $where)
+            {
+                $SQL = " DELETE FROM $tbl WHERE";
+                foreach ($where as $key => $value) {
+                    $SQL .= " $key = '$value' AND";
+                }
+                $SQL = rtrim($SQL, "AND");
+                // echo $SQL;
+                $SQLEx = $this->connection->query($SQL);
+                // print_r($SQLEx);
+                if ($SQLEx > 0) {
                     $ResponceData['Data'] = "1";
                     $ResponceData['Msg'] = "Success";
+
                     $ResponceData['Code'] = "1";
                 } else {
                     $ResponceData['Data'] = "0";
-                    $ResponceData['Msg'] = "Try Again";
+                    $ResponceData['Msg'] = "Try Agian";
                     $ResponceData['Code'] = "0";
                 }
                 return $ResponceData;
-                }
+            }
+
+            function q($s){
+                $this->connection->query($s);
             }
 }

@@ -16,19 +16,19 @@
             <tr>
                 <td><label for="Title" class="form-control">Title</label></td>
 
-                <td><input type="text" id="	Title" name="Title"></td>
+                <td><input type="text" id="Title" name="Title"></td>
             </tr>
-            <td><label for="status" class="form-control">status</label></td>
+            <td><label for="Status" class="form-control">status</label></td>
             <td>
                 <select name="Status" id="Status">
-                    <option value="select">--select--</option>
+                    <option  selected>--select--</option>
                     <option value="Pending">Pending</option>
                     <option value="Active">Active</option>
                     <option value="Complete">Complete</option>
                 </select>
             </td>
             <tr>
-                <td><input type="submit" id="addtodo" name="addtodo" value="Add"></td>
+                <td><input type="submit" id="addtodo" name="addtodo" value="Add" class="btn btn-success"></td>
             </tr>
 
 
@@ -38,6 +38,8 @@
     <div class="table-responsive-sm">
         <table class="table table-striped">
             <thead>
+
+                <td>Sno</td>
                 <td>Title</td>
                 <td>Status</td>
                 <td>Action</td>
@@ -75,27 +77,77 @@
                     showall();
 
                 }))
-            })
+            });
             async function showall() {
                 const response = await fetch("http://localhost/Laravel/API_Task/Backend/showall");
                 // console.log(response)
                 const data = await response.json();
                 // console.log(data.Data);
                 let Htmllist = ""
+                i = 1
                 data.Data.forEach(element => {
-                    console.log(element);
-                    Htmllist += `<tr><td>${element.Title}</td>
+                  //  console.log(element);
+                    Htmllist += `<tr><td>${i}</td><td>${element.Title}</td>
                 <td>${element.Status}</td>
                 <td>
-                <button type="button"  class="btn btn-link">Edit</button>
-                <button type="button" class="btn btn-link">Delete</button>                 
+                <button onclick ="edittodo(${element.id})">Edit</button>
+                <button onclick ="deletebytodo(${element.id})">Delete</button>      
                 </td>              
                 </tr>`
+                    i++
                 });
                 document.getElementById("showall").innerHTML = Htmllist
 
             }
             showall();
+
+            async function edittodo(id) {
+                let Selecttodo = await fetch(`http://localhost/Laravel/API_Task/backend/selecttodo?id=${id}`)
+                // console.log(Selecttodo);
+                let SelecttodoRes = await Selecttodo.json()
+                console.log(SelecttodoRes.Data[0]);
+                console.log(document.getElementById("Status").value);
+
+
+                document.getElementById("Title").value = SelecttodoRes.Data[0].Title
+                document.getElementById("Status").value = SelecttodoRes.Data[0].Status
+                document.getElementById('addtodo').setAttribute('onclick', `showHide(${SelecttodoRes.Data[0].id})`);
+                document.getElementById('addtodo').value = "Update";
+                document.getElementById("todo").id = "update";
+                // document.getElementById("addtodo").type = "click";
+
+
+            };
+
+            async function showHide(id) {
+
+                document.getElementById("update").addEventListener("submit", function(e) {
+                    e.preventDefault();
+                    // console.log("calll", id);\
+                    updatedata = {}
+
+                    $.each($('#update').serializeArray(), function() {
+                        updatedata[this.name] = this.value;
+                    })
+                    console.log(updatedata);
+                    console.log(id)
+                    //return false;
+                    //delete(updatedata['addtodo']);
+                    fetch(`http://localhost/Laravel/API_Task/backend/updatetodo?id=${id}`, {
+                        headers: {
+                            'Accept': 'application/json',
+                            'Content-Type': 'application/json'
+                        },
+                        method: "PUT",
+                        body: JSON.stringify(updatedata)
+
+                    }).then((res) => res.json()).then((result) => {
+                        console.log(result);
+                        showall();
+                    })
+
+                })
+            }
         </script>
 
 

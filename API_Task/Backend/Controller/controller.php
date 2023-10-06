@@ -38,19 +38,42 @@ class controller extends model
         case '/Todoadd':
           $data = json_decode(file_get_contents('php://input'), true);
           // print_r($data);
-          $InsertRes = $this->insert('todo',$data);
-         
+          $InsertRes = $this->insert('todo', $data);
+
           echo json_encode($InsertRes);
 
           break;
         case '/showall':
-          
+
           $showall = $this->select('todo');
-         
+
           echo json_encode($showall);
 
           break;
-          
+        case '/Delete':
+            // print_r($_SERVER['REQUEST_METHOD']);
+          $data = $this->delete('todo', array("id" => $_REQUEST['id']));
+          // print_r($data);
+
+          echo json_encode($data);
+
+          break;
+        case '/selecttodo':
+          $Selectbyid = $this->select('todo',array("id"=>$_GET['id']));
+          // print_r(  $Selectbyid);
+          echo json_encode($Selectbyid);
+
+          break;
+        case '/updatetodo':
+          $data = json_decode(file_get_contents('php://input'), true);
+          //print_r($data); 
+          //exit;
+          $updatebyid = $this->update('todo',$data,array("id"=>$_GET['id']));
+          // print_r( $updatebyid);
+          echo json_encode($updatebyid);
+
+          break;
+
         default:
           # code...
           break;
