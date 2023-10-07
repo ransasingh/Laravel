@@ -21,12 +21,18 @@
             <td><label for="Status" class="form-control">status</label></td>
             <td>
                 <select name="Status" id="Status">
-                    <option  selected>--select--</option>
+                    <option selected>--select--</option>
                     <option value="Pending">Pending</option>
                     <option value="Active">Active</option>
                     <option value="Complete">Complete</option>
                 </select>
             </td>
+            <tr>
+                <td>
+                    <input type="file" name="image" type="image">
+                    <button type="button" onclick="SaveimageFile()">Upload</button>
+                </td>
+            </tr>
             <tr>
                 <td><input type="submit" id="addtodo" name="addtodo" value="Add" class="btn btn-success"></td>
             </tr>
@@ -42,6 +48,7 @@
                 <td>Sno</td>
                 <td>Title</td>
                 <td>Status</td>
+                
                 <td>Action</td>
             </thead>
             <tbody id="showall"></tbody>
@@ -86,12 +93,12 @@
                 let Htmllist = ""
                 i = 1
                 data.Data.forEach(element => {
-                  //  console.log(element);
+                    //  console.log(element);
                     Htmllist += `<tr><td>${i}</td><td>${element.Title}</td>
                 <td>${element.Status}</td>
                 <td>
                 <button onclick ="edittodo(${element.id})">Edit</button>
-                <button onclick ="deletebytodo(${element.id})">Delete</button>      
+                <button onclick ="deletetodo(${element.id})">Delete</button>      
                 </td>              
                 </tr>`
                     i++
@@ -147,6 +154,45 @@
                     })
 
                 })
+
+            }
+
+            function deletetodo(id) {
+                fetch(`http://localhost/Laravel/API_Task/backend/Delete?id=${id}`, {
+                        headers: {
+                            'Accept': 'application/json',
+                            'Content-Type': 'application/json'
+                        },
+                        method: "DELETE",
+                        // body: JSON.stringify(FormData)
+                    })
+                    .then((res) => res.json()).then((result) => {
+                        // .then(function (res) { return res.json() }).then((result)=>{
+                        console.log("result", result);
+                        showall()
+                    })
+
+            }
+
+            function SaveimageFile() {
+                const form_data = new FormData();
+
+            form_data.append('sample_image', $("#image")[0].files[0]);
+
+            fetch("http://localhost/Laravel/API_Task/backend/uploadimage", {
+                method: "POST",
+                body: form_data
+            }).then(function(response) {
+                return response.json();
+            }).then(function(responseData) {
+
+                document.getElementById('uploaded_image').innerHTML = '<div class="alert alert-success">Image Uploaded Successfully</div> <img src="' + responseData.image_source + '" class="img-thumbnail" />';
+
+                document.getElementsByName('sample_image')[0].value = '';
+                // console.log(document.getElementById('uploaded_image'));
+              exit;
+
+            });
             }
         </script>
 

@@ -51,7 +51,7 @@ class controller extends model
 
           break;
         case '/Delete':
-            // print_r($_SERVER['REQUEST_METHOD']);
+          // print_r($_SERVER['REQUEST_METHOD']);
           $data = $this->delete('todo', array("id" => $_REQUEST['id']));
           // print_r($data);
 
@@ -59,7 +59,7 @@ class controller extends model
 
           break;
         case '/selecttodo':
-          $Selectbyid = $this->select('todo',array("id"=>$_GET['id']));
+          $Selectbyid = $this->select('todo', array("id" => $_GET['id']));
           // print_r(  $Selectbyid);
           echo json_encode($Selectbyid);
 
@@ -68,9 +68,23 @@ class controller extends model
           $data = json_decode(file_get_contents('php://input'), true);
           //print_r($data); 
           //exit;
-          $updatebyid = $this->update('todo',$data,array("id"=>$_GET['id']));
+          $updatebyid = $this->update('todo', $data, array("id" => $_GET['id']));
           // print_r( $updatebyid);
           echo json_encode($updatebyid);
+
+          break;
+        case '/uploadimage':
+          echo "<pre>";
+          print_r($_REQUEST);
+          print_r($_FILES);
+          exit;
+          if (isset($_FILES['sample_image'])) {
+            $extension = pathinfo($_FILES['sample_image']['name'], PATHINFO_EXTENSION);
+            $new_name = time() . '.' . $extension;
+            move_uploaded_file($_FILES['sample_image']['tmp_name'], 'Uploads/' . $new_name);
+            $data = array('image_source' => 'Uploads/' . $new_name);
+            echo json_encode($data);
+          }
 
           break;
 

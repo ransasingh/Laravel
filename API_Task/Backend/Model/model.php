@@ -119,9 +119,11 @@ class model{
                     $ResponceData['Code'] = "0";
                 }
                 return $ResponceData;
+                // print_r($ResponceData['Data'] );
+                // exit;
             }
 
-            function q($s){
-                $this->connection->query($s);
-            }
+            // function q($s){
+            //     $this->connection->query($s);
+            // }
 }
