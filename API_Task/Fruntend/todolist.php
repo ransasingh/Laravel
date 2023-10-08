@@ -29,8 +29,9 @@
             </td>
             <tr>
                 <td>
-                    <input type="file" name="image" type="image">
+                    <input type="file" name="image" id="image">
                     <button type="button" onclick="SaveimageFile()">Upload</button>
+                    <img src="" width="50" id="preview" alt="">
                 </td>
             </tr>
             <tr>
@@ -48,7 +49,9 @@
                 <td>Sno</td>
                 <td>Title</td>
                 <td>Status</td>
-                
+                <td>profile_pic</td>
+
+
                 <td>Action</td>
             </thead>
             <tbody id="showall"></tbody>
@@ -95,7 +98,7 @@
                 data.Data.forEach(element => {
                     //  console.log(element);
                     Htmllist += `<tr><td>${i}</td><td>${element.Title}</td>
-                <td>${element.Status}</td>
+                <td>${element.Status}</td><td>${element.profile_pic}</td>
                 <td>
                 <button onclick ="edittodo(${element.id})">Edit</button>
                 <button onclick ="deletetodo(${element.id})">Delete</button>      
@@ -173,27 +176,22 @@
                     })
 
             }
+            let imgInp = document.getElementById('image')
+            let ImgPrev = document.getElementById('preview')
+
+            imgInp.onchange = evt => {
+                const [file] = imgInp.files
+                if (file) {
+                    ImgPrev.src = URL.createObjectURL(file)
+                }
+            }
+
 
             function SaveimageFile() {
-                const form_data = new FormData();
 
-            form_data.append('sample_image', $("#image")[0].files[0]);
-
-            fetch("http://localhost/Laravel/API_Task/backend/uploadimage", {
-                method: "POST",
-                body: form_data
-            }).then(function(response) {
-                return response.json();
-            }).then(function(responseData) {
-
-                document.getElementById('uploaded_image').innerHTML = '<div class="alert alert-success">Image Uploaded Successfully</div> <img src="' + responseData.image_source + '" class="img-thumbnail" />';
-
-                document.getElementsByName('sample_image')[0].value = '';
-                // console.log(document.getElementById('uploaded_image'));
-              exit;
-
-            });
-            }
+          
+                
+                    }
         </script>
 
 
