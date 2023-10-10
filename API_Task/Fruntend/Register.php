@@ -16,7 +16,7 @@
         <div class="text-center">
             <h2><b>Registration Form</b></h2>
         </div>
-        <form method="post" class="row g-2">
+        <form method="post" class="row g-2" id="formdata">
             <div class="col-md-6 offset-3">
                 <label for="fullname" class="form-label">Full name</label>
                 <input type="text" class="form-control" name="fullname" id="fullname" required>
@@ -55,14 +55,14 @@
             <div class="row mt-3">
                 <div class="col-md-6 offset-3">
                     <label for="Country">Country</label>
-                    <select name="Country" id="Country" class="form-control">
+                    <select name="Country" id="Country" onchange="statebycountry(this)" class="form-control">
                         <option value="">--Select--</option>
 
                     </select>
                 </div>
                 <div class="col-md-6 offset-3">
                     <label for="State">State</label>
-                    <select name="State" id="State" class="form-control">
+                    <select name="State" id="State" onchange="citybystateid(this)" class="form-control">
                         <option value="">--Select--</option>
 
                     </select>
@@ -84,6 +84,90 @@
 
             </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+    <script>
+        $("#formdata").on("submit", function(e) {
+            e.preventDefault();
+            var result = {};
+            $.each($('#formdata').serializeArray(), function() {
+                result[this.name] = this.value;
+            });
+            console.log(result);
+            var hobbylist = "";
+            $('input[type=checkbox]').each(function() {
+                if (this.checked) {
+                    hobbylist += $(this).val() + ",";
+                }
+
+            });
+            hobbylist = hobbylist.substring(0, (hobbylist.length - 1));
+            // console.log(hobbylist);
+            result['hobby'] = hobbylist
+            delete result['Hobby[]']
+            delete result['Country']
+            delete result['State']
+            fetch(`http://localhost/laravel/API_Task/Backend/registerfetch`, {
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                method: "POST",
+                body: JSON.stringify(result)
+            }).then((res) => res.json()).then((Response) => {
+                // console.log(Response);
+                window.location.href = 'login.php';
+            })
+        })
+
+
+
+
+        // Country Fetch Start
+        fetch(`http://localhost/Laravel/API_Task/Backend/allcountries`).then((res) => res.json()).then(Response => {
+            // console.log(Response.Data);
+            let htmlres = "<option value=''>select country</option>";
+            Response.Data.map((data) => {
+                // console.log(data);
+                htmlres += `<option value='${data.country_id}'>${data.country_name}</option>`
+            })
+            document.getElementById("Country").innerHTML = htmlres
+
+
+        })
+        // Country Fetch End
+        // States Fetch Start
+        function statebycountry(e) {
+            fetch(`http://localhost/laravel/API_Task/Backend/allstate?country_id=${e.value}`).then((res) => res.json()).then((Response) => {
+                // console.log(Response.Data);
+                let htmlres = "<option value=''>select state</option>";
+                Response.Data.map((data) => {
+                    // console.log(data);
+                    htmlres += `<option value='${data.sid }'>${data.name}</option>`
+                })
+                document.getElementById("State").innerHTML = htmlres
+
+            })
+        }
+        // States Fetch End
+
+        // Cities Fetch Start
+
+        function citybystateid(e) {
+            // console.log(e)
+            fetch(`http://localhost/Laravel/API_Task/Backend/allcity?state_id=${e.value}`).then((res) => res.json()).then((Response) => {
+                // console.log(Response.Data);
+                let htmlres = "<option value=''>select state</option>";
+                Response.Data.map((data) => {
+                    // console.log(data);
+                    htmlres += `<option value='${data.cid }'>${data.name}</option>`
+                })
+                document.getElementById("City").innerHTML = htmlres
+
+            })
+        }
+        // Cities Fetch End
+    </script>
 </body>
 
 </html>

@@ -73,11 +73,39 @@ class controller extends model
           echo json_encode($updatebyid);
 
           break;
+        case '/allcountries':
+          
+          $allcountrybyid = $this->select('country');
+
+          echo json_encode($allcountrybyid);
+
+          break;
+        case '/allstate':
+          
+          $Allstatesbycountry = $this->Select(" states",array("country_id"=>$_REQUEST['country_id']));
+          echo json_encode($Allstatesbycountry);                  
+          break;
+
+          
+        case '/allcity':
+          $Allcities = $this->Select("cities",array("state_id"=>$_REQUEST['state_id']));
+          echo json_encode($Allcities);                  
+          break;
+
+          case '/registerfetch':
+            $data = json_decode(file_get_contents("php://input"),true); 
+            $registerbyfetchmethod = $this->insert(" users",$data); 
+            echo json_encode($registerbyfetchmethod);        
+            break;
+          case '/Login':
+                  
+            break;
+
         case '/uploadimage':
-          echo "<pre>";
-          print_r($_REQUEST);
-          print_r($_FILES);
-          exit;
+          // echo "<pre>";
+          // print_r($_REQUEST);
+          // print_r($_FILES);
+          // exit;
           if (isset($_FILES['sample_image'])) {
             $extension = pathinfo($_FILES['sample_image']['name'], PATHINFO_EXTENSION);
             $new_name = time() . '.' . $extension;

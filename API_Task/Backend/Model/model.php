@@ -12,6 +12,7 @@ class model{
         //     }
         // }
     }
+    //select query
     function select($tbl,$where=""){
          $SQL= "select * from $tbl";
          if ($where!="") {
