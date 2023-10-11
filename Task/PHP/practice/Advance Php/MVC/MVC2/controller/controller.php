@@ -76,7 +76,7 @@ class controller extends model
                         // print_r($_POST);
                         // echo "</pre>";
                         $data = array_merge($_POST, array("Hobby" => $hobbydata));
-                        $insertres = $this->register('studentdata', $data);
+                        $insertres = $this->register('users', $data);
                         // echo "<pre>";
                         // print_r( $insertres);
                         // echo "</pre>";
