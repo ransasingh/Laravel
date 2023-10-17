@@ -89,11 +89,11 @@
     <script>
         $("#formdata").on("submit", function(e) {
             e.preventDefault();
-            var result = {};
+            
+            console.log(result);var result = {};
             $.each($('#formdata').serializeArray(), function() {
                 result[this.name] = this.value;
             });
-            console.log(result);
             var hobbylist = "";
             $('input[type=checkbox]').each(function() {
                 if (this.checked) {

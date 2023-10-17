@@ -7,11 +7,15 @@ class controller extends model
 
     function __construct()
     {
-        ob_start();
+        // ob_start();
         parent::__construct();
         if (isset($_SERVER['PATH_INFO'])) {
             switch ($_SERVER['PATH_INFO']) {
-                case '/home':
+                case '/register':
+                    $data = json_decode(file_get_contents("php://input"),true); 
+                    $registerfetch = $this->insert("users",$data); 
+                    print_r( $registerfetch);
+                    echo json_encode($registerfetch);  
                  
 
                     break;
@@ -21,7 +25,7 @@ class controller extends model
                     break;
             }
         }
-        ob_flush();
+        // ob_flush();
     }
 }
 $controller = new controller();

@@ -9,9 +9,10 @@
 
 
 </head>
+<body>
 <div class="text-right">
 
-    <body>
+  
 
 
         <div class="container mt-3 p-3 mb-2 bg-blue text-black">
@@ -20,7 +21,7 @@
 
                 <h2><b>Registration</b></h2>
             </div>
-            <form method="post" class="row g-2">
+            <form method="post" id="formdata" class="row g-2">
                 <div class="col-md-6 offset-3">
                     <label for="fullname" class="form-label">Full name</label>
                     <input type="text" class="form-control" name="fullname" id="fullname">
@@ -58,7 +59,7 @@
 
                 </div>
                 <div class="col-md-6 offset-3">
-                    <button type="Submit" name="register" id="register" class="btn btn-primary">Regisrer</button>
+                    <button type="submit" name="register" id="register" class="btn btn-primary">Regisrer</button>
                     <button type="reset" name="cancel" id="cancel" class="btn btn-danger">Cancel</button>
 
                 </div>
@@ -73,3 +74,43 @@
             </form>
 
         </div>
+        
+</div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+<script>
+   $("#formdata").on("submit", function(e) {
+            e.preventDefault();
+        // console.log(e.target);
+        var result = {};
+            $.each($('#formdata').serializeArray(), function() {
+                console.log(this);
+                result[this.name] = this.value;
+
+                
+
+                
+            });
+            // console.log(result);
+            hobbylist="";
+            $('input[type=checkbox]').each(function() {
+                if (this.checked) {
+                    hobbylist += $(this).val() + ",";
+                }
+                //  console.log(hobbylist);
+
+            });
+
+            hobbylist = hobbylist.substring(0, (hobbylist.length - 1));
+            console.log(hobbylist);
+            result['hobby'] = hobbylist
+           
+        
+
+
+    })
+    
+
+</script>
+</body>
+</html>
