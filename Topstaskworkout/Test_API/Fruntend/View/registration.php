@@ -4,15 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Registration</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 
 
 </head>
-<body>
-<div class="text-right">
 
-  
+<body>
+    <div class="text-right">
+
+
 
 
         <div class="container mt-3 p-3 mb-2 bg-blue text-black">
@@ -74,25 +75,25 @@
             </form>
 
         </div>
-        
-</div>
-<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
-<script>
-   $("#formdata").on("submit", function(e) {
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+    <script>
+        $("#formdata").on("submit", function(e) {
             e.preventDefault();
-        // console.log(e.target);
-        var result = {};
+            // console.log(e.target);
+            var result = {};
             $.each($('#formdata').serializeArray(), function() {
-                console.log(this);
+                // console.log(this);
                 result[this.name] = this.value;
 
-                
 
-                
+
+
             });
             // console.log(result);
-            hobbylist="";
+            hobbylist = "";
             $('input[type=checkbox]').each(function() {
                 if (this.checked) {
                     hobbylist += $(this).val() + ",";
@@ -102,15 +103,32 @@
             });
 
             hobbylist = hobbylist.substring(0, (hobbylist.length - 1));
-            console.log(hobbylist);
+            // console.log(hobbylist);
             result['hobby'] = hobbylist
-           
-        
+            delete result['hobby[]']
+            // console.log(result);
+            fetch("http://localhost/laravel/Topstaskworkout/Test_API/Backend/register", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+
+                },
+
+                body: JSON.stringify(result),
+
+            }).then((res) => res.json()).then((responce) => {
+                // console.log(responce);
+                alert('Registration Success');
+                window.location.href= 'login.php';
+               
+
+            })
 
 
-    })
-    
 
-</script>
+
+        })
+    </script>
 </body>
+
 </html>

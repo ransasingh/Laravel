@@ -12,14 +12,18 @@ class controller extends model
         if (isset($_SERVER['PATH_INFO'])) {
             switch ($_SERVER['PATH_INFO']) {
                 case '/register':
-                    $data = json_decode(file_get_contents("php://input"),true); 
-                    $registerfetch = $this->insert("users",$data); 
-                    print_r( $registerfetch);
-                    echo json_encode($registerfetch);  
-                 
+                    $data = json_decode(file_get_contents("php://input"), true);
+                    $registerfetch = $this->insert("users", $data);
+                    // print_r( $registerfetch);
+                    echo json_encode($registerfetch);
+
 
                     break;
-
+                    case '/loginbyapi':
+                        $LoginDatabyApiRes = $this->Select("users",array("username"=>$_POST['username'],"password"=>$_POST['password']));
+                                     
+                        echo json_encode($LoginDatabyApiRes);
+                        break;
                 default:
                     # code...
                     break;
