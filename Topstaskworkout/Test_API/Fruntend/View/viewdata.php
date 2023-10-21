@@ -1,9 +1,4 @@
-<?php
-//  print_r($_SESSION['Userdata']);
-if (!isset($_SESSION['Userdata'])) {
-    header("location:login");
-}
-?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -29,39 +24,19 @@ if (!isset($_SESSION['Userdata'])) {
                 <th>Action</th>
 
             </thead>
-            <tbody>
-                <?php
-                // print_r($viewuser);
+            <tbody id="showdata">
 
-                if (!empty($viewuser['Data'])) {
-                    $i = 0;
-                    foreach ($viewuser['Data'] as $key => $value) {
-                        $i++ ?>
-                        <tr>
-                            <td><?php echo $i; ?></td>
-                            <td><?php echo $value->fullname; ?></td>
-                            <td><?php echo $value->username; ?></td>
-                            <td><?php echo $value->email; ?></td>
-                            <td><?php echo $value->phone; ?></td>
-                            <td><?php echo $value->gender; ?></td>
-                            <td><?php echo $value->hobby; ?></td>
-                            <td>
-                                <a href="edit?userid=<?php echo $value->id; ?>" class="btn btn-primary me-md-2">Edit</a> &nbsp;&nbsp;
-                                <a href="delete?userid=<?php echo $value->id; ?>" class="btn btn-danger me-md-2">Delete</a>
-                            </td>
-                        </tr>
-                    <?php   }
-                } else {  ?>
-
-                <?php  }
-                ?>
             </tbody>
-
-
-
-
         </table>
+        <script>
+            function selectalldata() {
+                // console.log("call");
+                fetch(`http://localhost/Laravel/Topstaskworkout/Test_API/backend/viewapidata`).then((res) => res.json()).then((responce) => {
+                    console.log(responce);
 
+                })
+            }
+        </script>
 </body>
 
 </html>

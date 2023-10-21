@@ -57,8 +57,8 @@
 
             }).then((res)=>res.json()).then((responce)=>{
                 console.log(responce);
-                // alert('Login Success');
-                // window.location.href='';
+                alert('Login Success');
+                window.location.href='viewdata.php';
                 
             })
                     

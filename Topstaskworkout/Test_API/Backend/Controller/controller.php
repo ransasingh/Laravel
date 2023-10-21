@@ -19,9 +19,14 @@ class controller extends model
 
                     break;
                 case '/loginbyapi':
-                    $LoginDatabyApiRes = $this->Select("users", array("email" => $_GET['email'], "password" => $_GET['password']));
+                    $data = json_decode(file_get_contents("php://input"), true);
+                    $LoginDatabyApiRes = $this->Select("users", array("email" => $_GET['email'], "password" => $_GET['password']),$data);
 
                     echo json_encode($LoginDatabyApiRes);
+                    break;
+                case '/viewapidata':
+                    $viewdataapi= $this->Select("users");
+                     echo json_encode( $viewdataapi);
                     break;
                 default:
                     # code...
