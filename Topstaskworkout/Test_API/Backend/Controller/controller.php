@@ -17,13 +17,12 @@ class controller extends model
                     // print_r( $registerfetch);
                     echo json_encode($registerfetch);
 
-
                     break;
-                    case '/loginbyapi':
-                        $LoginDatabyApiRes = $this->Select("users",array("username"=>$_POST['username'],"password"=>$_POST['password']));
-                                     
-                        echo json_encode($LoginDatabyApiRes);
-                        break;
+                case '/loginbyapi':
+                    $LoginDatabyApiRes = $this->Select("users", array("email" => $_GET['email'], "password" => $_GET['password']));
+
+                    echo json_encode($LoginDatabyApiRes);
+                    break;
                 default:
                     # code...
                     break;
