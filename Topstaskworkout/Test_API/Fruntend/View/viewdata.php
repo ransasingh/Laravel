@@ -32,10 +32,26 @@
             function selectalldata() {
                 // console.log("call");
                 fetch(`http://localhost/Laravel/Topstaskworkout/Test_API/backend/viewapidata`).then((res) => res.json()).then((responce) => {
-                    console.log(responce);
+                    // console.log(responce);
+                    var Htmlres = ""
+                    responce.Data.forEach(element => {
+                    // console.log(element);
+                        console.log(element.fullname);
+                        Htmlres +=`<tr>
+                        <td>${element.id}</td>
+                        <td>${element.fullname}</td>
+                        <td>${element.username}</td>
+                        <td>${element.email}</td>
+                        <td>${element.phone}</td>
+                        <td>${element.gender}</td>
+                        <td>${element.hobby}</td>
+                        </tr>`
+                    });
+                    document.getElementById("showdata").innerHTML = Htmlres
 
                 })
             }
+            selectalldata();
         </script>
 </body>
 
