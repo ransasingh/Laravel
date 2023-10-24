@@ -36,7 +36,7 @@
                     var Htmlres = ""
                     responce.Data.forEach(element => {
                     // console.log(element);
-                        console.log(element.fullname);
+                        // console.log(element.fullname);
                         Htmlres +=`<tr>
                         <td>${element.id}</td>
                         <td>${element.fullname}</td>
@@ -45,6 +45,9 @@
                         <td>${element.phone}</td>
                         <td>${element.gender}</td>
                         <td>${element.hobby}</td>
+                        <td>
+            
+                        </td>
                         </tr>`
                     });
                     document.getElementById("showdata").innerHTML = Htmlres
