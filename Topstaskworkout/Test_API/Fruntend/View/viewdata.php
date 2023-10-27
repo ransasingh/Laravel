@@ -11,7 +11,7 @@
 <body>
     <table>
         <h3 class="text-center ">All Users</h3>
-        <table class="table table-success table-striped">
+        <table class="table">
             <thead>
 
                 <th>Sno</th>
@@ -46,8 +46,13 @@
                         <td>${element.gender}</td>
                         <td>${element.hobby}</td>
                         <td>
-            
-                        </td>
+                   <button type="button" onclick="editbyid(${element.id})" class="btn btn-primary" >
+                   Edit </button>
+       
+             
+                   <button onclick="deletebyid(${element.id})" class="btn btn-danger">Delete</button>
+                   </td>
+                 
                         </tr>`
                     });
                     document.getElementById("showdata").innerHTML = Htmlres
