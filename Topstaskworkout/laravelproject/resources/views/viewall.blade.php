@@ -14,20 +14,15 @@
                 <thead>
                 <tr>
                     <th>product_title</th>
-                    <th>product_name</th>
-                    <th>product_price</th>
-                    <th>product_quantity</th>
-                    <th>product_description</th>
+                  
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
                 @foreach($allproduct as $data)
                 <th>{{ $data->product_title}}</th> <br>
-                <th>{{ $data->product_name}}</th> <br>
-                <th>{{ $data->product_price}}</th> <br>
-                <th>{{ $data->product_quantity}}</th> <br>
-                <th>{{ $data->product_description}}</th> <br>
+             
+               
                 </tr>
                 @endforeach
                 </tbody>

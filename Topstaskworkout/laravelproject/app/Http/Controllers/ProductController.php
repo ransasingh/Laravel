@@ -5,16 +5,19 @@ namespace App\Http\Controllers;
 use App\Models\product;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use DB;
 
 class ProductController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(product $product)
     {
-  $allproduct= Product::all();
-return view('viewall',compact('allproduct'));
+        // $test="testing";
+        $allproduct = DB::table('product')->get();
+        return view('viewall', compact('allproduct'));
+        dd($allproduct);
     }
 
     /**
