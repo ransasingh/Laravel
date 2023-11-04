@@ -39,4 +39,8 @@ require __DIR__.'/auth.php';
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index']);
+// Route::view('/dashboard', [App\Http\Controllers::class, 'index']);
 Route::get('/product', [App\Http\Controllers\ProductController::class, 'index']);
+
+Route::any('/deleteproduct/{id}', [App\Http\Controllers\ProductController::class, 'destroy']);
+Route::any('/addnew',[App\Http\Controllers\ProductController::class,'store']);

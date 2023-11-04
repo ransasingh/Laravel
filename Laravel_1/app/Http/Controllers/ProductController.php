@@ -100,6 +100,6 @@ class ProductController extends Controller
     {
         $productById = $product::find($pid);
         $productById->delete();
-        return redirect('/product')->with('success', 'Task deleted successfully');
+        return redirect('/productlist')->with('success', 'Task deleted successfully');
     }
 }

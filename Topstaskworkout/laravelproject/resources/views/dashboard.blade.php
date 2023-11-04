@@ -2,7 +2,7 @@
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
          
-            <a href="product">product</a>
+            <a href="productlist">product</a>
         </h2>
     </x-slot>
 

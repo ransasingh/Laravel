@@ -15,9 +15,11 @@ class ProductController extends Controller
     public function index(product $product)
     {
         // $test="testing";
-        $allproduct = DB::table('product')->get();
-        return view('viewall', compact('allproduct'));
-        dd($allproduct);
+  
+        $productsList = DB::table('product')->get();
+      
+        return view("productlist", compact('productsList')); 
+        // dd($allproduct);
     }
 
     /**
@@ -31,10 +33,16 @@ class ProductController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request,product $product)
     {
-        //
+  
+        // dd($request);
+        // dd($request->all());
+        $product->product_title = $request->product_title;
+        $product->product_name = $request->product_name;
+        dd($product);
     }
+    
 
     /**
      * Display the specified resource.
@@ -63,8 +71,11 @@ class ProductController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(product $product)
+    public function destroy($id,product $product)
     {
-        //
+        $productById = $product::find($id);
+        $productById->delete();
+        return redirect('/product')->with('success', 'Task deleted successfully');
     }
+   
 }
