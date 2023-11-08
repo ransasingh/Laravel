@@ -15,10 +15,12 @@
 <body>
     <div class="container mt-1">
         <h1 class="text-center">PHP - Introduction of Laravel PHP Framework - Industry</h1>
-        <b>What is Lravel</b>
-      <p>Laravel is a framework built using the PHP scripting language. PHP is an open-source server-side language.
-         In other words, it is a backend language responsible for handling and processing data on a website. 
-         PHP on its own can not be used to create a web application.</p>
+        <b> What is the Laravel Framework?</b>
+        <p>Laravel is an open-source PHP framework, which is robust and easy to understand. It follows a model-view-controller design pattern. Laravel reuses the existing components of different frameworks which helps in creating a web application. The web application thus designed is more structured and pragmatic.
+
+Laravel offers a rich set of functionalities that incorporates the basic features of PHP frameworks like CodeIgniter, Yii, and other programming languages like Ruby on Rails. Laravel has a very rich set of features that will boost the speed of web development.
+
+With Laravel, you can build applications for any type of business or organization. Whether it’s eCommerce, social media marketing, or an online ticketing system, you can create any type of web application with Laravel because it’s flexible and scalable enough to accommodate any size project easily.</p>
          <b>What is Laravel Routing</b>
          <p>Routing is one of the essential concepts in Laravel. Routing in Laravel allows you to route all your application requests to their appropriate controller. The main and primary routes in Laravel acknowledge and accept a URI (Uniform Resource Identifier) along with a closure, given that it should have to be a simple and expressive way of routing. In this tutorial, you will learn about the routing concept of Laravel.</p>
          <b>What is Laravel Controllers</b>
@@ -59,11 +61,46 @@ Views are stored in the resources/views directory of the Laravel project. By def
             </li>
            
         </ul>
+       <b>What are migrations in Laravel?</b> 
+<p>Migration is a feature of Laravel that allows you to modify and share the application's database schema. It will enable you to alter the table by adding a new column or deleting an existing column.
 
+If you have ever had to tell a teammate to add a column to their local database schema manually, you've faced the problem that database migrations solve. Migrations are like version control for your database, allowing your team to modify and share the application's database schema. Migrations are typically paired with Laravel's schema builder to build your application's database schema.
 
+The Laravel Schema facade provides database agnostic support for creating and manipulating tables across all of Laravel's supported database systems.
+</p>
+<b>What are seeders in Laravel?</b>
+<p>Laravel's database seeding feature allows you to quickly insert data into your database. It is helpful for development environments where you may not have access to your production database.
 
+Laravel includes the ability to seed your database with data. By default, a Database seeder class is defined for you. You may use the call method from this class to run other seed classes. All seed classes are stored in the database/seeders directory.
 
-    </div>
+A seeder class only contains one method: run. This method is called when the db:seed Artisan command is executed. You may use the query builder to insert data or Eloquent model factories.
+
+</p>
+
+<b>What are Models?</b>
+ <p>Laravel is a framework that follows the Model-View-Controller design pattern. All your models, views, and controllers are stored in their directories, making it easy to keep track of everything.
+
+You'll use controllers to handle user requests and retrieve data by leveraging models. Models interact with your database and recover your objects’ information. Finally, views render pages.
+
+Laravel comes with a fantastic, built-in command line interface called Artisan CLI that provides complete commands to help you build your application.
+</p>    
+<b> What is Middleware in Laravel?</b>
+<p>Middleware in laravel is a platform that works as a bridge between the request and the response. The main aim of middleware is to provide the mechanism for investigating HTTP requests entering into your application. For instance, middleware in laravel ensures that the user of your particular application is authenticated. If they find that the user is not authenticated, it will redirect the user to the main login page of the application.
+
+Middleware in laravel also helps you to handle a request from a user who has already been authenticated. For example, if you want to display information about a user who has already been established, then middleware will help you by providing this functionality within your application.</p>
+
+<b>What are some common Artisan commands in Laravel?  </b>
+<li>make:controller – Creates a new Controller file in App/Http/Controllers folder</li>
+<li>make:model – Creates a new Eloquent model class</li>
+<li>make:migration – Creates a new migration file</li>
+<li>make:seeder – Creates a new database seeder class</li>
+<li>make:request – Creates a new form request class in App/Http/Requests folder</li>
+<li>make:request – Creates a new form request class in App/Http/Requests folder</li>
+<li>make:command – Creates a new Artisan command</li>
+<li>make:mail – Creates a new email class</li>
+<li>make:channel – Creates a new channel class for broadcasting </li>
+
+</div>
 
     <!-- Optional JavaScript; choose one of the two! -->
 
