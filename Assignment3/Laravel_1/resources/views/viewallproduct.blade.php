@@ -12,6 +12,7 @@
                     <th>product_decription</th>
                     <th>price</th>
                     <th>quantity</th>
+                    <th>Product_Image</th>
                     <th>Action</th>
                 </tr>
             </thead>
@@ -22,6 +23,7 @@
                     <th>{{ $data->product_decription}}</th> <br>
                     <th>{{ $data->price}}</th> <br>
                     <th>{{ $data->quantity}}</th>
+                    <th>{{ $data->product_image}}</th>
                     <th>
                         <a href="editproduct/{{ $data->id}}">Edit</a>
                       &nbsp;&nbsp;  <a href="deleteproduct/{{ $data->id}}">Delete</a>

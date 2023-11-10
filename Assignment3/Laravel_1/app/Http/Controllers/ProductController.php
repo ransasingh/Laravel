@@ -44,6 +44,7 @@ class ProductController extends Controller
         $product->product_decription= $request->product_decription;
         $product->price = $request->price;
         $product->quantity = $request->quantity;       
+        $product->product_image = $request->product_image;       
         $product->save();
         return redirect('product');
     }
@@ -69,7 +70,7 @@ class ProductController extends Controller
     {
         $productById = $product::find($pid);
         return view('editprod', compact('productById'));
-        dd( $productById);
+        // dd( $productById);
     }
 
     /**
@@ -86,6 +87,7 @@ class ProductController extends Controller
         $productById->product_decription= $request->product_decription;
         $productById->price = $request->price;
         $productById->quantity = $request->quantity;       
+      
         $productById->save();
         return redirect('product');
     }
@@ -100,6 +102,7 @@ class ProductController extends Controller
     {
         $productById = $product::find($pid);
         $productById->delete();
-        return redirect('/productlist')->with('success', 'Task deleted successfully');
+        return redirect('/product')->with('success', 'Task deleted successfully');
+        
     }
 }

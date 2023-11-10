@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <h2 class="text-center">PRODUCT FORM</h2>
-        <form action="/updateproduct/{{$productById['id']}}" method="post">
+        <form action="/updateproduct/{{$productById['id']}}" method="post" enctype="multipart/form-data">
             @csrf
             {{--dd($productById['product_title'])--}}
             <div class="row">
@@ -24,6 +24,11 @@
                     <label for="quantity" class="label-control mb-1">quantity</label>
                     <inPut type="tel" class="form-control" name="quantity" id="quantity" value="{{$productById['quantity']}}">
                 </div>
+                <div class="col-6 offset-3 mt-2">
+                    <label for="product_image" class="label-control mb-1">product_image</label>
+                    <inPut type="file" class="form-control" name="product_image" id="product_image" value="{{$productById['product_image}']}}">
+                </div>
+              
                 <div class="col-6 offset-3 mt-2">
                     <input type="submit" class="btn btn-success" value="Update" name="addproduct">&nbsp;
                     <input type="reset" class="btn btn-danger" value="CANCEL">
