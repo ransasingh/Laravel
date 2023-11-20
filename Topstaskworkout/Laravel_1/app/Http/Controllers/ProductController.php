@@ -39,11 +39,14 @@ class ProductController extends Controller
     public function store(Request $request,product $product)
     {
         // dd('call');
+        $imageName = time().'.'.$request->product_pic->getClientOriginalExtension();
+        $request->product_pic->move(public_path('upload'), $imageName);
         
         $product->product_title = $request->product_title;
         $product->product_decription= $request->product_decription;
         $product->price = $request->price;
         $product->quantity = $request->quantity;       
+        $product->product_pic = $imageName ;       
         $product->save();
         return redirect('product');
     }
@@ -69,7 +72,7 @@ class ProductController extends Controller
     {
         $productById = $product::find($pid);
         return view('editprod', compact('productById'));
-        dd( $productById);
+        
     }
 
     /**
@@ -81,11 +84,22 @@ class ProductController extends Controller
      */
     public function update($pid,Request $request, product $product)
     {
+        
+      
+        if ($request->product_pic=="") {
+            $imageName = $request->oldproduct_pic;
+        }
+        else{
+            $imageName = time().'.'.$request->product_pic->getClientOriginalExtension();
+            $request->product_pic->move(public_path('upload'), $imageName);
+
+        }
         $productById = $product::find($pid);
         $productById->product_title = $request->product_title;
         $productById->product_decription= $request->product_decription;
         $productById->price = $request->price;
         $productById->quantity = $request->quantity;       
+        $productById->product_pic = $imageName;       
         $productById->save();
         return redirect('product');
     }
@@ -100,6 +114,6 @@ class ProductController extends Controller
     {
         $productById = $product::find($pid);
         $productById->delete();
-        return redirect('/productlist')->with('success', 'Task deleted successfully');
+        return redirect('/product')->with('success', 'Task deleted successfully');
     }
 }

@@ -4,15 +4,15 @@
 <div class="container">
     <div class="row justify-content-center">
         <h2 class="text-center">PRODUCT FORM</h2>
-        <form action="saveproduct" method="post">
+        <form action="saveproduct" method="post" enctype="multipart/form-data" >
             @csrf
             <div class="row">
                 <div class="col-6 offset-3">
-                    <label for=product_title" class="label-control mb-1">product_title</label>
+                    <label for="product_title" class="label-control mb-1">product_title</label>
                     <input type="text" class="form-control" name="product_title" id="product_title">
                 </div>
                 <div class="col-6 offset-3 mt-2">
-                    <label for=product_discripation" class="label-control mb-1">product_discripation</label>
+                    <label for="product_discripation" class="label-control mb-1">product_discripation</label>
                     <input type="text" class="form-control" name="product_decription" id="product_discripation">
                 </div>
                 <div class="col-6 offset-3 mt-2">
@@ -22,6 +22,10 @@
                 <div class="col-6 offset-3 mt-2">
                     <label for="quantity" class="label-control mb-1">quantity</label>
                     <inPut type="tel" class="form-control" name="quantity" id="quantity">
+                </div>
+                <div class="col-6 offset-3 mt-2">
+                    <label for="product_pic" class="label-control mb-1">product_pic</label>
+                    <inPut type="file" class="form-control" name="product_pic" id="product_pic">
                 </div>
                 <div class="col-6 offset-3 mt-2">
                     <input type="submit" class="btn btn-success" value="ADD PRODUCT" name="addproduct">&nbsp;

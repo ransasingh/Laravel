@@ -4,16 +4,16 @@
 <div class="container">
     <div class="row justify-content-center">
         <h2 class="text-center">PRODUCT FORM</h2>
-        <form action="/updateproduct/{{$productById['id']}}" method="post">
+        <form action="/updateproduct/{{$productById['id']}}" method="post" enctype="multipart/form-data">
             @csrf
-            {{--dd($productById['product_title'])--}}
+           
             <div class="row">
                 <div class="col-6 offset-3">
-                    <label for=product_title" class="label-control mb-1">product_title</label>
+                    <label for="product_title" class="label-control mb-1">product_title</label>
                     <input type="text" class="form-control" name="product_title" id="product_title" value="{{$productById['product_title']}}">
                 </div>
                 <div class="col-6 offset-3 mt-2">
-                    <label for=product_discripation" class="label-control mb-1">product_discripation</label>
+                    <label for="product_discripation" class="label-control mb-1">product_discripation</label>
                     <input type="text" class="form-control" name="product_decription" id="product_discripation" value="{{$productById['product_decription']}}">
                 </div>
                 <div class="col-6 offset-3 mt-2">
@@ -23,6 +23,12 @@
                 <div class="col-6 offset-3 mt-2">
                     <label for="quantity" class="label-control mb-1">quantity</label>
                     <inPut type="tel" class="form-control" name="quantity" id="quantity" value="{{$productById['quantity']}}">
+                </div>
+                <div class="col-6 offset-3 mt-2">
+                    <label for="product_pic" class="label-control mb-1">product_pic</label>
+                    <img src="/upload/{{$productById['product_pic']}}" width="100" alt="">
+                    <inPut type="file" class="form-control" name="product_pic" id="product_pic"  >
+                    <inPut type="hidden" class="form-control" name="oldproduct_pic" id="oldproduct_pic" value="{{$productById['product_pic']}}" >
                 </div>
                 <div class="col-6 offset-3 mt-2">
                     <input type="submit" class="btn btn-success" value="Update" name="addproduct">&nbsp;
