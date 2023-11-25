@@ -35,5 +35,7 @@ Route::any('/deleteproduct/{pid}', [App\Http\Controllers\productController::clas
 
 Route::view('/macroexample','macro');
 
+Route::get('/send-mail', [ App\Http\Controllers\SendMailController::class ,'index']);
+
 Route::view('/templet','templet');
 Route::view('/admindashboard','admin.admindashboard');
