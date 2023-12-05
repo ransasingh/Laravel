@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Spatie\FlareClient\View;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+
+//frontend
+// Route::post('/signup', [App\Http\Controllers\BaseController::class, 'store']);
+// Route::view('/','frontend.homepage');
+// Route::view('/login','frontend.login');
+// Route::view('/signup','frontend.signup');
+Route::get('/', [App\Http\Controllers\frontend\UserController::class, 'index']);
+Route::get('/login', [App\Http\Controllers\frontend\UserController::class, 'login']);
+Route::get('/signup', [App\Http\Controllers\frontend\UserController::class, 'signup']);
+Route::post('/register', [App\Http\Controllers\frontend\UserController::class, 'store']);
+
