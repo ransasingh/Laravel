@@ -9,46 +9,53 @@
                 <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
                     <div class="card-body p-4 p-md-5">
                         <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Login</h3>
-                        <form>
+                        <form action="signin" method="post">
+                            @csrf
 
                             <div class="row">
                                 <div class="col-md-8 mb-4">
 
                                     <div class="form-outline">
-                                        <input type="text" id="username" class="form-control form-control-lg" placeholder="Enter Your User Name" />
+                                        <input type="text" id="name" name="name" class="form-control form-control-lg" placeholder="Enter Your User Name" />
 
                                     </div>
 
                                 </div>
-                              
+
                             </div>
                             <div class="row">
                                 <div class="col-md-8 mb-4">
 
                                     <div class="form-outline">
-                                        <input type="password" id="Paassword" class="form-control form-control-lg" placeholder="Enter Your Password" />
+                                        <input type="password" name="password" id="Paassword" class="form-control form-control-lg" placeholder="Enter Your Password" />
 
                                     </div>
-                                 
+
 
                                 </div>
-                              
+
                             </div>
                             <div class="row">
                                 <div class="col-md-2 mb-4">
 
-                 
+
                                     <div class="form-outline">
-                                    <button type="submit" class="btn btn-primary" value="Login" name="Login">Login</button>
+                                        <button type="submit" class="btn btn-primary" value="Login" name="Login">Login</button>
 
                                     </div>
-                                 
+
 
                                 </div>
 
-                                <a href="signup">create a new account</a>
-                                
-                              
+                                <!-- <a href="signup">create a new account</a> -->
+                                <div class="create-account">
+                                    <p>
+                                        Don't have an account yet ?&nbsp; <a href="signup:;" id="register">
+                                            Create an account </a>
+                                    </p>
+                                </div>
+
+
                             </div>
 
 

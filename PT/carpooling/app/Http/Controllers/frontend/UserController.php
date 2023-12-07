@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Validator;
 use App\Models\User;
+use Auth;
 
 class UserController extends Controller
 {
@@ -16,14 +17,34 @@ class UserController extends Controller
     {
         return view('frontend.homepage');
     }
+
     public function login()
     {
         return view('frontend.login');
     }
-    public function signup()
+
+    public function customauthlogin(Request $request)
     {
-        return view('frontend.signup');
+        // dd("called");
+        $request->validate([
+            'name' => 'required',
+            'password' => 'required',
+        ]);
+
+        // $credentials = $request->only('name', 'password');
+        // if (Auth::attempt($credentials)) {
+            
+        //     return view('frontend.dashboard.homepage')
+        //         ->withSuccess('Signed in');
+        // }
+ 
+        //  else {
+
+        //     return redirect("login")->withSuccess('Login details are not valid');
+        // }
     }
+
+
 
     /**
      * Show the form for creating a new resource.
@@ -39,7 +60,7 @@ class UserController extends Controller
     public function store(Request $request, User $user)
     {
         // dd("called");
-        $cpassword =$request->password_confirm;
+        $cpassword = $request->password_confirm;
         $password = $request->password;
         // dd($cpassword);
         // dd($password);
@@ -67,9 +88,7 @@ class UserController extends Controller
             } else {
                 echo "password miss match";
             }
-
         }
-        
     }
 
     /**
