@@ -26,7 +26,7 @@ use Spatie\FlareClient\View;
 // Route::view('/signup','frontend.signup');
 Route::get('/', [App\Http\Controllers\frontend\UserController::class, 'index']);
 Route::get('/login', [App\Http\Controllers\frontend\UserController::class, 'login']);
-Route::post('/signin', [App\Http\Controllers\frontend\UserController::class, 'customauthlogin']);
+Route::post('/custom-login', [App\Http\Controllers\frontend\UserController::class, 'customauthlogin']); 
 Route::get('/signup', [App\Http\Controllers\frontend\UserController::class, 'signup']);
 Route::post('/register', [App\Http\Controllers\frontend\UserController::class, 'store']);
 // Route::view('/dashboard','frontend.dashboard.homepage' );

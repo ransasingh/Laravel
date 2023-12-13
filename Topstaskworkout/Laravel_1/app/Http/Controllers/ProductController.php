@@ -36,17 +36,17 @@ class ProductController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request,product $product)
+    public function store(Request $request, product $product)
     {
         // dd('call');
-        $imageName = time().'.'.$request->product_pic->getClientOriginalExtension();
+        $imageName = time() . '.' . $request->product_pic->getClientOriginalExtension();
         $request->product_pic->move(public_path('upload'), $imageName);
-        
+
         $product->product_title = $request->product_title;
-        $product->product_decription= $request->product_decription;
+        $product->product_decription = $request->product_decription;
         $product->price = $request->price;
-        $product->quantity = $request->quantity;       
-        $product->product_pic = $imageName ;       
+        $product->quantity = $request->quantity;
+        $product->product_pic = $imageName;
         $product->save();
         return redirect('product');
     }
@@ -68,11 +68,10 @@ class ProductController extends Controller
      * @param  \App\Models\product  $product
      * @return \Illuminate\Http\Response
      */
-    public function edit($pid,product $product)
+    public function edit($pid, product $product)
     {
         $productById = $product::find($pid);
         return view('editprod', compact('productById'));
-        
     }
 
     /**
@@ -82,24 +81,22 @@ class ProductController extends Controller
      * @param  \App\Models\product  $product
      * @return \Illuminate\Http\Response
      */
-    public function update($pid,Request $request, product $product)
+    public function update($pid, Request $request, product $product)
     {
-        
-      
-        if ($request->product_pic=="") {
-            $imageName = $request->oldproduct_pic;
-        }
-        else{
-            $imageName = time().'.'.$request->product_pic->getClientOriginalExtension();
-            $request->product_pic->move(public_path('upload'), $imageName);
 
+
+        if ($request->product_pic == "") {
+            $imageName = $request->oldproduct_pic;
+        } else {
+            $imageName = time() . '.' . $request->product_pic->getClientOriginalExtension();
+            $request->product_pic->move(public_path('upload'), $imageName);
         }
         $productById = $product::find($pid);
         $productById->product_title = $request->product_title;
-        $productById->product_decription= $request->product_decription;
+        $productById->product_decription = $request->product_decription;
         $productById->price = $request->price;
-        $productById->quantity = $request->quantity;       
-        $productById->product_pic = $imageName;       
+        $productById->quantity = $request->quantity;
+        $productById->product_pic = $imageName;
         $productById->save();
         return redirect('product');
     }
@@ -110,10 +107,20 @@ class ProductController extends Controller
      * @param  \App\Models\product  $product
      * @return \Illuminate\Http\Response
      */
-    public function delete($pid,product $product)
+    public function delete($pid, product $product)
     {
+
+        // echo public_path();
+        // exit;
         $productById = $product::find($pid);
+        $FileName = public_path()."uploads/". $productById->product_pic;
+        dd($product->product_pic);
+        exit;
+        // unlink($FileName);
+
+       
         $productById->delete();
         return redirect('/product')->with('success', 'Task deleted successfully');
     }
 }
+

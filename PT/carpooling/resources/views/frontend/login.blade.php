@@ -9,7 +9,7 @@
                 <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
                     <div class="card-body p-4 p-md-5">
                         <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Login</h3>
-                        <form action="signin" method="post">
+                        <form action="custom-login" method="post">
                             @csrf
 
                             <div class="row">
@@ -50,7 +50,7 @@
                                 <!-- <a href="signup">create a new account</a> -->
                                 <div class="create-account">
                                     <p>
-                                        Don't have an account yet ?&nbsp; <a href="signup:;" id="register">
+                                        Don't have an account yet ?&nbsp; <a href="signup" id="register">
                                             Create an account </a>
                                     </p>
                                 </div>

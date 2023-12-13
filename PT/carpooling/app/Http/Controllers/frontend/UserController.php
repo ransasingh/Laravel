@@ -22,6 +22,10 @@ class UserController extends Controller
     {
         return view('frontend.login');
     }
+    public function signup()
+    {
+        return view('frontend.signup');
+    }
 
     public function customauthlogin(Request $request)
     {
