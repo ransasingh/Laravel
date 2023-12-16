@@ -16,6 +16,9 @@ class AuthController extends Controller
      */
     public function index(Request $request, AuthUser $users)
     {
+     
+        
+
         $validatedData = $request->validate([
             'username' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
@@ -38,6 +41,7 @@ class AuthController extends Controller
      */
     public function create(Request $request, AuthUser $users)
     {
+      
         $credentials = $request->only('email', 'password');
 
         if (Auth::attempt($credentials)) {
