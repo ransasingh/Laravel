@@ -1,3 +1,0 @@
-id- admin@gmail.com
-password- 12345678
-import table - state
