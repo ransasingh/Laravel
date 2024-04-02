@@ -15,6 +15,9 @@
 
 
         <div class="container mt-3 p-3 mb-2 bg-blue text-black">
+            <div>
+                <h6><a href="home">Home</a></h6>
+            </div>
 
             <div class="text-center">
 

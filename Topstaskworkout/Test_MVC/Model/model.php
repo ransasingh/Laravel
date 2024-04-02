@@ -4,7 +4,7 @@ class model
     public $connection = "";
     public function __construct()
     {
-        $this->connection = new mysqli("localhost", "root", "", "test_mvc");
+        $this->connection = new mysqli("localhost", "root", "", "testmvc");
         //  if ($this->connection) {
         //    echo "success";
         //  }
